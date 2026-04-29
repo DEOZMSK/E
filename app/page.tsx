@@ -40,23 +40,16 @@ export default function HomePage() {
           <div className="absolute bottom-[-18%] right-[-8%] h-96 w-96 rounded-full bg-[#ff9f5a]/20 blur-3xl" />
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[clamp(640px,96svh,860px)] overflow-hidden lg:hidden">
-          <Image
-            src="/photo.png"
-            alt="Елена Ксорос, фитнес-тренер EFITNES"
-            priority
-            fill
-            sizes="100vw"
-            className="object-cover object-top"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/18 via-black/42 to-[#090911]/95" />
-          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent to-[#090911]" />
-        </div>
+        <div className="relative z-10 mt-auto overflow-hidden rounded-[2rem] border border-white/10 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:mt-0 sm:border-outline/70 sm:p-9 lg:col-span-2">
+          <div className="pointer-events-none absolute inset-0">
+            <Image src="/photo.png" alt="Елена Ксорос, фитнес-тренер EFITNES" priority fill sizes="(min-width: 1024px) 70vw, 100vw" className="object-cover object-[52%_12%] opacity-52" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#090911]/55 via-[#090911]/68 to-[#090911]/88" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_22%,rgba(255,174,120,0.22),transparent_48%)]" />
+          </div>
 
-        <div className="relative z-10 mt-auto overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b from-black/20 via-black/35 to-black/70 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-[2px] sm:mt-0 sm:border-outline/70 sm:bg-surface/80 sm:p-9">
           <div className="relative z-10">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#ffb36b]">{hero.eyebrow}</p>
-            <h1 className="hero-gradient-title mt-4 text-[2.45rem] font-bold leading-[1.06] tracking-tight sm:text-5xl lg:text-[3.55rem]">
+            <h1 className="hero-gradient-title mt-4 max-w-3xl text-[2.45rem] font-bold leading-[1.06] tracking-tight sm:text-5xl lg:text-[3.55rem]">
               {hero.headline}
             </h1>
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-neutral-300 sm:text-lg">{hero.subheadline}</p>
@@ -73,7 +66,7 @@ export default function HomePage() {
               </CTAButton>
             </div>
 
-            <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-neutral-400">
+            <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-neutral-300">
               <Link href="/questions" className="text-[#ffb36b] no-underline hover:text-white">
                 Частые вопросы
               </Link>
@@ -82,21 +75,7 @@ export default function HomePage() {
               </a>
             </div>
 
-            <p className="mt-5 text-sm leading-relaxed text-neutral-400">{hero.note}</p>
-          </div>
-        </div>
-
-        <div className="relative hidden justify-center md:flex">
-          <div className="relative w-[min(88vw,520px)] max-w-[520px]">
-            <Image
-              src="/photo.png"
-              alt="Елена Ксорос, фитнес-тренер EFITNES"
-              priority
-              width={960}
-              height={1440}
-              sizes="(min-width: 1280px) 520px, (min-width: 768px) 460px, (min-width: 640px) 420px, 88vw"
-              className="w-full origin-top scale-[0.97] transform-gpu rounded-[36px] object-cover object-top"
-            />
+            <p className="mt-5 text-sm leading-relaxed text-neutral-300">{hero.note}</p>
           </div>
         </div>
       </section>
@@ -105,13 +84,13 @@ export default function HomePage() {
         {features.map((feature, idx) => (
           <article
             key={feature.title}
-            className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-gradient-to-br from-[#141423]/95 via-[#10101c]/93 to-[#090914]/95 shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
+            className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-gradient-to-br from-[#141423]/95 via-[#10101c]/93 to-[#090914]/95 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
           >
-            <div className="relative h-44 w-full overflow-hidden sm:h-48">
-              <Image src={featureImages[idx] ?? "/2.png"} alt={feature.title} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover object-center opacity-60" />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-[#0b0b15]/35 to-[#0b0b15]/88" />
+            <div className="pointer-events-none absolute inset-0">
+              <Image src={featureImages[idx] ?? "/2.png"} alt={feature.title} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover object-center opacity-44" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#090911]/52 via-[#0b0b15]/62 to-[#090911]/86" />
             </div>
-            <div className="relative z-10 p-6 pt-4">
+            <div className="relative z-10 min-h-[188px]">
               <h2 className="text-xl font-semibold text-white">{feature.title}</h2>
               <p className="mt-3 leading-relaxed text-neutral-300">{feature.description}</p>
             </div>
@@ -121,10 +100,10 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-6xl px-4 pb-14 sm:px-6">
         <div className="relative overflow-hidden rounded-[2rem] border border-outline/70 bg-surface/85 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.28)] sm:p-8">
-          <div className="pointer-events-none relative mb-5 h-36 w-full overflow-hidden rounded-[1.5rem] border border-white/10 sm:mb-6 sm:h-44">
-            <Image src="/stat.png" alt="Статистика прогресса" fill sizes="(min-width: 768px) 70vw, 100vw" className="object-cover object-center opacity-55" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#090911]/68 via-[#090911]/34 to-[#090911]/78" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_24%,rgba(255,179,107,0.2),transparent_55%)]" />
+          <div className="pointer-events-none absolute inset-0">
+            <Image src="/stat.png" alt="Статистика прогресса" fill sizes="(min-width: 768px) 70vw, 100vw" className="object-cover object-center opacity-30" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#090911]/52 via-[#090911]/72 to-[#090911]/88" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_16%,rgba(255,179,107,0.2),transparent_48%)]" />
           </div>
 
           <h2 className="relative z-10 text-2xl font-semibold text-white">{flow.title}</h2>
