@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Manrope, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
-import { CookieConsent } from "./components/CookieConsent";
+import { RouteAwareCookieConsent } from "./components/RouteAwareCookieConsent";
 
 const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
@@ -187,7 +187,7 @@ export default function RootLayout({
         <Script id="efitnes-structured-data" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify(structuredData)}
         </Script>
-        <CookieConsent />
+        <RouteAwareCookieConsent />
         {children}
       </body>
     </html>
