@@ -34,7 +34,7 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-background text-neutral-100">
-      <section className="relative mx-auto min-h-[100svh] overflow-hidden max-w-6xl px-0 pt-0 sm:min-h-[92vh] sm:px-6 sm:pt-10 lg:min-h-0 lg:px-4 lg:py-10">
+      <section className="relative mx-auto min-h-[100svh] overflow-hidden max-w-6xl px-0 pt-0 sm:min-h-[92vh] sm:px-6 sm:pt-8 lg:min-h-0 lg:px-4 lg:py-6">
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute left-[-10%] top-[-12%] h-72 w-72 rounded-full bg-accent/20 blur-3xl" />
           <div className="absolute bottom-[-18%] right-[-8%] h-96 w-96 rounded-full bg-[#ff9f5a]/20 blur-3xl" />
@@ -42,7 +42,7 @@ export default function HomePage() {
 
         <div className="relative z-10 mt-auto overflow-hidden rounded-[2rem] border border-white/10 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:mt-0 sm:border-outline/70 sm:p-9 lg:mt-0 lg:grid lg:grid-cols-12 lg:gap-8 lg:bg-surface/70">
           <div className="pointer-events-none absolute inset-0 lg:hidden">
-            <Image src="/photo.png" alt="Елена Ксорос, фитнес-тренер EFITNES" priority fill sizes="100vw" className="object-cover object-[52%_12%] opacity-52" />
+            <Image src="/photo.png" alt="Елена Ксорос, фитнес-тренер EFITNES" priority fill sizes="100vw" className="object-cover object-[52%_12%] opacity-42" />
             <div className="absolute inset-0 bg-gradient-to-b from-[#090911]/55 via-[#090911]/68 to-[#090911]/88" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_22%,rgba(255,174,120,0.22),transparent_48%)]" />
           </div>
@@ -86,21 +86,21 @@ export default function HomePage() {
               sizes="(min-width: 1280px) 32vw, (min-width: 1024px) 36vw, 100vw"
               className="object-cover object-[54%_14%]"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#090911]/12 via-transparent to-[#090911]/50" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#090911]/20 via-[#090911]/10 to-[#090911]/58" />
           </div>
 
         </div>
       </section>
 
-      <section className="relative z-20 mx-auto mt-6 grid max-w-6xl gap-4 px-4 pb-10 sm:mt-8 sm:px-6 md:grid-cols-3 lg:mt-10">
+      <section className="relative z-20 mx-auto mt-2 grid max-w-6xl gap-3 px-4 pb-6 sm:mt-3 sm:px-6 md:grid-cols-3 lg:mt-4">
         {features.map((feature, idx) => (
           <article
             key={feature.title}
             className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-gradient-to-br from-[#141423]/95 via-[#10101c]/93 to-[#090914]/95 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
           >
             <div className="pointer-events-none absolute inset-0">
-              <Image src={featureImages[idx] ?? "/2.png"} alt={feature.title} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover object-center opacity-62" />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#090911]/18 via-[#0b0b15]/38 to-[#090911]/64" />
+              <Image src={featureImages[idx] ?? "/2.png"} alt={feature.title} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover object-center opacity-78" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#090911]/10 via-[#0b0b15]/26 to-[#090911]/52" />
             </div>
             <div className="relative z-10 min-h-[188px]">
               <h2 className="text-xl font-semibold text-white">{feature.title}</h2>
@@ -110,11 +110,11 @@ export default function HomePage() {
         ))}
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-14 sm:px-6">
+      <section className="mx-auto max-w-6xl px-4 pb-8 sm:px-6">
         <div className="relative overflow-hidden rounded-[2rem] border border-outline/70 bg-surface/85 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.28)] sm:p-8">
           <div className="pointer-events-none absolute inset-0">
-            <Image src="/stat.png" alt="Статистика прогресса" fill sizes="(min-width: 768px) 70vw, 100vw" className="object-cover object-center opacity-42" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#090911]/52 via-[#090911]/72 to-[#090911]/88" />
+            <Image src="/stat.png" alt="Статистика прогресса" fill sizes="(min-width: 768px) 70vw, 100vw" className="object-cover object-center opacity-26" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#090911]/58 via-[#090911]/76 to-[#090911]/90" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_16%,rgba(255,179,107,0.2),transparent_48%)]" />
           </div>
 
