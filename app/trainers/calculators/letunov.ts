@@ -1,0 +1,1 @@
+export const calculateLetunov=(baseline:number,afterLoad:number,after3min:number)=>{const rise=afterLoad-baseline;const recovery=after3min-baseline;return{rise,recovery,type:rise<25&&recovery<10?"нормотоническая":recovery>=20?"гипертоническая":"дистоническая"}};

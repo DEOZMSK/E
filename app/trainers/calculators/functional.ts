@@ -1,0 +1,1 @@
+export const calculateFunctional=(power1:number,power2:number,hr1:number,hr2:number,weightKg:number)=>{const pwc170=power1+((170-hr1)*(power2-power1))/Math.max(hr2-hr1,1);const vo2=(1.7*pwc170+1240)/Math.max(weightKg,1);return{pwc170:+pwc170.toFixed(0),vo2max:+vo2.toFixed(1)}};
