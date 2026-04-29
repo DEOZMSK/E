@@ -80,8 +80,8 @@ export function CookieConsent() {
       <div className="w-full max-w-lg rounded-3xl border border-white/20 bg-white/95 p-6 text-neutral-800 shadow-[0_20px_60px_rgba(0,0,0,0.25)]">
         <h2 className="text-lg font-semibold text-neutral-900">Использование файлов cookie</h2>
         <p className="mt-3 text-sm leading-relaxed text-neutral-600">
-          Сайт <span className="font-medium">JyotishGPT.ru</span> использует обязательные и аналитические cookie, сервисы аналитики
-          (Google Analytics, Яндекс.Метрика), Telegram-бота <span className="whitespace-nowrap">@artemiy_ksoros_bot</span> и API
+          Сайт <span className="font-medium">EFITNES.ru</span> использует обязательные и аналитические cookie, сервисы аналитики
+          (Google Analytics, Яндекс.Метрика), Telegram-бота <span className="whitespace-nowrap">@EFITNES_BOT</span> и API
           искусственного интеллекта, чтобы обрабатывать запросы и улучшать консультации. Подробнее см. в документах:
           {" "}
           <Link href="/privacy" className="text-accent hover:text-accent-hover">Политика конфиденциальности</Link>,{" "}

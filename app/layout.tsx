@@ -18,12 +18,12 @@ const unbounded = Unbounded({
   variable: "--font-heading"
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://jyotishgpt.ru";
-const defaultTitle = "JyotishGPT — ведическая AI-нумерология Артемия Ксорос";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://efitnes.ru";
+const defaultTitle = "EFITNES — персональное фитнес-сопровождение для женщин";
 const defaultDescription =
-  "JyotishGPT — ведический AI-помощник Артемия Ксорос. Соединяет астрологию, нумерологию и аналитику, чтобы поддерживать осознанные решения.";
+  "EFITNES — платформа фитнес-диагностики и персонального сопровождения с Еленой: тренировки, питание и восстановление.";
 const snippetDescription =
-  "JyotishGPT — авторский проект Артемия Ксорос, где искусственный интеллект опирается на ведические традиции, помогая видеть личные циклы и шаги развития.";
+  "EFITNES — сервис, который помогает женщинам пройти путь: диагностика, план и персональная поддержка Елены.";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -31,50 +31,50 @@ const structuredData = {
     {
       "@type": "Person",
       "@id": `${siteUrl}/#person`,
-      name: "Artemiy Ksoros",
-      alternateName: "Артемий Ксорос",
+      name: "Elena",
+      alternateName: "Елена",
       description:
-        "Artemiy Ksoros — исследователь ведической астрологии и цифровых технологий. Создатель JyotishGPT — проекта, соединяющего древние знания и искусственный интеллект.",
-      jobTitle: "Создатель JyotishGPT",
+        "Elena — исследователь женского фитнеса и цифровых технологий. Создатель EFITNES — проекта, объединяющего фитнес-экспертизу и цифровые инструменты.",
+      jobTitle: "Создатель EFITNES",
       url: `${siteUrl}/`,
       image: `${siteUrl}/kcopoc.jpeg`,
       sameAs: [
         `${siteUrl}/`,
-        "https://t.me/jyotishgpt"
+        "https://t.me/Al0PBEDA"
       ]
     },
     {
       "@type": "Brand",
       "@id": `${siteUrl}/#brand`,
-      name: "JyotishGPT",
-      alternateName: "Jyotish GPT",
+      name: "EFITNES",
+      alternateName: "Фитнес с Еленой",
       description: defaultDescription,
       url: `${siteUrl}/`,
       founder: { "@id": `${siteUrl}/#person` },
-      slogan: "AI-нумерология для осознанного пути",
+      slogan: "Диагностика, план, сопровождение",
       image: `${siteUrl}/kcopoc.jpeg`,
       sameAs: [
         `${siteUrl}/`,
-        "https://t.me/jyotishgpt"
+        "https://t.me/Al0PBEDA"
       ]
     },
     {
       "@type": "Organization",
       "@id": `${siteUrl}/#organization`,
-      name: "JyotishGPT",
+      name: "EFITNES",
       description: defaultDescription,
       url: `${siteUrl}/`,
       founder: { "@id": `${siteUrl}/#person` },
       brand: { "@id": `${siteUrl}/#brand` },
       sameAs: [
         `${siteUrl}/`,
-        "https://t.me/jyotishgpt"
+        "https://t.me/Al0PBEDA"
       ]
     },
     {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
-      name: "JyotishGPT",
+      name: "EFITNES",
       url: `${siteUrl}/`,
       description: defaultDescription,
       inLanguage: "ru",
@@ -94,24 +94,24 @@ const structuredData = {
     {
       "@type": "LegalService",
       "@id": `${siteUrl}/#legal-service`,
-      name: "Консультации JyotishGPT",
+      name: "Консультации EFITNES",
       description:
-        "Самозанятый консультант Артемий Ксорос проводит консультации с использованием AI-сервиса JyotishGPT и соблюдает требования 152-ФЗ.",
+        "Самозанятый консультант Елена проводит консультации с использованием AI-сервиса EFITNES и соблюдает требования 152-ФЗ.",
       areaServed: {
         "@type": "AdministrativeArea",
         name: "Москва, Россия"
       },
       provider: { "@id": `${siteUrl}/#person` },
       serviceType: [
-        "Консультации по ведической астрологии",
-        "AI-анализ даты рождения"
+        "Консультации по женскому фитнесу",
+        "AI-анализ прогресса и нагрузки"
       ],
       url: `${siteUrl}/`,
       telephone: "+7-991-979-71-19",
       email: "mailto:art.ksoros@gmail.com",
       sameAs: [
-        "https://t.me/BAPHbl",
-        "https://t.me/JyotishGPT"
+        "https://t.me/Al0PBEDA",
+        "https://t.me/EFITNES"
       ]
     }
   ]
@@ -121,22 +121,22 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: defaultTitle,
-    template: "%s — JyotishGPT"
+    template: "%s — EFITNES"
   },
   description: defaultDescription,
-  applicationName: "JyotishGPT",
+  applicationName: "EFITNES",
   keywords: [
-    "JyotishGPT",
-    "Артемий Ксорос",
-    "ведическая астрология",
-    "AI-нумерология",
-    "ведический искусственный интеллект",
+    "EFITNES",
+    "Елена",
+    "женский фитнес",
+    "AI-фитнес-сопровождение",
+    "персональный искусственный интеллект",
     "самоанализ",
-    "нумерология"
+    "фитнес-диагностика"
   ],
-  authors: [{ name: "Artemiy Ksoros", url: siteUrl }],
-  creator: "Artemiy Ksoros",
-  publisher: "Artemiy Ksoros",
+  authors: [{ name: "Elena", url: siteUrl }],
+  creator: "Elena",
+  publisher: "Elena",
   alternates: {
     canonical: "/"
   },
@@ -144,7 +144,7 @@ export const metadata: Metadata = {
     title: defaultTitle,
     description: defaultDescription,
     url: siteUrl,
-    siteName: "JyotishGPT",
+    siteName: "EFITNES",
     locale: "ru_RU",
     type: "website",
     images: [
@@ -153,7 +153,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Портрет Артемия Ксорос"
+        alt: "Фитнес-наставник Елена"
       }
     ]
   },
@@ -164,7 +164,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: `${siteUrl}/kcopoc.jpeg`,
-        alt: "Портрет Артемия Ксорос"
+        alt: "Фитнес-наставник Елена"
       }
     ]
   },
@@ -176,7 +176,7 @@ export const metadata: Metadata = {
       follow: true
     }
   },
-  category: "ведическая AI-нумерология",
+  category: "женский фитнес",
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -201,7 +201,7 @@ export default function RootLayout({
   return (
     <html lang="ru" className={`${manrope.variable} ${unbounded.variable}`}>
       <body className="bg-background">
-        <Script id="jyotishgpt-structured-data" type="application/ld+json" strategy="beforeInteractive">
+        <Script id="efitnes-structured-data" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify(structuredData)}
         </Script>
         <CookieConsent />
