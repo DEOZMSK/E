@@ -32,6 +32,7 @@ export interface AnthropometryResult {
   whtr?: number;
   bodyType?: "астеник" | "нормостеник" | "гиперстеник";
   estimatedWeightKg?: number;
+  idealWeightKg?: number;
   bmiComment?: string;
   whrComment?: string;
   whtrComment?: string;
