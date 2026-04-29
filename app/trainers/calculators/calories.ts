@@ -26,6 +26,14 @@ const macroPerKg: Record<Goal, { protein: number; fat: number }> = {
 };
 
 export const calculateCalories = (i: CaloriesInput) => {
+  if (![i.weightKg, i.heightCm, i.age].every((value) => Number.isFinite(value))) {
+    return { valid: false, warning: "Проверьте вводные: вес, рост и возраст должны быть числами." };
+  }
+
+  if (i.weightKg <= 0 || i.heightCm <= 0 || i.age <= 0) {
+    return { valid: false, warning: "Вес, рост и возраст должны быть больше 0." };
+  }
+
   const bmr = r(10 * i.weightKg + 6.25 * i.heightCm - 5 * i.age + (i.sex === "male" ? 5 : -161));
   const tdee = r(bmr * activityFactor[i.activity]);
   const targetCalories = r(tdee * goalFactor[i.goal]);
@@ -41,5 +49,5 @@ export const calculateCalories = (i: CaloriesInput) => {
     warning = "Целевые калории слишком низкие для выбранных белков/жиров. Проверьте вводные.";
   }
 
-  return { bmr, tdee, targetCalories, proteinG, fatG, carbsG, warning };
+  return { valid: true, bmr, tdee, targetCalories, proteinG, fatG, carbsG, warning };
 };
