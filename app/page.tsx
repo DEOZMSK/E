@@ -32,22 +32,23 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-background text-neutral-100">
-      <section className="relative mx-auto min-h-[92vh] max-w-6xl px-0 pt-0 sm:px-6 sm:pt-14 lg:grid lg:min-h-[calc(100vh-40px)] lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:gap-10 lg:px-4 lg:py-20">
+      <section className="relative mx-auto min-h-[100svh] overflow-hidden max-w-6xl px-0 pt-0 sm:min-h-[92vh] sm:px-6 sm:pt-14 lg:grid lg:min-h-[calc(100vh-40px)] lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:gap-10 lg:px-4 lg:py-20">
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute left-[-10%] top-[-12%] h-72 w-72 rounded-full bg-accent/20 blur-3xl" />
           <div className="absolute bottom-[-18%] right-[-8%] h-96 w-96 rounded-full bg-[#ff9f5a]/20 blur-3xl" />
         </div>
 
-        <div className="absolute inset-x-0 top-0 z-0 h-[112%] overflow-hidden lg:hidden">
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[clamp(640px,96svh,860px)] overflow-hidden lg:hidden">
           <Image
             src="/photo.png"
             alt="Елена Ксорос, фитнес-тренер EFITNES"
             priority
             fill
             sizes="100vw"
-            className="object-cover object-[50%_12%] scale-[1.08]"
+            className="object-cover object-top"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/35 to-[#090911]/92" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/18 via-black/42 to-[#090911]/95" />
+          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent to-[#090911]" />
         </div>
 
         <div className="relative z-10 mt-auto overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b from-black/20 via-black/35 to-black/70 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-[2px] sm:mt-0 sm:border-outline/70 sm:bg-surface/80 sm:p-9">
