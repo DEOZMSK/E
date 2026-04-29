@@ -42,8 +42,7 @@ export default function UserAgreementPage() {
           Оферта самозанятого Артемия Ксороса (ИНН {requisites.inn}), оператора сайта и IT-инфраструктуры EFITNES, действующего в статусе плательщика НПД, Москва, Россия.
         </p>
         <p className="text-sm text-neutral-600">
-          Документ регулирует использование сайта <Link href="https://efitnes.ru" className="text-accent hover:text-accent-hover">https://efitnes.ru</Link>, Telegram-бота <span className="whitespace-nowrap">@EFITNES_BOT</span>, каналов
-          @EFITNES_BOT и прямых контактов с оператором в Telegram @EFITNES_BOT.
+          Документ регулирует использование сайта <Link href="https://www.efitnes.site" className="text-accent hover:text-accent-hover">https://www.efitnes.site</Link>, Telegram-бота <span className="whitespace-nowrap">@EFITNES_BOT</span>, каналов EFITNES и прямых контактов: Telegram-бот @EFITNES_BOT, личный Telegram Елены @Al0PBEDA.
         </p>
       </header>
 
@@ -63,7 +62,7 @@ export default function UserAgreementPage() {
       <section className="space-y-3 rounded-3xl border border-outline/60 bg-white/80 p-6 shadow-lg">
         <h2 className="text-xl font-semibold text-neutral-900">2. Предмет соглашения</h2>
         <p>
-          2.1. Оператор оказывает Пользователю консультационные услуги, включая анализ даты рождения, жизненных периодов, подготовку рекомендаций и сопровождение в цифровом формате (сайт, Telegram, email).
+          2.1. Проект EFITNES предоставляет фитнес-диагностику, персональные рекомендации по тренировкам и питанию, а также сопровождение в цифровом формате (сайт, Telegram, email).
         </p>
         <p>
           2.2. Материалы сервиса (текстовые, голосовые или визуальные) носят рекомендательный характер и не являются медицинской услугой. При боли, беременности, травмах, хронических заболеваниях и иных противопоказаниях необходимо обратиться к врачу. Бот не ставит диагнозы и не назначает лечение.

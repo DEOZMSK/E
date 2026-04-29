@@ -6,7 +6,7 @@ import { LegalFooter } from "../components/LegalFooter";
 export const metadata: Metadata = {
   title: "Политика конфиденциальности EFITNES",
   description:
-    "Как сервис EFITNES обрабатывает и защищает персональные данные пользователей сайта и Telegram-бота.",
+    "Как проект EFITNES (Елена Ксорос) обрабатывает и защищает персональные данные пользователей сайта и Telegram-бота.",
   alternates: {
     canonical: "/privacy"
   },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/png",
-        alt: "Елена Ксорос, фитнес-тренер"
+        alt: "Елена Ксорос, фитнес-тренер EFITNES"
       }
     ]
   },
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/photo.png",
-        alt: "Елена Ксорос, фитнес-тренер"
+        alt: "Елена Ксорос, фитнес-тренер EFITNES"
       }
     ]
   }
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
         <h2 className="text-xl font-semibold text-neutral-900">1. Термины и общие положения</h2>
         <p>
           1.1. «Оператор» — самозанятый Артемий Ксорос (ИНН 500119421000), обеспечивающий работу сайта
-          <Link href="https://efitnes.ru" className="text-accent hover:text-accent-hover"> https://efitnes.ru</Link> и IT-инфраструктуры EFITNES.
+          <Link href="https://www.efitnes.site" className="text-accent hover:text-accent-hover"> https://www.efitnes.site</Link> и IT-инфраструктуры EFITNES.
         </p>
         <p>
           1.2. «Пользователь» — любое физическое лицо, посещающее сайт, взаимодействующее с Telegram-ботом <span className="whitespace-nowrap">@EFITNES_BOT</span>
@@ -91,7 +91,7 @@ export default function PrivacyPage() {
         </p>
         <p>1.3. «Персональные данные» — любая информация, относящаяся к определённому или определяемому физическому лицу.</p>
         <p>
-          1.4. Настоящая Политика распространяется на сайт EFITNES.ru, связанные страницы, Telegram-бота и формы связи, включая интеграции с Google Analytics,
+          1.4. Настоящая Политика распространяется на сайт www.efitnes.site, связанные страницы, Telegram-бота и формы связи, включая интеграции с Google Analytics,
           Яндекс.Метрикой и API искусственного интеллекта (например, OpenAI API).
         </p>
       </section>
