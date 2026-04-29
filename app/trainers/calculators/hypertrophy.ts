@@ -1,0 +1,1 @@
+export const calculateHypertrophy=(sets:number,reps:number,weightKg:number,rm1Kg:number)=>{const tonnage=sets*reps*weightKg;const intensity=(weightKg/Math.max(rm1Kg,1))*100;return{tonnage:+tonnage.toFixed(0),intensity:+intensity.toFixed(1),volumeIndex:+(tonnage*(intensity/100)).toFixed(0)}};

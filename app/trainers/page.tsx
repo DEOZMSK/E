@@ -12,11 +12,12 @@ const trainerCards = [
   { id: "anthropometry", title: "📐 Антропометрия", active: true },
   { id: "calories", title: "🔥 Калории и БЖУ", active: true },
   { id: "caliper", title: "🧴 КЖС / состав тела", active: true },
-  { id: "strength", title: "💪 Силовые тесты", active: false },
-  { id: "flexibility", title: "🧘 Гибкость", active: false },
-  { id: "functional", title: "❤️ PWC170 / МПК / Летунов", active: false },
-  { id: "stress", title: "🧠 Стресс", active: false },
-  { id: "hypertrophy", title: "🏋️ Гипертрофия", active: false }
+  { id: "strength", title: "💪 Силовые тесты", active: true },
+  { id: "flexibility", title: "🧘 Гибкость", active: true },
+  { id: "functional", title: "❤️ PWC170 / МПК", active: true },
+  { id: "letunov", title: "🫀 Тест Летунова", active: true },
+  { id: "stress", title: "🧠 Стресс", active: true },
+  { id: "hypertrophy", title: "🏋️ Гипертрофия", active: true }
 ];
 
 export default function TrainersPage() {

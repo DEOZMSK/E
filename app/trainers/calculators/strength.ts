@@ -1,0 +1,1 @@
+export const calculateStrength=(pushUps:number,squats:number,plankSec:number,weightKg:number)=>{const score=(pushUps/Math.max(weightKg,1))*35+squats*0.7+plankSec*0.08;return{score:+score.toFixed(1),level:score<40?"ниже среднего":score<70?"средний":"выше среднего"}};
