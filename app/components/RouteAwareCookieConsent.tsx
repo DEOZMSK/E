@@ -2,11 +2,12 @@
 
 import { usePathname } from "next/navigation";
 import { CookieConsent } from "./CookieConsent";
+import { isTrainersRoute } from "./route-guards";
 
 export function RouteAwareCookieConsent() {
   const pathname = usePathname();
 
-  if (pathname?.startsWith("/trainers")) {
+  if (isTrainersRoute(pathname)) {
     return null;
   }
 
