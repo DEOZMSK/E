@@ -28,7 +28,7 @@ const getWhtrComment = (whtr: number): string => {
   return "По введённым данным WHtR высокий риск, нужна осторожность.";
 };
 
-const getBodyType = (sex: AnthropometryInput["sex"], wristCm: number): AnthropometryResult["bodyType"] => {
+const getBodyType = (sex: AnthropometryInput["sex"], wristCm: number): NonNullable<AnthropometryResult["bodyType"]> => {
   if (sex === "male") {
     if (wristCm < 17) return "астеник";
     if (wristCm <= 20) return "нормостеник";
@@ -66,7 +66,7 @@ export const calculateAnthropometry = (input: AnthropometryInput): Anthropometry
   const bmi = round(input.weightKg / (heightM * heightM));
   const whr = round(input.waistCm / input.hipCm);
   const whtr = round(input.waistCm / input.heightCm);
-  const bodyType = getBodyType(input.sex, input.wristCm);
+  const bodyType: NonNullable<AnthropometryResult["bodyType"]> = getBodyType(input.sex, input.wristCm);
 
   return {
     valid: true,
