@@ -137,44 +137,44 @@ export default function QuestionsPage() {
   };
 
   return (
-    <main className={`${inter.className} relative min-h-screen overflow-hidden bg-gradient-to-br from-[#fdf6e8] via-[#f8e6c9] to-[#f3d9aa] text-neutral-900`}>
+    <main className={`${inter.className} min-h-screen overflow-hidden bg-background text-neutral-100`}>
       <script
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col gap-10 px-6 py-14 sm:gap-14 sm:px-10 lg:px-12">
-        <CTAButton href="/" variant="secondary" newTab={false} analyticsEvent="click_questions_back" className="w-full justify-center px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] border-[#c59a58]/20 bg-[#fff8eb] text-neutral-900 hover:bg-[#fbe9c7] shadow-none hover:shadow-none sm:w-auto sm:justify-start">
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col gap-10 px-4 py-14 sm:gap-14 sm:px-6 lg:px-8">
+        <CTAButton href="/" variant="secondary" newTab={false} analyticsEvent="click_questions_back" className="w-full justify-center px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] sm:w-auto sm:justify-start">
           Назад
         </CTAButton>
 
         <div className="text-center sm:text-left">
-          <h1 className="text-3xl font-semibold leading-tight tracking-tight text-neutral-900 sm:text-4xl">
+          <h1 className="text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl">
             Вопросы по EFITNES
           </h1>
-          <p className="mt-3 text-base text-neutral-600 sm:text-lg">
+          <p className="mt-3 text-base text-neutral-300 sm:text-lg">
             Категории вопросов по старту, снижению веса, тренировкам, питанию и восстановлению — чтобы быстро понять, с чего начать.
           </p>
-          <p className="mt-4 text-xs font-medium uppercase tracking-[0.22em] text-neutral-500 sm:text-sm">
-            EFITNES · Елена Ксорос · фитнес-сопровождение · диагностика · безопасность
+          <p className="mt-4 text-xs font-medium uppercase tracking-[0.22em] text-neutral-400 sm:text-sm">
+            EFITNES · Елена Ксорос · фитнес-сопровождение · диагностика · поддержка
           </p>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-600 sm:text-base">{snippetText}</p>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-300 sm:text-base">{snippetText}</p>
 
-          <div className="mt-6 rounded-3xl border border-[#d9b16f]/35 bg-white/60 p-5 shadow-[0_18px_46px_rgba(125,84,25,0.08)]">
-            <div className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-500 sm:text-xs">Навигация по категориям</div>
-            <nav className="mt-3 grid gap-2 text-sm text-neutral-700 sm:grid-cols-2">
+          <div className="mt-6 rounded-3xl border border-outline/70 bg-surface/85 p-5 shadow-[0_18px_50px_rgba(0,0,0,0.22)]">
+            <div className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-400 sm:text-xs">Навигация по категориям</div>
+            <nav className="mt-3 grid gap-2 text-sm text-neutral-200 sm:grid-cols-2">
               {categories.map((category) => (
-                <a key={category.name} href={`#${category.anchor}`} className="rounded-2xl border border-transparent bg-white/70 px-4 py-2 font-medium transition hover:border-[#c59a58]/35 hover:bg-[#fff0d6]">
+                <a key={category.name} href={`#${category.anchor}`} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-2 font-medium transition hover:border-accent/45 hover:bg-white/10">
                   {category.name}
                 </a>
               ))}
             </nav>
           </div>
 
-          <div className="mt-6 grid gap-4 text-sm text-neutral-600 sm:grid-cols-2 sm:gap-5 sm:text-base">
+          <div className="mt-6 grid gap-4 text-sm text-neutral-300 sm:grid-cols-2 sm:gap-5 sm:text-base">
             {fitnessFaqCategories.map(({ name, description }) => (
-              <div key={name} className="rounded-2xl border border-[#d9b16f]/35 bg-white/60 p-4 shadow-[0_10px_24px_rgba(125,84,25,0.08)]">
-                <div className="text-base font-semibold text-neutral-900 sm:text-lg">{name}</div>
+              <div key={name} className="rounded-2xl border border-outline/70 bg-surface/85 p-4 shadow-[0_18px_50px_rgba(0,0,0,0.2)]">
+                <div className="text-base font-semibold text-white sm:text-lg">{name}</div>
                 <p className="mt-2 leading-relaxed">{description}</p>
               </div>
             ))}
@@ -183,8 +183,8 @@ export default function QuestionsPage() {
 
         <QuestionsAccordion categories={categories} />
 
-        <div className="pb-14 text-center text-sm text-neutral-600 sm:text-base">
-          <p className="mx-auto max-w-2xl leading-relaxed text-neutral-600">
+        <div className="pb-14 text-center text-sm text-neutral-300 sm:text-base">
+          <p className="mx-auto max-w-2xl leading-relaxed text-neutral-300">
             Если хочешь разобрать цель глубже, напиши Елене Ксорос в Telegram — она поможет собрать персональный маршрут по тренировкам, питанию и восстановлению.
           </p>
           <div className="mt-6 flex flex-col items-center gap-4">
