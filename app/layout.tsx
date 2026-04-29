@@ -37,7 +37,7 @@ const structuredData = {
         "Персональный фитнес-наставник и автор программы EFITNES для женщин.",
       jobTitle: "Фитнес-коуч",
       url: `${siteUrl}/`,
-      image: `${siteUrl}/kcopoc.jpeg`,
+      image: `${siteUrl}/photo.png`,
       sameAs: [`${siteUrl}/`, "https://t.me/Al0PBEDA"]
     },
     {
@@ -48,7 +48,7 @@ const structuredData = {
       url: `${siteUrl}/`,
       founder: { "@id": `${siteUrl}/#person` },
       logo: `${siteUrl}/android-chrome-512x512.png`,
-      image: `${siteUrl}/kcopoc.jpeg`,
+      image: `${siteUrl}/photo.png`,
       sameAs: ["https://t.me/EFITNES", "https://t.me/Al0PBEDA"]
     },
     {
@@ -118,11 +118,11 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${siteUrl}/kcopoc.jpeg`,
+        url: `${siteUrl}/photo.png`,
         width: 1200,
         height: 630,
-        type: "image/jpeg",
-        alt: "EFITNES — фитнес-сопровождение с Еленой"
+        type: "image/png",
+        alt: "Елена Ксорос, фитнес-тренер"
       }
     ]
   },
@@ -133,8 +133,8 @@ export const metadata: Metadata = {
     creator: "@EFITNES",
     images: [
       {
-        url: `${siteUrl}/kcopoc.jpeg`,
-        alt: "EFITNES — фитнес-сопровождение с Еленой"
+        url: `${siteUrl}/photo.png`,
+        alt: "Елена Ксорос, фитнес-тренер"
       }
     ]
   },

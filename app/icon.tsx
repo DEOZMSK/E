@@ -17,15 +17,17 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "radial-gradient(circle at 50% 40%, #fce3ba 0%, #d2a660 60%, #9f7336 100%)",
-          color: "#2f1607",
-          fontSize: 60,
+          background: "radial-gradient(circle at 30% 20%, #261635 0%, #120b1b 55%, #09060f 100%)",
+          color: "#ff8a3d",
+          fontSize: 52,
           fontFamily: "'Segoe UI', 'Arial', sans-serif",
-          fontWeight: 700,
-          letterSpacing: 4
+          fontWeight: 800,
+          letterSpacing: 2,
+          border: "4px solid #ff4d9d",
+          borderRadius: 24
         }}
       >
-        JG
+        EF/E
       </div>
     ),
     {

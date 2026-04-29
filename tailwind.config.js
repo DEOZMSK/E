@@ -8,20 +8,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "#fdf6e8",
-        surface: "#f8ebd0",
-        outline: "#e5d0a8",
-        muted: "#6f6f6f",
+        background: "#0f0b14",
+        surface: "#1a1223",
         accent: {
-          DEFAULT: "#6e4b1f",
-          hover: "#5b3d19"
-        }
+          DEFAULT: "#ff4d9d",
+          hover: "#e13f88"
+        },
+        warm: {
+          DEFAULT: "#ff8a3d",
+          hover: "#e2742f"
+        },
+        muted: "#a79bb7",
+        outline: "#3a2b4d"
       },
       maxWidth: {
         content: "64rem"
       },
       boxShadow: {
-        focus: "0 0 0 4px rgba(110,75,31,0.22)"
+        focus: "0 0 0 4px rgba(255,77,157,0.3)"
       },
       keyframes: {
         "soft-pulse": {
