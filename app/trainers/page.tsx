@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { TrainerToolsClient } from "./TrainerToolsClient";
+
+export const metadata: Metadata = {
+  title: "🧰 Тесты для тренера",
+  description: "Калькуляторы и тесты для тренера: антропометрия, калории и БЖУ для работы с клиентами.",
+  alternates: { canonical: "/trainers" }
+};
 
 const trainerCards = [
   { id: "anthropometry", title: "📐 Антропометрия", active: true },
