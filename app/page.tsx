@@ -27,8 +27,39 @@ export const metadata: Metadata = {
   }
 };
 
+type FeatureCardProps = {
+  title: string;
+  text: string;
+  imageSrc: string;
+  imagePosition?: "top" | "right";
+};
+
+function FeatureCard({ title, text, imageSrc, imagePosition = "right" }: FeatureCardProps) {
+  return (
+    <article className="group relative overflow-hidden rounded-[2rem] border border-white/12 bg-[radial-gradient(circle_at_top,rgba(255,181,117,0.16),rgba(13,16,26,0.95)_42%)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.05),transparent_48%)]" />
+      <div className="relative z-10 max-w-[75%]">
+        <h2 className="text-xl font-semibold text-white">{title}</h2>
+        <p className="mt-2 leading-relaxed text-neutral-300">{text}</p>
+      </div>
+      <div
+        className={`pointer-events-none absolute overflow-hidden rounded-2xl border border-white/15 ${
+          imagePosition === "top"
+            ? "right-4 top-4 h-24 w-24"
+            : "bottom-4 right-4 h-28 w-24"
+        }`}
+      >
+        <Image src={imageSrc} alt="" fill sizes="120px" className="object-cover opacity-60 mix-blend-screen" />
+        <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(9,12,19,0.18),rgba(9,12,19,0.72))]" />
+      </div>
+    </article>
+  );
+}
+
 export default function HomePage() {
   const { hero, features, flow, telegramLink } = siteConfig;
+
+  const featureImages = ["/2.png", "/3.png", "/1.png"];
 
   return (
     <main className="min-h-screen overflow-hidden bg-background text-neutral-100">
@@ -102,17 +133,23 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto grid max-w-6xl gap-4 px-4 pb-10 sm:px-6 md:grid-cols-3">
-        {features.map((feature) => (
-          <article key={feature.title} className="rounded-3xl border border-outline/70 bg-surface/85 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)]">
-            <p className="text-3xl">{feature.icon}</p>
-            <h2 className="mt-3 text-xl font-semibold text-white">{feature.title}</h2>
-            <p className="mt-2 leading-relaxed text-neutral-300">{feature.description}</p>
-          </article>
+        {features.map((feature, idx) => (
+          <FeatureCard
+            key={feature.title}
+            title={feature.title}
+            text={feature.description}
+            imageSrc={featureImages[idx] ?? "/2.png"}
+            imagePosition={idx === 0 ? "top" : "right"}
+          />
         ))}
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-14 sm:px-6">
-        <div className="rounded-[2rem] border border-outline/70 bg-surface/85 p-8 shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
+        <div className="relative overflow-hidden rounded-[2rem] border border-outline/70 bg-surface/85 p-8 shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
+          <div className="work-card-visual pointer-events-none absolute right-4 top-4 h-28 w-28 overflow-hidden rounded-3xl border border-white/15">
+            <Image src="/stat.png" alt="" fill sizes="112px" className="object-cover opacity-55 mix-blend-soft-light" />
+            <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(8,10,18,0.08),rgba(8,10,18,0.72))]" />
+          </div>
           <h2 className="text-2xl font-semibold text-white">{flow.title}</h2>
           <p className="mt-3 max-w-3xl leading-relaxed text-neutral-300">{flow.description}</p>
           <ol className="mt-6 grid gap-3 md:grid-cols-3">
@@ -125,13 +162,21 @@ export default function HomePage() {
               </li>
             ))}
           </ol>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-8 flex flex-col gap-3">
             <CTAButton href={telegramLink} variant="glow">
               {flow.ctaLabel}
             </CTAButton>
-            <Link className="text-sm text-[#ffb36b] no-underline hover:text-white" href="/questions">
-              Посмотреть FAQ
-            </Link>
+            <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-3">
+              <CTAButton href={elenaTelegramLink} variant="secondary" className="rounded-2xl border-white/20 bg-white/10 px-5 py-3 text-sm hover:bg-white/15">
+                Написать в Telegram
+              </CTAButton>
+              <Link
+                className="inline-flex items-center justify-center rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold text-neutral-100 no-underline transition hover:bg-white/15"
+                href="/questions"
+              >
+                FAQ
+              </Link>
+            </div>
           </div>
         </div>
       </section>
