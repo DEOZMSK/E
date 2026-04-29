@@ -9,17 +9,19 @@ import {
 } from "./types";
 
 const activityFactorMap: Record<ActivityLevel, number> = {
-  sedentary: 1.2,
+  low: 1.2,
   light: 1.375,
+  light_training: 1.46,
   moderate: 1.55,
-  high: 1.725,
-  veryHigh: 1.9
+  hard: 1.725,
+  very_hard: 1.9
 };
 
 const goalCaloriesFactor: Record<Goal, number> = {
-  lose: 0.85,
-  maintain: 1,
-  gain: 1.12
+  fat_loss: 0.85,
+  recomposition: 0.95,
+  maintenance: 1,
+  muscle_gain: 1.12
 };
 
 const round = (value: number, decimals = 2) => Number(value.toFixed(decimals));
@@ -52,6 +54,7 @@ export const calculateAnthropometry = (input: AnthropometryInput): Anthropometry
   const heightM = input.heightCm / 100;
 
   return {
+    valid: true,
     bmi: round(input.weightKg / (heightM * heightM)),
     whr: round(input.waistCm / input.hipCm),
     whtr: round(input.waistCm / input.heightCm),
@@ -76,6 +79,7 @@ export const calculateCalories = (input: CaloriesInput): CaloriesResult => {
   const carbsCalories = targetCalories - proteinCalories - fatCalories;
 
   return {
+    valid: true,
     bmr,
     tdee,
     targetCalories,

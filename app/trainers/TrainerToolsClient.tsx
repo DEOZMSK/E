@@ -27,7 +27,7 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
   const [wristCm, setWristCm] = useState(16);
 
   const [activity, setActivity] = useState<ActivityLevel>("moderate");
-  const [goal, setGoal] = useState<Goal>("maintain");
+  const [goal, setGoal] = useState<Goal>("maintenance");
 
   const anthropometry = useMemo(
     () => calculateAnthropometry({ sex, age, heightCm, weightKg, waistCm, hipCm, wristCm }),
@@ -115,19 +115,21 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
               <label className="text-sm text-neutral-200">
                 Активность
                 <select value={activity} onChange={(e) => setActivity(e.target.value as ActivityLevel)} className="mt-2 min-h-14 w-full rounded-xl border border-white/15 bg-neutral-900/80 px-4 py-3 text-xl text-neutral-100">
-                  <option value="sedentary">Низкая</option>
+                  <option value="low">Низкая</option>
                   <option value="light">Лёгкая</option>
+                  <option value="light_training">Лёгкая с тренировками</option>
                   <option value="moderate">Средняя</option>
-                  <option value="high">Высокая</option>
-                  <option value="veryHigh">Очень высокая</option>
+                  <option value="hard">Высокая</option>
+                  <option value="very_hard">Очень высокая</option>
                 </select>
               </label>
               <label className="text-sm text-neutral-200">
                 Цель
                 <select value={goal} onChange={(e) => setGoal(e.target.value as Goal)} className="mt-2 min-h-14 w-full rounded-xl border border-white/15 bg-neutral-900/80 px-4 py-3 text-xl text-neutral-100">
-                  <option value="lose">Снижение</option>
-                  <option value="maintain">Поддержание</option>
-                  <option value="gain">Набор</option>
+                  <option value="fat_loss">Снижение жира</option>
+                  <option value="recomposition">Рекомпозиция</option>
+                  <option value="maintenance">Поддержание</option>
+                  <option value="muscle_gain">Набор мышц</option>
                 </select>
               </label>
             </>
