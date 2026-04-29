@@ -18,12 +18,12 @@ const unbounded = Unbounded({
   variable: "--font-heading"
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://efitnes.ru";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
 const defaultTitle = "EFITNES — персональное фитнес-сопровождение для женщин";
 const defaultDescription =
-  "EFITNES — платформа фитнес-диагностики и персонального сопровождения с Еленой: тренировки, питание и восстановление.";
+  "EFITNES — платформа фитнес-диагностики и персонального сопровождения: тренировки, питание, восстановление и поддержка Елены.";
 const snippetDescription =
-  "EFITNES — сервис, который помогает женщинам пройти путь: диагностика, план и персональная поддержка Елены.";
+  "EFITNES — сервис для женщин: диагностика, индивидуальный план тренировок и питания, сопровождение и контроль прогресса.";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -31,32 +31,14 @@ const structuredData = {
     {
       "@type": "Person",
       "@id": `${siteUrl}/#person`,
-      name: "Elena",
-      alternateName: "Елена",
+      name: "Елена",
+      alternateName: "Elena",
       description:
-        "Elena — исследователь женского фитнеса и цифровых технологий. Создатель EFITNES — проекта, объединяющего фитнес-экспертизу и цифровые инструменты.",
-      jobTitle: "Создатель EFITNES",
+        "Персональный фитнес-наставник и автор программы EFITNES для женщин.",
+      jobTitle: "Фитнес-коуч",
       url: `${siteUrl}/`,
       image: `${siteUrl}/kcopoc.jpeg`,
-      sameAs: [
-        `${siteUrl}/`,
-        "https://t.me/Al0PBEDA"
-      ]
-    },
-    {
-      "@type": "Brand",
-      "@id": `${siteUrl}/#brand`,
-      name: "EFITNES",
-      alternateName: "Фитнес с Еленой",
-      description: defaultDescription,
-      url: `${siteUrl}/`,
-      founder: { "@id": `${siteUrl}/#person` },
-      slogan: "Диагностика, план, сопровождение",
-      image: `${siteUrl}/kcopoc.jpeg`,
-      sameAs: [
-        `${siteUrl}/`,
-        "https://t.me/Al0PBEDA"
-      ]
+      sameAs: [`${siteUrl}/`, "https://t.me/Al0PBEDA"]
     },
     {
       "@type": "Organization",
@@ -65,11 +47,9 @@ const structuredData = {
       description: defaultDescription,
       url: `${siteUrl}/`,
       founder: { "@id": `${siteUrl}/#person` },
-      brand: { "@id": `${siteUrl}/#brand` },
-      sameAs: [
-        `${siteUrl}/`,
-        "https://t.me/Al0PBEDA"
-      ]
+      logo: `${siteUrl}/android-chrome-512x512.png`,
+      image: `${siteUrl}/kcopoc.jpeg`,
+      sameAs: ["https://t.me/EFITNES", "https://t.me/Al0PBEDA"]
     },
     {
       "@type": "WebSite",
@@ -78,41 +58,30 @@ const structuredData = {
       url: `${siteUrl}/`,
       description: defaultDescription,
       inLanguage: "ru",
-      publisher: { "@id": `${siteUrl}/#brand` },
-      creator: { "@id": `${siteUrl}/#person` },
+      publisher: { "@id": `${siteUrl}/#organization` }
     },
     {
-      "@type": "WebPage",
-      "@id": `${siteUrl}/#homepage`,
-      url: `${siteUrl}/`,
-      name: defaultTitle,
-      isPartOf: { "@id": `${siteUrl}/#website` },
-      about: { "@id": `${siteUrl}/#brand` },
-      description: defaultDescription,
-      inLanguage: "ru"
-    },
-    {
-      "@type": "LegalService",
-      "@id": `${siteUrl}/#legal-service`,
-      name: "Консультации EFITNES",
+      "@type": "Service",
+      "@id": `${siteUrl}/#service`,
+      name: "Персональное фитнес-сопровождение EFITNES",
       description:
-        "Самозанятый консультант Елена проводит консультации с использованием AI-сервиса EFITNES и соблюдает требования 152-ФЗ.",
-      areaServed: {
-        "@type": "AdministrativeArea",
-        name: "Москва, Россия"
-      },
-      provider: { "@id": `${siteUrl}/#person` },
+        "Диагностика, индивидуальный фитнес-план, рекомендации по питанию и сопровождение прогресса.",
+      provider: { "@id": `${siteUrl}/#organization` },
+      areaServed: "RU",
       serviceType: [
-        "Консультации по женскому фитнесу",
-        "AI-анализ прогресса и нагрузки"
+        "Женский фитнес",
+        "Персональные тренировки",
+        "План питания",
+        "Фитнес-диагностика"
       ],
-      url: `${siteUrl}/`,
-      telephone: "+7-991-979-71-19",
-      email: "mailto:art.ksoros@gmail.com",
-      sameAs: [
-        "https://t.me/Al0PBEDA",
-        "https://t.me/EFITNES"
-      ]
+      audience: {
+        "@type": "PeopleAudience",
+        suggestedGender: "female"
+      },
+      availableChannel: {
+        "@type": "ServiceChannel",
+        serviceUrl: `${siteUrl}/book`
+      }
     }
   ]
 };
@@ -124,19 +93,19 @@ export const metadata: Metadata = {
     template: "%s — EFITNES"
   },
   description: defaultDescription,
-  applicationName: "EFITNES",
+  applicationName: "EFITNES Fitness",
   keywords: [
     "EFITNES",
-    "Елена",
     "женский фитнес",
-    "AI-фитнес-сопровождение",
-    "персональный искусственный интеллект",
-    "самоанализ",
-    "фитнес-диагностика"
+    "персональный фитнес-коуч",
+    "фитнес сопровождение онлайн",
+    "питание и тренировки",
+    "фитнес для женщин",
+    "диагностика тела"
   ],
-  authors: [{ name: "Elena", url: siteUrl }],
-  creator: "Elena",
-  publisher: "Elena",
+  authors: [{ name: "Елена", url: siteUrl }],
+  creator: "Елена",
+  publisher: "EFITNES",
   alternates: {
     canonical: "/"
   },
@@ -153,7 +122,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Фитнес-наставник Елена"
+        alt: "EFITNES — фитнес-сопровождение с Еленой"
       }
     ]
   },
@@ -161,10 +130,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: defaultTitle,
     description: defaultDescription,
+    creator: "@EFITNES",
     images: [
       {
         url: `${siteUrl}/kcopoc.jpeg`,
-        alt: "Фитнес-наставник Елена"
+        alt: "EFITNES — фитнес-сопровождение с Еленой"
       }
     ]
   },
@@ -176,7 +146,7 @@ export const metadata: Metadata = {
       follow: true
     }
   },
-  category: "женский фитнес",
+  category: "fitness",
   icons: {
     icon: [
       { url: "/favicon.ico" },

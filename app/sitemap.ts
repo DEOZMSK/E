@@ -1,17 +1,10 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://efitnes.ru";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
-  const routes = [
-    "",
-    "/book",
-    "/questions",
-    "/privacy",
-    "/user-agreement",
-    "/telegram-disclaimer"
-  ];
+  const routes = ["", "/book", "/questions", "/privacy", "/user-agreement", "/telegram-disclaimer"];
 
   return routes.map((route) => ({
     url: `${siteUrl}${route}`,
