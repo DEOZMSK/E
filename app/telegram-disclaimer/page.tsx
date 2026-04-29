@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const requisites = {
   email: "art.ksoros@gmail.com",
   phone: "+7 (991) 979-71-19",
-  telegram: "@Al0PBEDA"
+  telegram: "@EFITNES_BOT"
 };
 
 export default function TelegramDisclaimerPage() {
@@ -48,10 +48,10 @@ export default function TelegramDisclaimerPage() {
       <section className="space-y-3 rounded-3xl border border-outline/60 bg-white/80 p-6 shadow-lg">
         <h2 className="text-xl font-semibold text-neutral-900">2. Ответственность EFITNES</h2>
         <p>
-          EFITNES и самозанятый консультант Елена не управляют серверами Telegram, не определяют политику безопасности и не могут гарантировать сохранность данных, передаваемых через Telegram.
+          EFITNES и самозанятый Артемий Ксорос (оператор сайта и IT-инфраструктуры) не управляют серверами Telegram, не определяют политику безопасности и не могут гарантировать сохранность данных, передаваемых через Telegram.
         </p>
         <p>
-          Ответственность за обработку данных в Telegram несёт Telegram. EFITNES использует полученную переписку только для оказания консультационных услуг и соблюдает требования 152-ФЗ. Дополнительные детали представлены в <Link
+          Ответственность за обработку данных в Telegram несёт Telegram. EFITNES использует полученную переписку только для предоставления информационных и фитнес-образовательных материалов и соблюдает требования 152-ФЗ. Дополнительные детали представлены в <Link
             href="/privacy"
             className="text-accent hover:text-accent-hover"
           >Политике конфиденциальности</Link> и <Link href="/user-agreement" className="text-accent hover:text-accent-hover">Пользовательском соглашении</Link>.

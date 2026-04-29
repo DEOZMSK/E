@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const STORAGE_KEY = "jyotishgpt-cookie-consent";
+const STORAGE_KEY = "efitnes-cookie-consent";
 
 const isConsentStored = () => {
   if (typeof window === "undefined") {
@@ -82,7 +82,7 @@ export function CookieConsent() {
         <p className="mt-3 text-sm leading-relaxed text-neutral-600">
           Сайт <span className="font-medium">EFITNES.ru</span> использует обязательные и аналитические cookie, сервисы аналитики
           (Google Analytics, Яндекс.Метрика), Telegram-бота <span className="whitespace-nowrap">@EFITNES_BOT</span> и API
-          искусственного интеллекта, чтобы обрабатывать запросы и улучшать консультации. Подробнее см. в документах:
+          искусственного интеллекта, чтобы обрабатывать запросы и улучшать информационные и фитнес-образовательные материалы. Подробнее см. в документах:
           {" "}
           <Link href="/privacy" className="text-accent hover:text-accent-hover">Политика конфиденциальности</Link>,{" "}
           <Link href="/user-agreement" className="text-accent hover:text-accent-hover">Пользовательское соглашение</Link> и{" "}
@@ -96,7 +96,7 @@ export function CookieConsent() {
             className="mt-1 h-4 w-4 flex-shrink-0 rounded border-neutral-400 text-accent focus:ring-accent"
           />
           <span>
-            Согласен(на) с использованием cookie, аналитических сервисов и обработкой персональных данных согласно документам.
+            Согласен(на) с использованием cookie, аналитических сервисов и обработкой персональных данных согласно документам. Подтверждаю, что сервис не является медицинской услугой, а бот не ставит диагнозы.
           </span>
         </label>
         <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:justify-end">
