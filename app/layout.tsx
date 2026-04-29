@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Manrope, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { RouteAwareCookieConsent } from "./components/RouteAwareCookieConsent";
+import { RouteAwareLandingHead } from "./components/RouteAwareLandingHead";
 
 const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
@@ -184,9 +184,7 @@ export default function RootLayout({
   return (
     <html lang="ru" className={`${manrope.variable} ${cormorant.variable}`}>
       <body className="bg-background">
-        <Script id="efitnes-structured-data" type="application/ld+json" strategy="beforeInteractive">
-          {JSON.stringify(structuredData)}
-        </Script>
+        <RouteAwareLandingHead id="efitnes-structured-data" payload={JSON.stringify(structuredData)} />
         <RouteAwareCookieConsent />
         {children}
       </body>
