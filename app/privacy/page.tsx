@@ -4,23 +4,23 @@ import Link from "next/link";
 import { LegalFooter } from "../components/LegalFooter";
 
 export const metadata: Metadata = {
-  title: "Политика конфиденциальности JyotishGPT",
+  title: "Политика конфиденциальности EFITNES",
   description:
-    "Как самозанятый консультант Артемий Ксорос собирает, использует и защищает персональные данные пользователей JyotishGPT и Telegram-бота.",
+    "Как самозанятый консультант Елена собирает, использует и защищает персональные данные пользователей EFITNES и Telegram-бота.",
   alternates: {
     canonical: "/privacy"
   },
   keywords: [
-    "JyotishGPT",
+    "EFITNES",
     "политика конфиденциальности",
-    "Артемий Ксорос",
-    "AI-нумерология",
+    "Елена",
+    "фитнес-сопровождение",
     "персональные данные"
   ],
   openGraph: {
-    title: "Политика конфиденциальности JyotishGPT",
+    title: "Политика конфиденциальности EFITNES",
     description:
-      "Политика конфиденциальности самозанятого консультанта Артемия Ксорос: категории данных, сроки хранения, права пользователей и работа с Telegram.",
+      "Политика конфиденциальности самозанятого консультанта Елены: категории данных, сроки хранения, права пользователей и работа с Telegram.",
     url: "/privacy",
     images: [
       {
@@ -28,19 +28,19 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Портрет Артемия Ксорос"
+        alt: "Портрет Елены"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Политика конфиденциальности JyotishGPT",
+    title: "Политика конфиденциальности EFITNES",
     description:
-      "Политика конфиденциальности самозанятого консультанта Артемия Ксорос: категории данных, сроки хранения, права пользователей и работа с Telegram.",
+      "Политика конфиденциальности самозанятого консультанта Елены: категории данных, сроки хранения, права пользователей и работа с Telegram.",
     images: [
       {
         url: "/kcopoc.jpeg",
-        alt: "Портрет Артемия Ксорос"
+        alt: "Портрет Елены"
       }
     ]
   }
@@ -50,7 +50,7 @@ const legalContacts = {
   inn: "500119421000",
   email: "art.ksoros@gmail.com",
   phone: "+7 (991) 979-71-19",
-  telegram: "@BAPHbl"
+  telegram: "@Al0PBEDA"
 };
 
 export default function PrivacyPage() {
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
           «Об информации, информационных технологиях и о защите информации» и иным действующим законодательством Российской Федерации.
         </p>
         <p className="text-sm text-neutral-500">
-          Самозанятый консультант: <strong>Артемий Ксорос</strong> (ИНН {legalContacts.inn}), Москва, Россия. Контакты: <a
+          Самозанятый консультант: <strong>Елена</strong> (ИНН {legalContacts.inn}), Москва, Россия. Контакты: <a
             href="mailto:art.ksoros@gmail.com"
             className="text-accent hover:text-accent-hover"
           >art.ksoros@gmail.com</a>, <a href="tel:+79919797119" className="text-accent hover:text-accent-hover">{legalContacts.phone}</a>, Telegram {legalContacts.telegram}.
@@ -82,16 +82,16 @@ export default function PrivacyPage() {
       <section className="space-y-3 rounded-3xl border border-outline/60 bg-white/80 p-6 shadow-lg">
         <h2 className="text-xl font-semibold text-neutral-900">1. Термины и общие положения</h2>
         <p>
-          1.1. «Оператор» — самозанятый Артемий Ксорос, оказывающий консультационные услуги под брендом JyotishGPT и управляющий сайтом
-          <Link href="https://jyotishgpt.ru" className="text-accent hover:text-accent-hover"> https://jyotishgpt.ru</Link>.
+          1.1. «Оператор» — самозанятый Елена, оказывающий консультационные услуги под брендом EFITNES и управляющий сайтом
+          <Link href="https://efitnes.ru" className="text-accent hover:text-accent-hover"> https://efitnes.ru</Link>.
         </p>
         <p>
-          1.2. «Пользователь» — любое физическое лицо, посещающее сайт, взаимодействующее с Telegram-ботом <span className="whitespace-nowrap">@artemiy_ksoros_bot</span>
-          или обращающееся к Артемию Ксорос за консультацией.
+          1.2. «Пользователь» — любое физическое лицо, посещающее сайт, взаимодействующее с Telegram-ботом <span className="whitespace-nowrap">@EFITNES_BOT</span>
+          или обращающееся за консультацией по персональному фитнес-сопровождению.
         </p>
         <p>1.3. «Персональные данные» — любая информация, относящаяся к определённому или определяемому физическому лицу.</p>
         <p>
-          1.4. Настоящая Политика распространяется на сайт JyotishGPT.ru, связанные страницы, Telegram-бота и формы связи, включая интеграции с Google Analytics,
+          1.4. Настоящая Политика распространяется на сайт EFITNES.ru, связанные страницы, Telegram-бота и формы связи, включая интеграции с Google Analytics,
           Яндекс.Метрикой и API искусственного интеллекта (например, OpenAI API).
         </p>
       </section>
@@ -100,7 +100,7 @@ export default function PrivacyPage() {
         <h2 className="text-xl font-semibold text-neutral-900">2. Категории обрабатываемых данных</h2>
         <ul className="list-disc space-y-2 pl-5">
           <li>ФИО или псевдоним, контактный email, номер телефона, Telegram-аккаунт.</li>
-          <li>Информация, предоставляемая в заявках и сообщениях: дата рождения, формулировка запроса, цели консультации.</li>
+          <li>Информация, предоставляемая в заявках и сообщениях: исходные фитнес-показатели, формулировка запроса, цели консультации.</li>
           <li>
             Технические данные: IP-адрес, тип устройства и браузера, cookies, referrer, время посещения, статистика взаимодействия с контентом.
           </li>

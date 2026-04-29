@@ -5,15 +5,15 @@ import { BOOKING_TIMEZONE } from "../../lib/booking/config";
 import { BookingForm } from "./BookingForm";
 
 export const metadata: Metadata = {
-  title: "Запись на консультацию JyotishGPT",
+  title: "Запись на консультацию EFITNES",
   description:
     "Выберите формат консультации, дату и удобный слот. Запись подтверждается сразу через Google Calendar без переписок.",
   alternates: {
     canonical: "/book"
   },
   openGraph: {
-    title: "Запись на консультацию JyotishGPT",
-    description: "Онлайн-запись в календарь Артемия Ксорос: обучение боту, глубокая сессия или VIP-маршрут.",
+    title: "Запись на консультацию EFITNES",
+    description: "Онлайн-запись в календарь Елены: обучение боту, глубокая сессия или VIP-маршрут.",
     url: "/book",
     images: [
       {
@@ -21,22 +21,22 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Портрет Артемия Ксорос"
+        alt: "Портрет Елены"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Запись на консультацию JyotishGPT",
-    description: "Онлайн-запись в календарь Артемия Ксорос: обучение боту, глубокая сессия или VIP-маршрут.",
+    title: "Запись на консультацию EFITNES",
+    description: "Онлайн-запись в календарь Елены: обучение боту, глубокая сессия или VIP-маршрут.",
     images: [
       {
         url: "/kcopoc.jpeg",
-        alt: "Портрет Артемия Ксорос"
+        alt: "Портрет Елены"
       }
     ]
   },
-  keywords: ["запись на консультацию", "JyotishGPT", "Артемий Ксорос", "онлайн-бронирование"]
+  keywords: ["запись на консультацию", "EFITNES", "Елена", "онлайн-бронирование"]
 };
 
 export default function BookPage() {

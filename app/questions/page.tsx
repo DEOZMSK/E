@@ -222,25 +222,25 @@ async function getQuestionCategories(): Promise<QuestionCategory[]> {
 }
 
 export const metadata: Metadata = {
-  title: "Вопросы к JyotishGPT — AI-нумерология Артемия Ксорос",
+  title: "Вопросы к EFITNES — фитнес-сопровождение Елены",
   description:
-    "Каталог живых вопросов к JyotishGPT: ведическая нумерология, астрология и самоанализ с участием Артемия Ксорос.",
+    "Каталог живых вопросов к EFITNES: фитнес-диагностика, план тренировок и персональное сопровождение с Еленой.",
   alternates: {
     canonical: "/questions"
   },
   keywords: [
-    "JyotishGPT",
-    "вопросы JyotishGPT",
-    "Артемий Ксорос",
-    "AI-нумерология",
-    "ведическая астрология",
+    "EFITNES",
+    "вопросы EFITNES",
+    "Елена",
+    "фитнес-сопровождение",
+    "фитнес-диагностика",
     "самоанализ",
-    "ведические знания"
+    "женский фитнес"
   ],
   openGraph: {
-    title: "Вопросы к JyotishGPT — AI-нумерология Артемия Ксорос",
+    title: "Вопросы к EFITNES — фитнес-сопровождение Елены",
     description:
-      "Официальный перечень тем, с которыми обращаются к JyotishGPT: от быта и отношений до карьеры и личной миссии.",
+      "Официальный перечень тем, с которыми обращаются к EFITNES: от быта и отношений до карьеры и личной миссии.",
     url: "/questions",
     images: [
       {
@@ -248,19 +248,19 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Портрет Артемия Ксорос"
+        alt: "Портрет Елены"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Вопросы к JyotishGPT — AI-нумерология Артемия Ксорос",
+    title: "Вопросы к EFITNES — фитнес-сопровождение Елены",
     description:
-      "Официальный перечень тем, с которыми обращаются к JyotishGPT: от быта и отношений до карьеры и личной миссии.",
+      "Официальный перечень тем, с которыми обращаются к EFITNES: от быта и отношений до карьеры и личной миссии.",
     images: [
       {
         url: "/kcopoc.jpeg",
-        alt: "Портрет Артемия Ксорос"
+        alt: "Портрет Елены"
       }
     ]
   }
@@ -276,7 +276,7 @@ export default async function QuestionsPage() {
   );
   const heroCtaLabel = siteConfig.hero.ctaLabel?.trim() || "Написать мне";
   const snippetText =
-    "JyotishGPT — официальная AI-система Артемия Ксорос. Здесь собраны живые темы, на которые ведический интеллект отвечает в диалоге: от быта и финансов до предназначения.";
+    "EFITNES — официальная AI-система Елены. Здесь собраны живые темы, на которые AI-помощник по фитнесу отвечает в диалоге: от быта и финансов до предназначения.";
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -342,7 +342,7 @@ export default async function QuestionsPage() {
               Подборка живых вопросов, с которыми чаще всего приходят: выбери категорию, чтобы увидеть идеи для старта разговора.
             </p>
             <p className="mt-4 text-xs font-medium uppercase tracking-[0.22em] text-neutral-500 sm:text-sm">
-              JyotishGPT · нумерология · астрология · Артемий Ксорос · AI · самоанализ · ведические знания
+              EFITNES · фитнес-диагностика · астрология · Елена · AI · самоанализ · женский фитнес
             </p>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-600 sm:text-base">
               {snippetText}

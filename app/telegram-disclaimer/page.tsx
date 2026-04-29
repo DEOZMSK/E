@@ -4,9 +4,9 @@ import Link from "next/link";
 import { LegalFooter } from "../components/LegalFooter";
 
 export const metadata: Metadata = {
-  title: "Дисклеймер о Telegram — JyotishGPT",
+  title: "Дисклеймер о Telegram — EFITNES",
   description:
-    "Информация о переходе на стороннюю платформу Telegram, ответственности сервиса JyotishGPT и правилах обработки данных Telegram.",
+    "Информация о переходе на стороннюю платформу Telegram, ответственности сервиса EFITNES и правилах обработки данных Telegram.",
   alternates: {
     canonical: "/telegram-disclaimer"
   }
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const requisites = {
   email: "art.ksoros@gmail.com",
   phone: "+7 (991) 979-71-19",
-  telegram: "@BAPHbl"
+  telegram: "@Al0PBEDA"
 };
 
 export default function TelegramDisclaimerPage() {
@@ -26,7 +26,7 @@ export default function TelegramDisclaimerPage() {
         <p className="text-xs font-medium uppercase tracking-[0.28em] text-neutral-400">Юридические документы</p>
         <h1 className="text-3xl font-semibold">Дисклеймер о Telegram</h1>
         <p className="text-base text-neutral-600">
-          После нажатия на кнопки связи на сайте JyotishGPT.ru вы переходите в сторонний сервис Telegram. Ниже указаны важные условия, которые необходимо учитывать.
+          После нажатия на кнопки связи на сайте EFITNES.ru вы переходите в сторонний сервис Telegram. Ниже указаны важные условия, которые необходимо учитывать.
         </p>
       </header>
 
@@ -46,12 +46,12 @@ export default function TelegramDisclaimerPage() {
       </section>
 
       <section className="space-y-3 rounded-3xl border border-outline/60 bg-white/80 p-6 shadow-lg">
-        <h2 className="text-xl font-semibold text-neutral-900">2. Ответственность JyotishGPT</h2>
+        <h2 className="text-xl font-semibold text-neutral-900">2. Ответственность EFITNES</h2>
         <p>
-          JyotishGPT и самозанятый консультант Артемий Ксорос не управляют серверами Telegram, не определяют политику безопасности и не могут гарантировать сохранность данных, передаваемых через Telegram.
+          EFITNES и самозанятый консультант Елена не управляют серверами Telegram, не определяют политику безопасности и не могут гарантировать сохранность данных, передаваемых через Telegram.
         </p>
         <p>
-          Ответственность за обработку данных в Telegram несёт Telegram. JyotishGPT использует полученную переписку только для оказания консультационных услуг и соблюдает требования 152-ФЗ. Дополнительные детали представлены в <Link
+          Ответственность за обработку данных в Telegram несёт Telegram. EFITNES использует полученную переписку только для оказания консультационных услуг и соблюдает требования 152-ФЗ. Дополнительные детали представлены в <Link
             href="/privacy"
             className="text-accent hover:text-accent-hover"
           >Политике конфиденциальности</Link> и <Link href="/user-agreement" className="text-accent hover:text-accent-hover">Пользовательском соглашении</Link>.
