@@ -101,30 +101,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative z-20 mx-auto -mt-[12vh] grid max-w-6xl gap-4 px-4 pb-10 sm:mt-0 sm:px-6 md:grid-cols-3">
+      <section className="relative z-20 mx-auto -mt-[8vh] grid max-w-6xl gap-4 px-4 pb-10 sm:mt-0 sm:px-6 md:grid-cols-3">
         {features.map((feature, idx) => (
           <article
             key={feature.title}
-            className="group relative overflow-hidden rounded-[2rem] border border-white/15 bg-gradient-to-br from-[#171724]/95 via-[#121220]/92 to-[#0a0a14]/95 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
+            className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-gradient-to-br from-[#141423]/95 via-[#10101c]/93 to-[#090914]/95 shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
           >
-            <div className="pointer-events-none absolute right-3 top-3 h-28 w-24 overflow-hidden rounded-2xl border border-white/10 bg-black/20">
-              <Image src={featureImages[idx] ?? "/2.png"} alt={feature.title} fill sizes="96px" className="object-cover object-top opacity-55 mix-blend-screen" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a14]/80 via-transparent to-black/35" />
+            <div className="relative h-44 w-full overflow-hidden sm:h-48">
+              <Image src={featureImages[idx] ?? "/2.png"} alt={feature.title} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover object-center opacity-60" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-[#0b0b15]/35 to-[#0b0b15]/88" />
             </div>
-            <h2 className="relative z-10 pr-24 text-xl font-semibold text-white">{feature.title}</h2>
-            <p className="relative z-10 mt-3 max-w-[92%] leading-relaxed text-neutral-300">{feature.description}</p>
+            <div className="relative z-10 p-6 pt-4">
+              <h2 className="text-xl font-semibold text-white">{feature.title}</h2>
+              <p className="mt-3 leading-relaxed text-neutral-300">{feature.description}</p>
+            </div>
           </article>
         ))}
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-14 sm:px-6">
-        <div className="relative overflow-hidden rounded-[2rem] border border-outline/70 bg-surface/85 p-8 shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
-          <div className="pointer-events-none absolute right-4 top-4 h-24 w-28 overflow-hidden rounded-2xl border border-white/10 bg-white/5 sm:h-32 sm:w-40">
-            <Image src="/stat.png" alt="Статистика прогресса" fill sizes="(min-width: 640px) 160px, 112px" className="object-cover opacity-50 mix-blend-screen" />
-            <div className="absolute inset-0 bg-gradient-to-br from-transparent via-black/15 to-[#101020]/80" />
+        <div className="relative overflow-hidden rounded-[2rem] border border-outline/70 bg-surface/85 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.28)] sm:p-8">
+          <div className="pointer-events-none relative mb-5 h-36 w-full overflow-hidden rounded-[1.5rem] border border-white/10 sm:mb-6 sm:h-44">
+            <Image src="/stat.png" alt="Статистика прогресса" fill sizes="(min-width: 768px) 70vw, 100vw" className="object-cover object-center opacity-55" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#090911]/68 via-[#090911]/34 to-[#090911]/78" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_24%,rgba(255,179,107,0.2),transparent_55%)]" />
           </div>
 
-          <h2 className="relative z-10 max-w-[85%] text-2xl font-semibold text-white">{flow.title}</h2>
+          <h2 className="relative z-10 text-2xl font-semibold text-white">{flow.title}</h2>
           <p className="relative z-10 mt-3 max-w-3xl leading-relaxed text-neutral-300">{flow.description}</p>
           <ol className="relative z-10 mt-6 grid gap-3 md:grid-cols-3">
             {(flow.steps ?? []).map((step, idx) => (
