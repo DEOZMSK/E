@@ -1,25 +1,20 @@
-# JyotishGPT — ведическая AI-нумерология
+# EFITNES — персональное фитнес-сопровождение
 
-Next.js (App Router) + Tailwind CSS. Официальный лендинг проекта Артемия Ксорос: искусственный интеллект соединяет джйотиш, нумерологию и практики самоанализа.
+Next.js (App Router) + Tailwind CSS. Лендинг EFITNES про персональную фитнес-диагностику, тренировки, питание и сопровождение для женщин.
 
-## SEO-архитектура
-- **Глобальные метаданные**: единое описание бренда, шаблон заголовков, keywords и canonical. Настройки задаются через `app/layout.tsx` и переменную `NEXT_PUBLIC_SITE_URL`.
-- **Структурированные данные (JSON-LD)**: Person, Brand, WebSite и WebPage публикуются на каждой странице через `next/script`. Используется официальное описание бренда и ссылка на раздел `/questions`.
-- **Открытая графика**: Open Graph и Twitter Cards для главной, `/questions` и `/privacy`. Изображение берётся из `public/kcopoc.jpeg`.
-- **Sitemap и robots**: `app/sitemap.ts` и `app/robots.ts` формируют карту сайта и правила индексации. `/questions` помечен как часть официального контента.
-- **Canonical и индексация**: для каждой страницы прописаны `alternates.canonical`, включены `robots.index/follow`, добавлены ключевые слова (JyotishGPT, Артемий Ксорос, AI-нумерология, ведические знания).
-- **AI-snippet**: в `app/layout.tsx` хранится мета-тег `ai-snippet` с готовым описанием для ChatGPT, Copilot и других ассистентов.
-- **Контентные блоки**: на главной странице добавлены секции с официальным описанием бренда и автора, а на `/questions` — пояснение, что список вопросов относится к JyotishGPT.
+## Что внутри проекта
+- SEO-настройка бренда EFITNES: `metadata`, Open Graph, Twitter и JSON-LD в `app/layout.tsx`.
+- Маршруты лендинга, страницы записи и юридические страницы.
+- Интеграция заявок и механика онлайн-записи через Google Sheets/Google Calendar (логика не менялась).
 
-## Структура проекта
-- `app/page.tsx` — главная страница с описанием JyotishGPT, CTA и блоками доверия.
-- `app/book/page.tsx` — онлайн-запись с выбором услуги и свободных слотов.
-- `app/questions/page.tsx` — каталог вопросов из файла `Что можно спросить_.txt` с подробными категориями.
-- `app/privacy/page.tsx` — политика конфиденциальности проекта.
-- `app/components/CTAButton.tsx` — универсальная кнопка CTA.
-- `content/site-config.ts` — тексты и настройки (можно переопределить через env-переменные).
-- `app/icon.tsx` — программный генератор favicon без бинарных файлов.
-- `app/robots.ts` и `app/sitemap.ts` — SEO-инфраструктура для поисковых и AI-агентов.
+## Структура
+- `app/page.tsx` — главная страница EFITNES.
+- `app/book/page.tsx` — запись на консультацию/сопровождение.
+- `app/questions/page.tsx` — подборка вопросов и сценариев.
+- `app/privacy/page.tsx` — политика конфиденциальности.
+- `app/layout.tsx` — глобальные метаданные, OG/Twitter, structured data.
+- `app/sitemap.ts` и `app/robots.ts` — генерация sitemap и robots.
+- `content/site-config.ts` — тексты и параметры для рендера контента.
 
 ## Запуск локально
 ```bash
@@ -27,18 +22,22 @@ npm install
 npm run dev
 ```
 
-Откройте [http://localhost:3000](http://localhost:3000). Все тексты подтягиваются из `content/site-config.ts` и `.env.local`.
+Откройте [http://localhost:3000](http://localhost:3000).
 
-## Настройка данных
-1. Скопируйте `env.example` → `.env.local` и заполните `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_TELEGRAM_LINK` и другие переменные.
-2. Обновите тексты, буллеты и шаги в `content/site-config.ts`, если меняется позиционирование.
-3. Замените `public/kcopoc.jpeg` на актуальное изображение (или настройте внешнюю ссылку) — его используют Open Graph и Twitter Cards. Обновите `public/photo.png`, если нужно другое фото в hero-блоке.
-4. Проверьте ссылки в блоках CTA и в политике конфиденциальности.
-5. Для обновления AI-snippet и JSON-LD отредактируйте значения в `app/layout.tsx`.
-6. Для онлайн-записи укажите `GOOGLE_CALENDAR_ID`, `GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY` и (при необходимости) `BOOKING_TZ`. Календарь должен быть расшарен на сервисный аккаунт с правами редактирования.
+## Переменные окружения
+Скопируйте `env.example` в `.env.local` и заполните значения.
 
-## Поддержание актуальности для ИИ-поисков
-- При добавлении новых страниц обновляйте `routes` в `app/sitemap.ts`.
-- Следите, чтобы `metadata` каждой страницы содержала ключевые слова проекта и уникальные описания.
-- Обновляйте structured data при изменении ссылок на соцсети или описание бренда.
-- После публикации проверяйте разметку через Rich Results Test и инструменты Bing/Perplexity.
+Ключевые переменные:
+- `NEXT_PUBLIC_SITE_URL` — домен проекта. Заполняется после покупки домена или получения постоянного Vercel URL.
+- `NEXT_PUBLIC_TELEGRAM_LINK` — ссылка на Telegram-канал/аккаунт.
+- `NEXT_PUBLIC_LEAD_WEBHOOK` — endpoint формы заявки.
+- `NEXT_PUBLIC_AUTHOR_*` — данные автора/эксперта в интерфейсе.
+
+Служебные переменные для записи:
+- `GOOGLE_SERVICE_ACCOUNT_EMAIL`
+- `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY`
+- `GOOGLE_SHEETS_ID`
+- `GOOGLE_CALENDAR_ID`
+- `BOOKING_TZ`
+
+> Важно: механизм работы с Google Calendar и Google Sheets в этом обновлении не изменялся.
