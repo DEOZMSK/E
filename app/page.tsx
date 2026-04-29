@@ -42,12 +42,12 @@ export default function HomePage() {
 
         <div className="relative z-10 mt-auto overflow-hidden rounded-[2rem] border border-white/10 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:mt-0 sm:border-outline/70 sm:p-9 lg:mt-0 lg:grid lg:grid-cols-12 lg:gap-8 lg:bg-surface/70">
           <div className="pointer-events-none absolute inset-0 lg:hidden">
-            <Image src="/photo.png" alt="Елена Ксорос, фитнес-тренер EFITNES" priority fill sizes="100vw" className="object-cover object-[52%_12%] opacity-42" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#090911]/55 via-[#090911]/68 to-[#090911]/88" />
+            <Image src="/photo.png" alt="Елена Ксорос, фитнес-тренер EFITNES" priority fill sizes="100vw" className="absolute inset-0 z-0 object-cover object-[52%_12%] brightness-50" />
+            <div className="absolute inset-0 z-10 bg-black/35" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_22%,rgba(255,174,120,0.22),transparent_48%)]" />
           </div>
 
-          <div className="relative z-10 lg:col-span-7">
+          <div className="relative z-20 lg:col-span-7">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#ffb36b]">{hero.eyebrow}</p>
             <h1 className="hero-gradient-title mt-4 max-w-3xl text-[2.45rem] font-bold leading-[1.06] tracking-tight sm:text-5xl lg:text-[3.55rem]">
               {hero.headline}
@@ -84,9 +84,9 @@ export default function HomePage() {
               priority
               fill
               sizes="(min-width: 1280px) 32vw, (min-width: 1024px) 36vw, 100vw"
-              className="object-cover object-[54%_14%]"
+              className="absolute inset-0 z-0 object-cover object-[54%_14%] brightness-50"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#090911]/20 via-[#090911]/10 to-[#090911]/58" />
+            <div className="absolute inset-0 z-10 bg-black/35" />
           </div>
 
         </div>
@@ -99,10 +99,16 @@ export default function HomePage() {
             className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-gradient-to-br from-[#141423]/95 via-[#10101c]/93 to-[#090914]/95 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
           >
             <div className="pointer-events-none absolute inset-0">
-              <Image src={featureImages[idx] ?? "/2.png"} alt={feature.title} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover object-center opacity-78" />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#090911]/10 via-[#0b0b15]/26 to-[#090911]/52" />
+              <Image
+                src={featureImages[idx] ?? "/2.png"}
+                alt={feature.title}
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="absolute inset-0 z-0 object-cover object-center brightness-50"
+              />
+              <div className="absolute inset-0 z-10 bg-black/35" />
             </div>
-            <div className="relative z-10 min-h-[188px]">
+            <div className="relative z-20 min-h-[188px]">
               <h2 className="text-xl font-semibold text-white">{feature.title}</h2>
               <p className="mt-3 leading-relaxed text-neutral-300">{feature.description}</p>
             </div>
@@ -113,14 +119,20 @@ export default function HomePage() {
       <section className="mx-auto mt-4 max-w-6xl px-4 pb-10 sm:px-6">
         <div className="relative overflow-hidden rounded-[2rem] border border-outline/70 bg-surface/85 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.28)] sm:p-8">
           <div className="pointer-events-none absolute inset-0">
-            <Image src="/stat.png" alt="Статистика прогресса" fill sizes="(min-width: 768px) 70vw, 100vw" className="object-cover object-center opacity-26" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#090911]/58 via-[#090911]/76 to-[#090911]/90" />
+            <Image
+              src="/stat.png"
+              alt="Статистика прогресса"
+              fill
+              sizes="(min-width: 768px) 70vw, 100vw"
+              className="absolute inset-0 z-0 object-cover object-center brightness-50"
+            />
+            <div className="absolute inset-0 z-10 bg-black/35" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_16%,rgba(255,179,107,0.2),transparent_48%)]" />
           </div>
 
-          <h2 className="relative z-10 text-2xl font-semibold text-white">{flow.title}</h2>
-          <p className="relative z-10 mt-3 max-w-3xl leading-relaxed text-neutral-300">{flow.description}</p>
-          <ol className="relative z-10 mt-6 grid gap-3 md:grid-cols-3">
+          <h2 className="relative z-20 text-2xl font-semibold text-white">{flow.title}</h2>
+          <p className="relative z-20 mt-3 max-w-3xl leading-relaxed text-neutral-300">{flow.description}</p>
+          <ol className="relative z-20 mt-6 grid gap-3 md:grid-cols-3">
             {(flow.steps ?? []).map((step, idx) => (
               <li key={step} className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
                 <span className="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-accent text-sm font-semibold text-white">
@@ -131,7 +143,7 @@ export default function HomePage() {
             ))}
           </ol>
 
-          <div className="relative z-10 mt-8 flex flex-col gap-3">
+          <div className="relative z-20 mt-8 flex flex-col gap-3">
             <CTAButton href={telegramLink} variant="glow" className="w-full sm:w-fit">
               {flow.ctaLabel}
             </CTAButton>
