@@ -66,11 +66,19 @@ export default function HomePage() {
               </CTAButton>
             </div>
 
-            <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-neutral-300">
-              <Link href="/questions" className="text-[#ffb36b] no-underline hover:text-white">
+            <div className="mt-5 flex flex-col gap-2 sm:max-w-[420px] sm:flex-row">
+              <Link
+                href="/questions"
+                className="inline-flex min-h-[52px] flex-1 items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-[#ffb36b] no-underline transition hover:bg-white/10 hover:text-white"
+              >
                 Частые вопросы
               </Link>
-              <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="text-[#ffb36b] no-underline hover:text-white">
+              <a
+                href={instagramLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[52px] flex-1 items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-[#ffb36b] no-underline transition hover:bg-white/10 hover:text-white"
+              >
                 Instagram*
               </a>
             </div>
