@@ -18,12 +18,12 @@ const unbounded = Unbounded({
   variable: "--font-heading"
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
-const defaultTitle = "EFITNES — персональное фитнес-сопровождение для женщин";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.efitnes.site";
+const defaultTitle = "Елена Ксорос — фитнес-тренер | EFITNES";
 const defaultDescription =
-  "EFITNES — платформа фитнес-диагностики и персонального сопровождения: тренировки, питание, восстановление и поддержка Елены.";
+  "EFITNES — фитнес-диагностика и персональное сопровождение для женщин: тренировки, питание, восстановление и поддержка Елены Ксорос.";
 const snippetDescription =
-  "EFITNES — сервис для женщин: диагностика, индивидуальный план тренировок и питания, сопровождение и контроль прогресса.";
+  "EFITNES — сервис Елены Ксорос для женщин: фитнес-диагностика, индивидуальный план тренировок и питания, сопровождение и контроль прогресса.";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -31,14 +31,19 @@ const structuredData = {
     {
       "@type": "Person",
       "@id": `${siteUrl}/#person`,
-      name: "Елена",
-      alternateName: "Elena",
+      name: "Елена Ксорос",
+      alternateName: "Elena Ksoros",
       description:
-        "Персональный фитнес-наставник и автор программы EFITNES для женщин.",
-      jobTitle: "Фитнес-коуч",
+        "Елена Ксорос — фитнес-тренер для женщин и лицо проекта EFITNES.",
+      jobTitle: "Фитнес-тренер",
       url: `${siteUrl}/`,
       image: `${siteUrl}/photo.png`,
-      sameAs: [`${siteUrl}/`, "https://t.me/Al0PBEDA"]
+      sameAs: [
+        `${siteUrl}/`,
+        "https://t.me/Al0PBEDA",
+        "https://www.instagram.com/soroskanele/",
+        "https://youtube.com/@elenaksoros2739"
+      ]
     },
     {
       "@type": "Organization",
@@ -49,7 +54,12 @@ const structuredData = {
       founder: { "@id": `${siteUrl}/#person` },
       logo: `${siteUrl}/android-chrome-512x512.png`,
       image: `${siteUrl}/photo.png`,
-      sameAs: ["https://t.me/EFITNES", "https://t.me/Al0PBEDA"]
+      sameAs: [
+        "https://t.me/EFITNES_BOT",
+        "https://t.me/Al0PBEDA",
+        "https://www.instagram.com/soroskanele/",
+        "https://youtube.com/@elenaksoros2739"
+      ]
     },
     {
       "@type": "WebSite",
@@ -63,11 +73,11 @@ const structuredData = {
     {
       "@type": "Service",
       "@id": `${siteUrl}/#service`,
-      name: "Персональное фитнес-сопровождение EFITNES",
+      name: "Фитнес-диагностика и персональное сопровождение EFITNES",
       description:
-        "Диагностика, индивидуальный фитнес-план, рекомендации по питанию и сопровождение прогресса.",
+        "Фитнес-диагностика, индивидуальный план тренировок, рекомендации по питанию и сопровождение прогресса для женщин.",
       provider: { "@id": `${siteUrl}/#organization` },
-      areaServed: "RU",
+      areaServed: ["Москва", "Балашиха", "Бишкек", "онлайн"],
       serviceType: [
         "Женский фитнес",
         "Персональные тренировки",
@@ -93,18 +103,22 @@ export const metadata: Metadata = {
     template: "%s — EFITNES"
   },
   description: defaultDescription,
-  applicationName: "EFITNES Fitness",
+  applicationName: "EFITNES",
   keywords: [
+    "Елена Ксорос",
+    "Елена Ксорос фитнес тренер",
     "EFITNES",
+    "фитнес-тренер Москва",
+    "фитнес-тренер Балашиха",
+    "фитнес-тренер Бишкек",
+    "фитнес-тренер онлайн",
     "женский фитнес",
-    "персональный фитнес-коуч",
-    "фитнес сопровождение онлайн",
-    "питание и тренировки",
-    "фитнес для женщин",
-    "диагностика тела"
+    "персональный тренер для женщин",
+    "фитнес-диагностика",
+    "питание и тренировки"
   ],
-  authors: [{ name: "Елена", url: siteUrl }],
-  creator: "Елена",
+  authors: [{ name: "Елена Ксорос", url: siteUrl }],
+  creator: "Елена Ксорос",
   publisher: "EFITNES",
   alternates: {
     canonical: "/"
@@ -122,7 +136,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: "image/png",
-        alt: "Елена Ксорос, фитнес-тренер"
+        alt: "Елена Ксорос, фитнес-тренер EFITNES"
       }
     ]
   },
@@ -130,11 +144,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: defaultTitle,
     description: defaultDescription,
-    creator: "@EFITNES",
     images: [
       {
         url: `${siteUrl}/photo.png`,
-        alt: "Елена Ксорос, фитнес-тренер"
+        alt: "Елена Ксорос, фитнес-тренер EFITNES"
       }
     ]
   },
