@@ -50,18 +50,18 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
               type="button"
               disabled={!card.active}
               onClick={() => card.active && setActiveTool(card.id)}
-              className={`rounded-2xl border p-4 text-left transition ${
+              className={`min-h-[6.5rem] rounded-2xl border px-4 py-5 text-left text-lg transition ${
                 card.active
                   ? isSelected
-                    ? "border-accent bg-surface"
-                    : "border-outline/80 bg-white/80 hover:border-accent/70"
-                  : "cursor-not-allowed border-outline/60 bg-neutral-200/50 text-neutral-500"
+                    ? "border-cyan-400/80 bg-white/15 shadow-lg shadow-cyan-900/20 backdrop-blur"
+                    : "border-white/15 bg-white/5 hover:border-cyan-300/60 hover:bg-white/10"
+                  : "cursor-not-allowed border-white/10 bg-neutral-900/60 text-neutral-500"
               }`}
             >
               <div className="flex items-center justify-between gap-2">
-                <p className="text-base font-semibold">{card.title}</p>
+                <p className="font-semibold leading-snug">{card.title}</p>
                 {!card.active && (
-                  <span className="rounded-full bg-neutral-500 px-2 py-1 text-xs font-semibold uppercase text-white">
+                  <span className="rounded-full border border-white/10 bg-neutral-800 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-neutral-300">
                     Скоро
                   </span>
                 )}
@@ -71,50 +71,50 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
         })}
       </div>
 
-      <div className="rounded-3xl border border-outline/70 bg-white/85 p-4 sm:p-6">
+      <div className="rounded-3xl border border-white/10 bg-white/10 p-4 shadow-xl shadow-black/20 backdrop-blur-md sm:p-6">
         <div className="grid gap-3 sm:grid-cols-2">
-          <label className="text-sm">
+          <label className="text-sm text-neutral-200">
             Пол
-            <select value={sex} onChange={(e) => setSex(e.target.value as Sex)} className="mt-1 w-full rounded-xl border px-4 py-3 text-lg">
+            <select value={sex} onChange={(e) => setSex(e.target.value as Sex)} className="mt-2 min-h-14 w-full rounded-xl border border-white/15 bg-neutral-900/80 px-4 py-3 text-xl text-neutral-100">
               <option value="female">Женский</option>
               <option value="male">Мужской</option>
             </select>
           </label>
-          <label className="text-sm">
+          <label className="text-sm text-neutral-200">
             Возраст
-            <input type="number" value={age} onChange={(e) => setAge(Number(e.target.value))} className="mt-1 w-full rounded-xl border px-4 py-3 text-lg" />
+            <input type="number" value={age} onChange={(e) => setAge(Number(e.target.value))} className="mt-2 min-h-14 w-full rounded-xl border border-white/15 bg-neutral-900/80 px-4 py-3 text-xl text-neutral-100" />
           </label>
-          <label className="text-sm">
+          <label className="text-sm text-neutral-200">
             Рост, см
-            <input type="number" value={heightCm} onChange={(e) => setHeightCm(Number(e.target.value))} className="mt-1 w-full rounded-xl border px-4 py-3 text-lg" />
+            <input type="number" value={heightCm} onChange={(e) => setHeightCm(Number(e.target.value))} className="mt-2 min-h-14 w-full rounded-xl border border-white/15 bg-neutral-900/80 px-4 py-3 text-xl text-neutral-100" />
           </label>
-          <label className="text-sm">
+          <label className="text-sm text-neutral-200">
             Вес, кг
-            <input type="number" value={weightKg} onChange={(e) => setWeightKg(Number(e.target.value))} className="mt-1 w-full rounded-xl border px-4 py-3 text-lg" />
+            <input type="number" value={weightKg} onChange={(e) => setWeightKg(Number(e.target.value))} className="mt-2 min-h-14 w-full rounded-xl border border-white/15 bg-neutral-900/80 px-4 py-3 text-xl text-neutral-100" />
           </label>
 
           {activeTool === "anthropometry" && (
             <>
-              <label className="text-sm">
+              <label className="text-sm text-neutral-200">
                 Талия, см
-                <input type="number" value={waistCm} onChange={(e) => setWaistCm(Number(e.target.value))} className="mt-1 w-full rounded-xl border px-4 py-3 text-lg" />
+                <input type="number" value={waistCm} onChange={(e) => setWaistCm(Number(e.target.value))} className="mt-2 min-h-14 w-full rounded-xl border border-white/15 bg-neutral-900/80 px-4 py-3 text-xl text-neutral-100" />
               </label>
-              <label className="text-sm">
+              <label className="text-sm text-neutral-200">
                 Бёдра, см
-                <input type="number" value={hipCm} onChange={(e) => setHipCm(Number(e.target.value))} className="mt-1 w-full rounded-xl border px-4 py-3 text-lg" />
+                <input type="number" value={hipCm} onChange={(e) => setHipCm(Number(e.target.value))} className="mt-2 min-h-14 w-full rounded-xl border border-white/15 bg-neutral-900/80 px-4 py-3 text-xl text-neutral-100" />
               </label>
-              <label className="text-sm sm:col-span-2">
+              <label className="text-sm text-neutral-200 sm:col-span-2">
                 Запястье, см
-                <input type="number" value={wristCm} onChange={(e) => setWristCm(Number(e.target.value))} className="mt-1 w-full rounded-xl border px-4 py-3 text-lg" />
+                <input type="number" value={wristCm} onChange={(e) => setWristCm(Number(e.target.value))} className="mt-2 min-h-14 w-full rounded-xl border border-white/15 bg-neutral-900/80 px-4 py-3 text-xl text-neutral-100" />
               </label>
             </>
           )}
 
           {activeTool === "calories" && (
             <>
-              <label className="text-sm">
+              <label className="text-sm text-neutral-200">
                 Активность
-                <select value={activity} onChange={(e) => setActivity(e.target.value as ActivityLevel)} className="mt-1 w-full rounded-xl border px-4 py-3 text-lg">
+                <select value={activity} onChange={(e) => setActivity(e.target.value as ActivityLevel)} className="mt-2 min-h-14 w-full rounded-xl border border-white/15 bg-neutral-900/80 px-4 py-3 text-xl text-neutral-100">
                   <option value="sedentary">Низкая</option>
                   <option value="light">Лёгкая</option>
                   <option value="moderate">Средняя</option>
@@ -122,9 +122,9 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
                   <option value="veryHigh">Очень высокая</option>
                 </select>
               </label>
-              <label className="text-sm">
+              <label className="text-sm text-neutral-200">
                 Цель
-                <select value={goal} onChange={(e) => setGoal(e.target.value as Goal)} className="mt-1 w-full rounded-xl border px-4 py-3 text-lg">
+                <select value={goal} onChange={(e) => setGoal(e.target.value as Goal)} className="mt-2 min-h-14 w-full rounded-xl border border-white/15 bg-neutral-900/80 px-4 py-3 text-xl text-neutral-100">
                   <option value="lose">Снижение</option>
                   <option value="maintain">Поддержание</option>
                   <option value="gain">Набор</option>
@@ -134,7 +134,7 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
           )}
         </div>
 
-        <div className="mt-5 rounded-2xl bg-surface/70 p-4 text-sm">
+        <div className="mt-5 rounded-2xl border border-white/10 bg-neutral-900/70 p-4 text-base text-neutral-100">
           {activeTool === "anthropometry" ? (
             <div className="grid gap-2 sm:grid-cols-2">
               <p>BMI: {anthropometry.bmi}</p>
