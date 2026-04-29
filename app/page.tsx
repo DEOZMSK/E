@@ -9,6 +9,8 @@ import { siteConfig } from "../content/site-config";
 const elenaTelegramLink = "https://t.me/Al0PBEDA";
 const instagramLink = "https://www.instagram.com/soroskanele/";
 
+const featureImages = ["/2.png", "/3.png", "/1.png"] as const;
+
 export const metadata: Metadata = {
   title: siteConfig.meta.title,
   description: siteConfig.meta.description,
@@ -52,40 +54,37 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 mt-auto overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b from-black/20 via-black/35 to-black/70 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-[2px] sm:mt-0 sm:border-outline/70 sm:bg-surface/80 sm:p-9">
-
           <div className="relative z-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#ffb36b]">{hero.eyebrow}</p>
-          <h1 className="hero-gradient-title mt-4 text-[2.45rem] font-bold leading-[1.06] tracking-tight sm:text-5xl lg:text-[3.55rem]">
-            {hero.headline}
-          </h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-neutral-300 sm:text-lg">
-            {hero.subheadline}
-          </p>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#ffb36b]">{hero.eyebrow}</p>
+            <h1 className="hero-gradient-title mt-4 text-[2.45rem] font-bold leading-[1.06] tracking-tight sm:text-5xl lg:text-[3.55rem]">
+              {hero.headline}
+            </h1>
+            <p className="mt-5 max-w-3xl text-base leading-relaxed text-neutral-300 sm:text-lg">{hero.subheadline}</p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <CTAButton href={telegramLink} variant="glow">
-              {hero.ctaLabel}
-            </CTAButton>
-            <CTAButton href="/book" variant="secondary" newTab={false}>
-              Записаться к Елене
-            </CTAButton>
-            <CTAButton href={elenaTelegramLink} variant="secondary">
-              Написать Елене
-            </CTAButton>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <CTAButton href={telegramLink} variant="glow">
+                {hero.ctaLabel}
+              </CTAButton>
+              <CTAButton href="/book" variant="secondary" newTab={false}>
+                Записаться к Елене
+              </CTAButton>
+              <CTAButton href={elenaTelegramLink} variant="secondary">
+                Написать Елене
+              </CTAButton>
+            </div>
+
+            <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-neutral-400">
+              <Link href="/questions" className="text-[#ffb36b] no-underline hover:text-white">
+                Частые вопросы
+              </Link>
+              <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="text-[#ffb36b] no-underline hover:text-white">
+                Instagram*
+              </a>
+            </div>
+
+            <p className="mt-5 text-sm leading-relaxed text-neutral-400">{hero.note}</p>
           </div>
-
-          <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-neutral-400">
-            <Link href="/questions" className="text-[#ffb36b] no-underline hover:text-white">
-              Частые вопросы
-            </Link>
-            <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="text-[#ffb36b] no-underline hover:text-white">
-              Instagram*
-            </a>
-          </div>
-
-          <p className="mt-5 text-sm leading-relaxed text-neutral-400">{hero.note}</p>
         </div>
-          </div>
 
         <div className="relative hidden justify-center md:flex">
           <div className="relative w-[min(88vw,520px)] max-w-[520px]">
@@ -103,20 +102,31 @@ export default function HomePage() {
       </section>
 
       <section className="relative z-20 mx-auto -mt-[12vh] grid max-w-6xl gap-4 px-4 pb-10 sm:mt-0 sm:px-6 md:grid-cols-3">
-        {features.map((feature) => (
-          <article key={feature.title} className="rounded-3xl border border-outline/70 bg-surface/85 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)]">
-            <p className="text-3xl">{feature.icon}</p>
-            <h2 className="mt-3 text-xl font-semibold text-white">{feature.title}</h2>
-            <p className="mt-2 leading-relaxed text-neutral-300">{feature.description}</p>
+        {features.map((feature, idx) => (
+          <article
+            key={feature.title}
+            className="group relative overflow-hidden rounded-[2rem] border border-white/15 bg-gradient-to-br from-[#171724]/95 via-[#121220]/92 to-[#0a0a14]/95 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
+          >
+            <div className="pointer-events-none absolute right-3 top-3 h-28 w-24 overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+              <Image src={featureImages[idx] ?? "/2.png"} alt={feature.title} fill sizes="96px" className="object-cover object-top opacity-55 mix-blend-screen" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a14]/80 via-transparent to-black/35" />
+            </div>
+            <h2 className="relative z-10 pr-24 text-xl font-semibold text-white">{feature.title}</h2>
+            <p className="relative z-10 mt-3 max-w-[92%] leading-relaxed text-neutral-300">{feature.description}</p>
           </article>
         ))}
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-14 sm:px-6">
-        <div className="rounded-[2rem] border border-outline/70 bg-surface/85 p-8 shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
-          <h2 className="text-2xl font-semibold text-white">{flow.title}</h2>
-          <p className="mt-3 max-w-3xl leading-relaxed text-neutral-300">{flow.description}</p>
-          <ol className="mt-6 grid gap-3 md:grid-cols-3">
+        <div className="relative overflow-hidden rounded-[2rem] border border-outline/70 bg-surface/85 p-8 shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
+          <div className="pointer-events-none absolute right-4 top-4 h-24 w-28 overflow-hidden rounded-2xl border border-white/10 bg-white/5 sm:h-32 sm:w-40">
+            <Image src="/stat.png" alt="Статистика прогресса" fill sizes="(min-width: 640px) 160px, 112px" className="object-cover opacity-50 mix-blend-screen" />
+            <div className="absolute inset-0 bg-gradient-to-br from-transparent via-black/15 to-[#101020]/80" />
+          </div>
+
+          <h2 className="relative z-10 max-w-[85%] text-2xl font-semibold text-white">{flow.title}</h2>
+          <p className="relative z-10 mt-3 max-w-3xl leading-relaxed text-neutral-300">{flow.description}</p>
+          <ol className="relative z-10 mt-6 grid gap-3 md:grid-cols-3">
             {(flow.steps ?? []).map((step, idx) => (
               <li key={step} className="flex gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
                 <span className="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-accent text-sm font-semibold text-white">
@@ -126,13 +136,22 @@ export default function HomePage() {
               </li>
             ))}
           </ol>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <CTAButton href={telegramLink} variant="glow">
+
+          <div className="relative z-10 mt-8 flex flex-col gap-3">
+            <CTAButton href={telegramLink} variant="glow" className="w-full sm:w-fit">
               {flow.ctaLabel}
             </CTAButton>
-            <Link className="text-sm text-[#ffb36b] no-underline hover:text-white" href="/questions">
-              Посмотреть FAQ
-            </Link>
+            <div className="flex gap-2 sm:max-w-[420px]">
+              <CTAButton href={elenaTelegramLink} variant="secondary" className="flex-1 rounded-2xl border-white/15 bg-white/5 px-5 py-3 text-sm shadow-none hover:bg-white/10">
+                Написать в Telegram
+              </CTAButton>
+              <Link
+                className="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-semibold text-[#ffb36b] no-underline transition hover:bg-white/10 hover:text-white"
+                href="/questions"
+              >
+                FAQ
+              </Link>
+            </div>
           </div>
         </div>
       </section>
