@@ -1,0 +1,80 @@
+07. ТЕСТ ЛЕТУНОВА
+
+Назначение:
+Ориентировочная функциональная оценка реакции сердечно-сосудистой системы на нагрузку.
+Это не медицинский диагноз.
+Для самостоятельного массового использования применять осторожно.
+
+UI-предупреждение:
+"Тест Летунова связан с нагрузкой и давлением. Не проводить при плохом самочувствии, повышенном давлении, беременности, сердечно-сосудистых жалобах или противопоказаниях."
+
+Вход:
+- age
+- sysBefore
+- diaBefore
+- hrBefore
+- sysAfter1
+- diaAfter1
+- hrAfter1
+- sysAfter2
+- diaAfter2
+- hrAfter2
+- sysRecovery
+- diaRecovery
+- hrRecovery
+
+Валидация:
+Все SYS, DIA, HR > 0
+Для каждого измерения SYS > DIA
+HR_after не должен быть равен HR_before для коэффициента реакции.
+
+Если sysBefore > 150 или diaBefore > 100:
+Показать сильное предупреждение:
+"По введённому давлению тест не стоит проводить без допуска специалиста."
+
+Формулы:
+
+1. Пульсовое давление
+pulsePressureBefore = sysBefore - diaBefore
+pulsePressureAfter1 = sysAfter1 - diaAfter1
+pulsePressureAfter2 = sysAfter2 - diaAfter2
+pulsePressureRecovery = sysRecovery - diaRecovery
+
+2. Идеальное давление по возрастной формуле
+idealSYS = 102 + 0.6 * age
+idealDIA = 63 + 0.4 * age
+
+3. Среднее давление по этапам
+averageSYS = (sysBefore + sysAfter1 + sysAfter2 + sysRecovery) / 4
+averageDIA = (diaBefore + diaAfter1 + diaAfter2 + diaRecovery) / 4
+
+4. Отклонение от идеального
+sysDeviationPct = ((averageSYS - idealSYS) * 100) / idealSYS
+diaDeviationPct = ((averageDIA - idealDIA) * 100) / idealDIA
+
+5. Коэффициент реакции нагрузки
+reaction1 = ((pulsePressureAfter1 - pulsePressureBefore) / (hrAfter1 - hrBefore)) * 100
+reaction2 = ((pulsePressureAfter2 - pulsePressureBefore) / (hrAfter2 - hrBefore)) * 100
+
+Если hrAfter1 === hrBefore:
+reaction1 не считать, warning.
+
+Если hrAfter2 === hrBefore:
+reaction2 не считать, warning.
+
+Классификация реакции:
+- reaction < 0: "большая реакция"
+- 0 <= reaction < 100: "норма"
+- reaction > 100: "маленькая реакция"
+
+Вывод:
+- пульсовое давление до/после
+- idealSYS / idealDIA
+- sysDeviationPct / diaDeviationPct
+- reaction1 / reaction2
+- reactionClass1 / reactionClass2
+- общий комментарий
+
+Формулировка:
+Писать не “у вас гипертонический тип реакции”, а:
+"По введённым данным реакция похожа на... Для точной оценки нужен специалист."

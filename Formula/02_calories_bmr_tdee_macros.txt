@@ -1,0 +1,111 @@
+02. КАЛОРИИ И БЖУ: BMR / TDEE / ЦЕЛЕВЫЕ КАЛОРИИ / МАКРОНУТРИЕНТЫ
+
+Назначение:
+Стартовый ориентир калорий и БЖУ под цель клиента.
+Не является строгой диетой или медицинским назначением.
+
+Вход:
+- sex: female | male
+- age: number
+- heightCm: number
+- weightKg: number
+- activity: low | light | light_training | moderate | hard | very_hard
+- goal: fat_loss | recomposition | maintenance | muscle_gain
+
+Валидация:
+age > 0
+heightCm > 0
+weightKg > 0
+activity должен быть из списка
+goal должен быть из списка
+
+Если ошибка:
+valid: false
+warning: "Проверьте вводные: возраст, рост и вес должны быть больше 0."
+
+1. BMR по Mifflin-St Jeor
+
+Мужчины:
+BMR = 10 * weightKg + 6.25 * heightCm - 5 * age + 5
+
+Женщины:
+BMR = 10 * weightKg + 6.25 * heightCm - 5 * age - 161
+
+Округлить до целого.
+
+2. Коэффициенты активности
+
+activityFactor:
+- low: 1.2 — низкая активность
+- light: 1.3 — лёгкая активность
+- light_training: 1.4 — лёгкая активность + тренировки
+- moderate: 1.5 — средняя активность
+- hard: 1.6 — тяжёлая активность
+- very_hard: 1.7 — очень тяжёлая активность
+
+3. TDEE
+TDEE = BMR * activityFactor
+Округлить до целого.
+
+4. Целевые калории по цели
+
+- fat_loss: targetCalories = TDEE * 0.85
+- recomposition: targetCalories = TDEE * 0.95
+- maintenance: targetCalories = TDEE
+- muscle_gain: targetCalories = TDEE * 1.10
+
+Округлить до целого.
+
+5. БЖУ по граммам на кг веса
+
+muscle_gain:
+- proteinG = weightKg * 1.8
+- fatG = weightKg * 0.9
+
+fat_loss:
+- proteinG = weightKg * 2.0
+- fatG = weightKg * 0.8
+
+recomposition:
+- proteinG = weightKg * 2.0
+- fatG = weightKg * 0.8
+
+maintenance:
+- proteinG = weightKg * 1.6
+- fatG = weightKg * 0.9
+
+6. Углеводы
+carbsG = (targetCalories - proteinG * 4 - fatG * 9) / 4
+
+Если carbsG < 30:
+- carbsG = 30
+- warning = "Целевые калории слишком низкие для выбранных белков/жиров. Проверьте вводные."
+
+Округление:
+- proteinG: целое
+- fatG: целое
+- carbsG: целое
+
+Важно:
+Если carbsG был поднят до 30, фактическая сумма калорий по БЖУ может стать выше targetCalories. Поэтому UI должен показывать warning.
+
+Рекомендуемый output:
+{
+  valid: true,
+  warning?: string,
+  bmr,
+  tdee,
+  targetCalories,
+  proteinG,
+  fatG,
+  carbsG
+}
+
+Формулировки UI:
+- “Стартовый ориентир”
+- “Расчётная точка отсчёта”
+- “Проверьте динамику 10–14 дней”
+
+Не писать:
+- “Вы обязаны есть ...”
+- “Это точная норма”
