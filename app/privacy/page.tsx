@@ -6,7 +6,7 @@ import { LegalFooter } from "../components/LegalFooter";
 export const metadata: Metadata = {
   title: "Политика конфиденциальности EFITNES",
   description:
-    "Как самозанятый консультант Елена собирает, использует и защищает персональные данные пользователей EFITNES и Telegram-бота.",
+    "Как сервис EFITNES обрабатывает и защищает персональные данные пользователей сайта и Telegram-бота.",
   alternates: {
     canonical: "/privacy"
   },
@@ -50,7 +50,7 @@ const legalContacts = {
   inn: "500119421000",
   email: "art.ksoros@gmail.com",
   phone: "+7 (991) 979-71-19",
-  telegram: "@Al0PBEDA"
+  telegram: "@EFITNES_BOT"
 };
 
 export default function PrivacyPage() {
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
           «Об информации, информационных технологиях и о защите информации» и иным действующим законодательством Российской Федерации.
         </p>
         <p className="text-sm text-neutral-500">
-          Самозанятый консультант: <strong>Елена</strong> (ИНН {legalContacts.inn}), Москва, Россия. Контакты: <a
+          Оператор сайта и IT-инфраструктуры: <strong>Артемий Ксорос</strong> (самозанятый, ИНН {legalContacts.inn}), Москва, Россия. Контакты: <a
             href="mailto:art.ksoros@gmail.com"
             className="text-accent hover:text-accent-hover"
           >art.ksoros@gmail.com</a>, <a href="tel:+79919797119" className="text-accent hover:text-accent-hover">{legalContacts.phone}</a>, Telegram {legalContacts.telegram}.
@@ -82,8 +82,8 @@ export default function PrivacyPage() {
       <section className="space-y-3 rounded-3xl border border-outline/60 bg-white/80 p-6 shadow-lg">
         <h2 className="text-xl font-semibold text-neutral-900">1. Термины и общие положения</h2>
         <p>
-          1.1. «Оператор» — самозанятый Елена, оказывающий консультационные услуги под брендом EFITNES и управляющий сайтом
-          <Link href="https://efitnes.ru" className="text-accent hover:text-accent-hover"> https://efitnes.ru</Link>.
+          1.1. «Оператор» — самозанятый Артемий Ксорос (ИНН 500119421000), обеспечивающий работу сайта
+          <Link href="https://efitnes.ru" className="text-accent hover:text-accent-hover"> https://efitnes.ru</Link> и IT-инфраструктуры EFITNES.
         </p>
         <p>
           1.2. «Пользователь» — любое физическое лицо, посещающее сайт, взаимодействующее с Telegram-ботом <span className="whitespace-nowrap">@EFITNES_BOT</span>
@@ -100,7 +100,7 @@ export default function PrivacyPage() {
         <h2 className="text-xl font-semibold text-neutral-900">2. Категории обрабатываемых данных</h2>
         <ul className="list-disc space-y-2 pl-5">
           <li>ФИО или псевдоним, контактный email, номер телефона, Telegram-аккаунт.</li>
-          <li>Информация, предоставляемая в заявках и сообщениях: исходные фитнес-показатели, формулировка запроса, цели консультации.</li>
+          <li>Добровольно предоставленные Пользователем данные для фитнес-диагностики: рост, вес, возраст, уровень активности, обхваты/замеры, питание, ограничения и противопоказания, Telegram username, цели и формулировка запроса.</li>
           <li>
             Технические данные: IP-адрес, тип устройства и браузера, cookies, referrer, время посещения, статистика взаимодействия с контентом.
           </li>
@@ -195,7 +195,7 @@ export default function PrivacyPage() {
           что данные ребёнка были предоставлены без согласия, Оператор удалит их по запросу.
         </p>
         <p>
-          Консультации не являются медицинской, психологической или юридической услугой. Оператор не несёт ответственности за решения, принятые Пользователем на основе рекомендаций.
+          Сервис EFITNES не является медицинской услугой. Рекомендации носят информационный и фитнес-образовательный характер. При боли, беременности, травмах, хронических заболеваниях или иных противопоказаниях необходимо обратиться к врачу. Telegram-бот не ставит диагнозы и не назначает лечение.
         </p>
       </section>
 
