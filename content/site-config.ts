@@ -1,0 +1,160 @@
+export interface SiteConfig {
+  meta: {
+    title: string;
+    description: string;
+  };
+  hero: {
+    eyebrow: string;
+    headline: string;
+    subheadline: string;
+    ctaLabel: string;
+    note: string;
+  };
+  features: {
+    icon: string;
+    title: string;
+    description: string;
+  }[];
+  chatPreview: {
+    title: string;
+    messages: {
+      sender: "user" | "bot";
+      text: string;
+    }[];
+  };
+  flow: {
+    title: string;
+    description: string;
+    steps?: string[];
+    ctaLabel: string;
+    hint: string;
+  };
+  closingNote: string;
+  telegramLink: string;
+}
+
+export const siteConfig: SiteConfig = {
+  meta: {
+    title:
+      process.env.NEXT_PUBLIC_SITE_TITLE ??
+      "JyotishGPT — ведическая AI-нумерология Артемия Ксорос",
+    description:
+      process.env.NEXT_PUBLIC_SITE_DESCRIPTION ??
+      "JyotishGPT — авторский AI-проект Артемия Ксорос. Это ведический AI-движок, обученный на авторских методиках Артемия Ксороса, соединяет ведические практики и цифровую аналитику, помогая увидеть личные циклы и точки роста.",
+  },
+  hero: {
+    eyebrow:
+      process.env.NEXT_PUBLIC_HERO_EYEBROW ??
+      "JyotishGPT · ведический искусственный интеллект",
+    headline:
+      process.env.NEXT_PUBLIC_HERO_HEADLINE ??
+      "AI-нумерология, которая говорит на языке твоей души",
+    subheadline:
+      process.env.NEXT_PUBLIC_HERO_SUBHEADLINE ??
+      "Искусственный интеллект, созданный Артемием Ксорос, соединяет ведическую астрологию, нумерологию и анализ времени, чтобы помочь увидеть свой путь без мистификаций и страха.",
+    ctaLabel:
+      process.env.NEXT_PUBLIC_HERO_CTA_LABEL ??
+      "Открыть диалог с JyotishGPT",
+    note:
+      process.env.NEXT_PUBLIC_HERO_NOTE ??
+      "Официальный канал связи с автором проекта. Помощник ответит сразу, а Артемий подключится лично, когда нужен живой разбор.",
+  },
+  features: [
+    {
+      icon: "🪔",
+      title: "Ведические корни",
+      description:
+        "Алгоритм построен на принципах джйотиша, нумерологии и ведической психологии, чтобы подсказки опирались на традицию, а не на случайные формулы."
+    },
+    {
+      icon: "🤖",
+      title: "AI-интерпретации",
+      description:
+        "JyotishGPT анализирует дату рождения, периоды времени и контекст запроса, чтобы выдавать точные и тёплые рекомендации, а не сухие прогнозы."
+    },
+    {
+      icon: "🧭",
+      title: "Личный контакт с автором",
+      description:
+        "Когда требуется живое сопровождение, Артемий Ксорос подключается к диалогу и помогает выстроить маршрут изменений шаг за шагом."
+    }
+  ],
+  chatPreview: {
+    title:
+      process.env.NEXT_PUBLIC_CHAT_PREVIEW_TITLE ??
+      "💬 Как ИИ поддерживает живой диалог",
+    messages: [
+      {
+        sender: "user",
+        text:
+          "Марина:\nЯ нашла JyotishGPT. Хочу понять, как совместить перемены в работе и отношения."
+      },
+      {
+        sender: "bot",
+        text:
+          "JyotishGPT:\nПривет! Давай посмотрим на твою личную матрицу времени. Назови дату рождения и что сейчас волнует в первую очередь."
+      },
+      {
+        sender: "user",
+        text: "Марина:\n27.03.1993. Хочется устойчивости, но будто всё рассыпается."
+      },
+      {
+        sender: "bot",
+        text:
+          "JyotishGPT:\nСейчас активирован период, отвечающий за профессиональную самореализацию. Давай выделим 3 шага: что завершить, что усилить и когда лучше принимать решение."
+      },
+      {
+        sender: "user",
+        text: "Марина:\nЗвучит по делу. Что посоветуешь сделать в первую очередь?"
+      },
+      {
+        sender: "bot",
+        text:
+          "JyotishGPT:\n1) Заверши незакрытый проект, чтобы освободить энергию.\n2) Запиши, какие качества партнёрства важны именно тебе.\n3) Поддерживай себя дыхательными практиками утром — это усилит концентрацию и уверенность."
+      },
+      {
+        sender: "bot",
+        text: "(несколько минут размышления…)"
+      },
+      {
+        sender: "user",
+        text: "Марина:\nМне стало спокойнее. Чувствую, что есть направление."
+      },
+      {
+        sender: "bot",
+        text:
+          "JyotishGPT:\nКогда будешь готова, подключимся с Артемием, чтобы собрать подробный план и подобрать практики."
+      },
+      {
+        sender: "user",
+        text: "Марина:\nБлагодарю! Такое ощущение, будто рядом наставник."
+      }
+    ]
+  },
+  flow: {
+    title:
+      process.env.NEXT_PUBLIC_FLOW_TITLE ??
+      "Как построена работа с JyotishGPT",
+    description:
+      process.env.NEXT_PUBLIC_FLOW_DESCRIPTION ??
+      "Каждая сессия сочетает машинный анализ и живой контакт. Так знание становится практикой, а не просто красивым описанием.",
+    steps: (
+      process.env.NEXT_PUBLIC_FLOW_STEPS?.split("\n").filter(Boolean) ?? [
+        "Опиши ситуацию и цель в диалоге. Это формирует запрос для ИИ и помогает Артемию почувствовать контекст.",
+        "Получи расшифровку ключевых периодов, числовых кодов и внутренних ресурсов.",
+        "Закрепи план действий: что сделать сегодня, как подготовиться к переломным датам, какие практики поддержат."
+      ]
+    ) as string[],
+    ctaLabel:
+      process.env.NEXT_PUBLIC_FLOW_CTA_LABEL ??
+      "Задать вопрос искусственному интеллекту",
+    hint:
+      process.env.NEXT_PUBLIC_FLOW_HINT ??
+      "JyotishGPT не заменяет терапию, но помогает увидеть карту пути и собрать силы для шага вперёд.",
+  },
+  closingNote:
+    process.env.NEXT_PUBLIC_CLOSING_NOTE ??
+    "Общение продолжается в Telegram: там действуют правила Telegram и политика конфиденциальности сервиса. JyotishGPT и Артемий Ксорос используют переписку только для консультаций и не отвечают за обработку данных Telegram.",
+  telegramLink:
+    process.env.NEXT_PUBLIC_TELEGRAM_LINK ?? "https://t.me/BAPHbl",
+};
