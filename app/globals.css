@@ -34,3 +34,21 @@ textarea,
 select {
   font: inherit;
 }
+
+.hero-gradient-title {
+  background: linear-gradient(90deg, #f5d365, #fda085, #c471f5, #12c2e9);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 4s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
