@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/photo.png",
         width: 1200,
         height: 630,
-        alt: "Елена Ксорос, фитнес-тренер"
+        alt: "Елена Ксорос, фитнес-тренер EFITNES"
       }
     ]
   }
@@ -32,13 +32,27 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-background text-neutral-100">
-      <section className="relative mx-auto grid min-h-[calc(100vh-40px)] max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.04fr_0.96fr] lg:py-20">
+      <section className="relative mx-auto min-h-[calc(100vh-40px)] max-w-6xl px-4 py-14 sm:px-6 lg:grid lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:gap-10 lg:py-20">
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute left-[-10%] top-[-12%] h-72 w-72 rounded-full bg-accent/20 blur-3xl" />
           <div className="absolute bottom-[-18%] right-[-8%] h-96 w-96 rounded-full bg-[#ff9f5a]/20 blur-3xl" />
         </div>
 
-        <div className="relative z-10 rounded-[2rem] border border-outline/70 bg-surface/85 p-7 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur sm:p-9">
+        <div className="relative z-10 overflow-hidden rounded-[2rem] border border-outline/70 bg-surface/85 p-7 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur sm:p-9">
+          <div className="relative -mx-4 -mt-6 flex justify-center pb-8 md:hidden">
+            <div className="relative w-full max-w-[min(98vw,600px)]">
+              <Image
+                src="/photo.png"
+                alt="Елена Ксорос, фитнес-тренер EFITNES"
+                priority
+                width={960}
+                height={1440}
+                className="h-auto w-full origin-top transform-gpu object-contain"
+              />
+            </div>
+          </div>
+
+          <div className="relative z-10">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#ffb36b]">{hero.eyebrow}</p>
           <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-[3.55rem]">
             {hero.headline}
@@ -70,18 +84,18 @@ export default function HomePage() {
 
           <p className="mt-5 text-sm leading-relaxed text-neutral-400">{hero.note}</p>
         </div>
+          </div>
 
-        <div className="relative mx-auto w-full max-w-[520px] lg:max-w-none">
-          <div className="absolute inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-br from-accent/30 via-[#ff7a59]/20 to-transparent blur-2xl" />
-          <div className="overflow-hidden rounded-[2.2rem] border border-white/10 bg-neutral-950 shadow-[0_30px_90px_rgba(0,0,0,0.55)]">
+        <div className="relative hidden justify-center md:flex">
+          <div className="relative w-[min(88vw,520px)] max-w-[520px]">
             <Image
               src="/photo.png"
               alt="Елена Ксорос, фитнес-тренер EFITNES"
               priority
               width={960}
               height={1440}
-              sizes="(min-width: 1024px) 520px, 92vw"
-              className="h-auto w-full object-cover object-top"
+              sizes="(min-width: 1280px) 520px, (min-width: 768px) 460px, (min-width: 640px) 420px, 88vw"
+              className="w-full origin-top scale-[0.97] transform-gpu rounded-[36px] object-cover object-top"
             />
           </div>
         </div>

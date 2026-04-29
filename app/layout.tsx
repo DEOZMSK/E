@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Manrope, Unbounded } from "next/font/google";
+import { Manrope, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { CookieConsent } from "./components/CookieConsent";
 
@@ -11,9 +11,9 @@ const manrope = Manrope({
   variable: "--font-body"
 });
 
-const unbounded = Unbounded({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin", "cyrillic"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["500", "600", "700"],
   display: "swap",
   variable: "--font-heading"
 });
@@ -182,7 +182,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru" className={`${manrope.variable} ${unbounded.variable}`}>
+    <html lang="ru" className={`${manrope.variable} ${cormorant.variable}`}>
       <body className="bg-background">
         <Script id="efitnes-structured-data" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify(structuredData)}

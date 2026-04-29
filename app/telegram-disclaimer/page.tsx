@@ -6,7 +6,7 @@ import { LegalFooter } from "../components/LegalFooter";
 export const metadata: Metadata = {
   title: "Дисклеймер о Telegram — EFITNES",
   description:
-    "Информация о переходе на стороннюю платформу Telegram, ответственности сервиса EFITNES и правилах обработки данных Telegram.",
+    "Информация о переходе на Telegram, проекте EFITNES (Елена Ксорос) и правилах обработки данных в Telegram.",
   alternates: {
     canonical: "/telegram-disclaimer"
   }
@@ -26,7 +26,7 @@ export default function TelegramDisclaimerPage() {
         <p className="text-xs font-medium uppercase tracking-[0.28em] text-neutral-400">Юридические документы</p>
         <h1 className="text-3xl font-semibold">Дисклеймер о Telegram</h1>
         <p className="text-base text-neutral-600">
-          После нажатия на кнопки связи на сайте EFITNES.ru вы переходите в сторонний сервис Telegram. Ниже указаны важные условия, которые необходимо учитывать.
+          После нажатия на кнопки связи на сайте www.efitnes.site вы переходите в сторонний сервис Telegram. Ниже указаны важные условия, которые необходимо учитывать.
         </p>
       </header>
 
