@@ -38,9 +38,9 @@ export default function HomePage() {
           <div className="absolute bottom-[-18%] right-[-8%] h-96 w-96 rounded-full bg-[#ff9f5a]/20 blur-3xl" />
         </div>
 
-        <div className="relative z-10 overflow-hidden rounded-[2rem] border border-outline/70 bg-surface/85 p-7 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur sm:p-9">
-          <div className="relative -mx-4 -mt-7 mb-3 flex justify-center overflow-hidden rounded-t-[2rem] md:hidden">
-            <div className="relative w-full max-w-[min(100vw,620px)]">
+        <div className="relative z-10 lg:hidden">
+          <div className="pointer-events-none relative z-0 -mx-4 mb-0 flex justify-center overflow-hidden">
+            <div className="relative w-full max-w-[min(108vw,720px)]">
               <Image
                 src="/photo.png"
                 alt="Елена Ксорос, фитнес-тренер EFITNES"
@@ -48,14 +48,14 @@ export default function HomePage() {
                 width={960}
                 height={1440}
                 sizes="100vw"
-                className="h-auto w-full origin-top scale-[1.08] transform-gpu object-cover object-top"
+                className="h-auto w-full origin-top scale-[1.2] transform-gpu object-cover object-top"
               />
             </div>
           </div>
 
-          <div className="relative z-10">
+          <div className="relative z-10 -mt-[15%] overflow-hidden rounded-[2rem] border border-white/20 bg-surface/55 p-7 shadow-[0_24px_80px_rgba(0,0,0,0.42)] backdrop-blur-xl sm:p-9">
           <p className="max-w-[22ch] text-[11px] font-semibold uppercase leading-[1.45] tracking-[0.2em] text-[#ffb36b] sm:max-w-none sm:text-xs sm:tracking-[0.28em]">{hero.eyebrow}</p>
-          <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-[3.55rem]">
+          <h1 className="mt-4 bg-[linear-gradient(110deg,#fff6ea_8%,#ffc58f_34%,#fff_50%,#ffb36b_68%,#fff6ea_92%)] bg-[length:220%_220%] bg-clip-text text-4xl font-semibold leading-tight tracking-tight text-transparent [animation:heroShine_7s_ease-in-out_infinite] sm:text-5xl lg:text-[3.55rem]">
             {hero.headline}
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-neutral-300 sm:text-lg">
@@ -83,11 +83,12 @@ export default function HomePage() {
             </a>
           </div>
 
-          <p className="mt-5 text-sm leading-relaxed text-neutral-400">{hero.note}</p>
-        </div>
+          <p className="mt-5 text-sm leading-relaxed text-neutral-300">{hero.note}</p>
           </div>
+        </div>
 
-        <div className="relative hidden justify-center md:flex">
+
+        <div className="relative hidden justify-center lg:flex">
           <div className="relative w-[min(88vw,520px)] max-w-[520px]">
             <Image
               src="/photo.png"
@@ -138,6 +139,13 @@ export default function HomePage() {
       </section>
 
       <LegalFooter />
+      <style jsx>{`
+        @keyframes heroShine {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+      `}</style>
+
     </main>
   );
 }
