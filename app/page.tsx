@@ -34,7 +34,7 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-background text-neutral-100">
-      <section className="relative mx-auto min-h-[100svh] overflow-hidden max-w-6xl px-0 pt-0 sm:min-h-[92vh] sm:px-6 sm:pt-8 lg:min-h-0 lg:px-4 lg:py-6">
+      <section className="relative mx-auto overflow-hidden max-w-6xl px-0 pt-0 sm:px-6 sm:pt-8 lg:grid lg:grid-cols-[1.04fr_0.96fr] lg:items-start lg:gap-8 lg:px-4 lg:pb-8 lg:pt-10">
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute left-[-10%] top-[-12%] h-72 w-72 rounded-full bg-accent/20 blur-3xl" />
           <div className="absolute bottom-[-18%] right-[-8%] h-96 w-96 rounded-full bg-[#ff9f5a]/20 blur-3xl" />
@@ -92,7 +92,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative z-20 mx-auto mt-2 grid max-w-6xl gap-3 px-4 pb-6 sm:mt-3 sm:px-6 md:grid-cols-3 lg:mt-4">
+      <section className="relative z-20 mx-auto mt-4 grid max-w-6xl gap-4 px-4 pb-8 sm:mt-6 sm:px-6 md:grid-cols-3 lg:mt-0">
         {features.map((feature, idx) => (
           <article
             key={feature.title}
@@ -110,7 +110,7 @@ export default function HomePage() {
         ))}
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pb-8 sm:px-6">
+      <section className="mx-auto mt-4 max-w-6xl px-4 pb-10 sm:px-6">
         <div className="relative overflow-hidden rounded-[2rem] border border-outline/70 bg-surface/85 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.28)] sm:p-8">
           <div className="pointer-events-none absolute inset-0">
             <Image src="/stat.png" alt="Статистика прогресса" fill sizes="(min-width: 768px) 70vw, 100vw" className="object-cover object-center opacity-26" />
