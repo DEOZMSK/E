@@ -13,26 +13,26 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Запись на консультацию EFITNES",
-    description: "Онлайн-запись в календарь Елены: обучение боту, глубокая сессия или VIP-маршрут.",
+    description: "Онлайн-запись в календарь EFITNES: Елена Ксорос, фитнес-тренер, проводит обучение, глубокие сессии и VIP-маршрут.",
     url: "/book",
     images: [
       {
-        url: "/kcopoc.jpeg",
+        url: "/photo.png",
         width: 1200,
         height: 630,
-        type: "image/jpeg",
-        alt: "Портрет Елены"
+        type: "image/png",
+        alt: "Елена Ксорос, фитнес-тренер"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
     title: "Запись на консультацию EFITNES",
-    description: "Онлайн-запись в календарь Елены: обучение боту, глубокая сессия или VIP-маршрут.",
+    description: "Онлайн-запись в календарь EFITNES: Елена Ксорос, фитнес-тренер, проводит обучение, глубокие сессии и VIP-маршрут.",
     images: [
       {
-        url: "/kcopoc.jpeg",
-        alt: "Портрет Елены"
+        url: "/photo.png",
+        alt: "Елена Ксорос, фитнес-тренер"
       }
     ]
   },

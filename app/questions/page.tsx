@@ -84,27 +84,27 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Вопросы к EFITNES — Елена Ксорос",
     description:
-      "Раздел вопросов EFITNES: как начать, как безопасно прогрессировать и как проходит персональное сопровождение с Еленой Ксорос.",
+      "Раздел вопросов EFITNES: Елена Ксорос, фитнес-тренер, объясняет старт, безопасный прогресс и персональное сопровождение.",
     url: "/questions",
     images: [
       {
-        url: "/kcopoc.jpeg",
+        url: "/photo.png",
         width: 1200,
         height: 630,
-        type: "image/jpeg",
-        alt: "Елена Ксорос"
+        type: "image/png",
+        alt: "Елена Ксорос, фитнес-тренер"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Вопросы к EFITNES — Елена Ксорос",
+    title: "Вопросы к EFITNES — Елена Ксорос, фитнес-тренер",
     description:
       "FAQ по EFITNES: старт, питание, тренировки, восстановление и формат работы с Еленой.",
     images: [
       {
-        url: "/kcopoc.jpeg",
-        alt: "Елена Ксорос"
+        url: "/photo.png",
+        alt: "Елена Ксорос, фитнес-тренер"
       }
     ]
   }
