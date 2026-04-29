@@ -39,21 +39,22 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 overflow-hidden rounded-[2rem] border border-outline/70 bg-surface/85 p-7 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur sm:p-9">
-          <div className="relative -mx-4 -mt-6 flex justify-center pb-8 md:hidden">
-            <div className="relative w-full max-w-[min(98vw,600px)]">
+          <div className="relative -mx-4 -mt-7 mb-3 flex justify-center overflow-hidden rounded-t-[2rem] md:hidden">
+            <div className="relative w-full max-w-[min(100vw,620px)]">
               <Image
                 src="/photo.png"
                 alt="Елена Ксорос, фитнес-тренер EFITNES"
                 priority
                 width={960}
                 height={1440}
-                className="h-auto w-full origin-top transform-gpu object-contain"
+                sizes="100vw"
+                className="h-auto w-full origin-top scale-[1.08] transform-gpu object-cover object-top"
               />
             </div>
           </div>
 
           <div className="relative z-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#ffb36b]">{hero.eyebrow}</p>
+          <p className="max-w-[22ch] text-[11px] font-semibold uppercase leading-[1.45] tracking-[0.2em] text-[#ffb36b] sm:max-w-none sm:text-xs sm:tracking-[0.28em]">{hero.eyebrow}</p>
           <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-[3.55rem]">
             {hero.headline}
           </h1>
