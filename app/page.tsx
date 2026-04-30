@@ -116,7 +116,7 @@ export default function HomePage() {
             <div className="relative z-20 min-h-[188px]">
               <h2 className="text-xl font-semibold text-white">{feature.title}</h2>
               <p className="mt-3 leading-relaxed text-neutral-300">{feature.description}</p>
-              {idx === 0 && (
+              {idx === 1 && (
                 <div className="mt-4">
                   <CTAButton href="/book" variant="secondary" newTab={false} className="rounded-xl px-3 py-1.5 text-xs shadow-none">
                     Записаться к Елене
