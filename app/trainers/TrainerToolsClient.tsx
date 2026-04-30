@@ -33,9 +33,26 @@ const descriptions: Record<string, string> = {
   flexibility: "Оценка мобильности по наклону сидя.",
   functional: "Функциональная работоспособность (PWC170/МПК).",
   letunov: "Реакция сердечно‑сосудистой системы на нагрузку.",
-  stress: "Скрининг уровня стресса по чек‑листу.",
+  stress: "Экспресс-скрининг стресса за последние 7 дней. Оцени каждый пункт по шкале от 0 до 4.",
   hypertrophy: "Оценка тренировочного объёма для гипертрофии."
 };
+
+const stressQuestions = [
+  "За последнюю неделю часто ощущала напряжение или внутреннюю тревогу?",
+  "Было сложно расслабиться даже после отдыха?",
+  "Замечала раздражительность или резкие перепады настроения?",
+  "Сон стал хуже: труднее заснуть, просыпаешься ночью или встаёшь без восстановления?",
+  "Часто чувствовала усталость, даже если нагрузка была обычной?",
+  "Было сложнее концентрироваться и держать внимание на делах?"
+];
+
+const stressOptions = [
+  { value: "0", label: "0 — никогда" },
+  { value: "1", label: "1 — редко" },
+  { value: "2", label: "2 — иногда" },
+  { value: "3", label: "3 — часто" },
+  { value: "4", label: "4 — почти постоянно" }
+];
 
 export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
   const [activeTool, setActiveTool] = useState("anthropometry");
@@ -63,7 +80,7 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
   const [bpAfterDia, setBpAfterDia] = useState(86);
   const [bpRecSys, setBpRecSys] = useState(126);
   const [bpRecDia, setBpRecDia] = useState(82);
-  const [stressAnswers, setStressAnswers] = useState([1, 1, 1, 1, 1, 1]);
+  const [stressAnswers, setStressAnswers] = useState([0, 0, 0, 0, 0, 0]);
   const [sets, setSets] = useState(4);
   const [reps, setReps] = useState(10);
   const [workWeight, setWorkWeight] = useState(60);
@@ -146,7 +163,17 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
           )}
 
           {activeTool === "stress" && stressAnswers.map((value, idx) => (
-            <NumberField key={idx} label={`Вопрос ${idx + 1}`} value={value} onChange={(next) => setStressAnswers((prev) => prev.map((v, i) => i === idx ? next : v))} />
+            <SelectField
+              key={idx}
+              label={stressQuestions[idx]}
+              value={String(value)}
+              onChange={(next) =>
+                setStressAnswers((prev) =>
+                  prev.map((v, i) => (i === idx ? Number(next) : v))
+                )
+              }
+              options={stressOptions}
+            />
           ))}
 
           {activeTool === "hypertrophy" && (
@@ -158,6 +185,12 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
             </>
           )}
         </div>
+
+        {activeTool === "stress" && (
+          <p className="text-xs text-white/70">
+            Шкала: 0 — никогда, 4 — почти постоянно. Это не диагноз, а ориентир для тренера, чтобы учитывать восстановление и нагрузку.
+          </p>
+        )}
 
         <ResultCard>
           {activeTool === "anthropometry" && <p>{anthropometry.valid ? `BMI ${anthropometry.bmi}, WHR ${anthropometry.whr}, WHtR ${anthropometry.whtr}, ${anthropometry.bodyType}, расчётный ориентир: ${anthropometry.estimatedWeightKg} кг` : "—"}</p>}
