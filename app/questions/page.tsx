@@ -138,7 +138,14 @@ export default function QuestionsPage() {
   };
 
   return (
-    <main className={`${inter.className} min-h-screen overflow-hidden bg-[#0f1115] text-neutral-100`}>
+    <main className={`${inter.className} relative min-h-screen overflow-hidden bg-[#0f1115] text-neutral-100`}>
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0">
+        <div className="absolute inset-[6px] rounded-[26px] border border-[#3ddc73]/20 shadow-[0_0_16px_rgba(61,220,115,0.16),inset_0_0_14px_rgba(15,169,88,0.10)]" />
+        <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-[#3ddc73]/35 to-transparent" />
+        <div className="absolute right-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-[#3ddc73]/35 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#59f08d]/40 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#24c763]/35 to-transparent" />
+      </div>
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -214,7 +221,9 @@ export default function QuestionsPage() {
           </div>
         </div>
       </div>
-      <LegalFooter />
+      <div className="relative z-10">
+        <LegalFooter />
+      </div>
     </main>
   );
 }
