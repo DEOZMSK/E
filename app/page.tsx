@@ -55,12 +55,6 @@ export default function HomePage() {
             </h1>
             <p className="mt-5 max-w-3xl text-base leading-relaxed text-neutral-300 sm:text-lg">{hero.subheadline}</p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <CTAButton href="/book" variant="secondary" newTab={false}>
-                Записаться к Елене
-              </CTAButton>
-            </div>
-
             <div className="mt-5 flex flex-col gap-2 sm:max-w-[420px] sm:flex-row sm:flex-wrap">
               <Link
                 href="/questions"
@@ -124,8 +118,15 @@ export default function HomePage() {
               <p className="mt-3 leading-relaxed text-neutral-300">{feature.description}</p>
               {idx === 0 && (
                 <div className="mt-4">
-                  <CTAButton href={telegramLink} variant="glow" className="px-4 py-2 text-sm shadow-[0_14px_38px_rgba(176,77,45,0.22)]">
-                    {hero.ctaLabel}
+                  <CTAButton href="https://t.me/EFITNES_BOT" variant="secondary" className="rounded-xl px-3 py-1.5 text-xs shadow-none">
+                    Пройти диагностику в боте
+                  </CTAButton>
+                </div>
+              )}
+              {idx === 1 && (
+                <div className="mt-4">
+                  <CTAButton href="/book" variant="secondary" newTab={false} className="rounded-xl px-3 py-1.5 text-xs shadow-none">
+                    Записаться к Елене
                   </CTAButton>
                 </div>
               )}
