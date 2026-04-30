@@ -164,7 +164,7 @@ export default function QuestionsPage() {
             <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#94a3b8] sm:text-xs">Навигация по категориям</div>
             <nav className="mt-3 grid gap-2 text-sm text-[#e2e8f0] sm:grid-cols-2">
               {categories.map((category) => (
-                <a key={category.name} href={`#${category.anchor}`} className="rounded-2xl border border-[#3a4558] bg-[#1e2430] px-4 py-2 font-medium transition hover:border-[#5b6b85] hover:bg-[#273043]">
+                <a key={category.name} href={`#${category.anchor}`} className="rounded-2xl border border-[#3a4558] bg-[#1e2430] px-4 py-2 font-medium text-[#e2e8f0] transition hover:border-[#5b6b85] hover:bg-[#273043] hover:text-[#f8fafc]">
                   {category.name}
                 </a>
               ))}
