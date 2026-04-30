@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Image from "next/image";
 
 import { fitnessFaqCategories } from "../../content/fitness-faq";
 import { siteConfig } from "../../content/site-config";
@@ -172,10 +173,19 @@ export default function QuestionsPage() {
           </div>
 
           <div className="mt-6 grid gap-4 text-sm text-[#cbd5e1] sm:grid-cols-2 sm:gap-5 sm:text-base">
-            {fitnessFaqCategories.map(({ name, description }) => (
-              <div key={name} className="rounded-2xl border border-[#2f3745] bg-[#171b22] p-4 shadow-[0_18px_50px_rgba(0,0,0,0.2)]">
-                <div className="text-base font-semibold text-[#f8fafc] sm:text-lg">{name}</div>
-                <p className="mt-2 leading-relaxed">{description}</p>
+            {fitnessFaqCategories.map(({ name, imageSrc }) => (
+              <div key={name} className="overflow-hidden rounded-2xl border border-[#2f3745] bg-[#171b22] shadow-[0_18px_50px_rgba(0,0,0,0.2)]">
+                {imageSrc ? (
+                  <Image
+                    src={imageSrc}
+                    alt={name}
+                    width={1200}
+                    height={675}
+                    className="h-full w-full object-cover"
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                    priority={name === "Старт"}
+                  />
+                ) : null}
               </div>
             ))}
           </div>
