@@ -88,7 +88,7 @@ export const siteConfig: SiteConfig = {
         "План: собираю персональную стратегию тренировок, активности, питания и восстановления.",
         "Сопровождение: отслеживаю прогресс, даю обратную связь и вношу корректировки по твоей ситуации."
       ]) as string[],
-    ctaLabel: process.env.NEXT_PUBLIC_FLOW_CTA_LABEL ?? "Записаться на персональную работу",
+    ctaLabel: process.env.NEXT_PUBLIC_FLOW_CTA_LABEL ?? "Пройти диагностику",
     hint: process.env.NEXT_PUBLIC_FLOW_HINT ?? "Можно начать через бот: диагностика займёт несколько минут, а дальше я подскажу следующий шаг."
   },
   closingNote:
