@@ -5,15 +5,15 @@ import { BOOKING_TIMEZONE } from "../../lib/booking/config";
 import { BookingForm } from "./BookingForm";
 
 export const metadata: Metadata = {
-  title: "Запись на консультацию EFITNES",
+  title: "Запись к Елене Ксорос",
   description:
-    "Выберите формат консультации, дату и удобный слот. Запись подтверждается сразу через Google Calendar без переписок.",
+    "Выберите услугу Елены Ксорос, дату и удобное время. Запись подтверждается сразу после бронирования.",
   alternates: {
     canonical: "/book"
   },
   openGraph: {
-    title: "Запись на консультацию EFITNES",
-    description: "Онлайн-запись в календарь EFITNES: Елена Ксорос, фитнес-тренер, проводит обучение, глубокие сессии и VIP-маршрут.",
+    title: "Запись к Елене Ксорос",
+    description: "Онлайн-запись к Елене Ксорос: персональная консультация за 1 500 ₽ и расширенная консультация за 12 000 ₽.",
     url: "/book",
     images: [
       {
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Запись на консультацию EFITNES",
-    description: "Онлайн-запись в календарь EFITNES: Елена Ксорос, фитнес-тренер, проводит обучение, глубокие сессии и VIP-маршрут.",
+    title: "Запись к Елене Ксорос",
+    description: "Онлайн-запись к Елене Ксорос: персональная консультация за 1 500 ₽ и расширенная консультация за 12 000 ₽.",
     images: [
       {
         url: "/photo.png",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
       }
     ]
   },
-  keywords: ["запись на консультацию", "EFITNES", "Елена", "онлайн-бронирование"]
+  keywords: ["Елена Ксорос", "персональная консультация", "онлайн-запись", "бронирование"]
 };
 
 export default function BookPage() {
@@ -44,10 +44,10 @@ export default function BookPage() {
     <main className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
       <header className="space-y-4 text-neutral-900">
         <p className="text-xs font-medium uppercase tracking-[0.28em] text-neutral-400">Онлайн-запись</p>
-        <h1 className="text-3xl font-semibold leading-tight">Выберите услугу и время, я сразу создам событие в календаре</h1>
+        <h1 className="text-3xl font-semibold leading-tight">Выберите услугу Елены Ксорос и удобное время</h1>
         <p className="max-w-3xl text-base text-neutral-600">
-          Рабочие дни Пн–Пт, время по {BOOKING_TIMEZONE}. Все брони проходят через Google Calendar сервисного аккаунта — без OAuth
-          и переписок. Доступные слоты учитывают занятость и длительность выбранной услуги.
+          Доступны две услуги: персональная консультация за 1 500 ₽ и расширенная консультация за 12 000 ₽.
+          Выберите удобный слот, а подтверждение записи придёт сразу после бронирования.
         </p>
       </header>
 
