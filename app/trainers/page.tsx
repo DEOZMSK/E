@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 };
 
 const trainerCards = [
-  { id: "anthropometry", title: "📐 Антропометрия", active: true },
-  { id: "calories", title: "🔥 Калории и БЖУ", active: true },
-  { id: "caliper", title: "🧴 КЖС / состав тела", active: true },
-  { id: "strength", title: "💪 Силовые тесты", active: true },
-  { id: "flexibility", title: "🧘 Гибкость", active: true },
-  { id: "functional", title: "❤️ PWC170 / МПК", active: true },
-  { id: "letunov", title: "🫀 Тест Летунова", active: true },
-  { id: "stress", title: "🧠 Стресс", active: true },
-  { id: "hypertrophy", title: "🏋️ Гипертрофия", active: true }
+  { id: "anthropometry", emoji: "📐", label: "Антропометрия", active: true },
+  { id: "calories", emoji: "🔥", label: "Калории и БЖУ", active: true },
+  { id: "caliper", emoji: "🧴", label: "КЖС / состав тела", active: true },
+  { id: "strength", emoji: "💪", label: "Силовые тесты", active: true },
+  { id: "flexibility", emoji: "🧘", label: "Гибкость", active: true },
+  { id: "functional", emoji: "❤️", label: "PWC170 / МПК", active: true },
+  { id: "letunov", emoji: "🫀", label: "Тест Летунова", active: true },
+  { id: "stress", emoji: "🧠", label: "Стресс", active: true },
+  { id: "hypertrophy", emoji: "🏋️", label: "Гипертрофия", active: true }
 ];
 
 export default function TrainersPage() {

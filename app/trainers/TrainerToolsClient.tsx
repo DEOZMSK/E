@@ -21,7 +21,7 @@ import { SelectField } from "./components/SelectField";
 import { WarningBox } from "./components/WarningBox";
 import { ActivityLevel, Goal, Sex } from "./types";
 
-interface ToolCardData { id: string; title: string; active: boolean }
+interface ToolCardData { id: string; emoji: string; label: string; active: boolean }
 interface TrainerToolsClientProps { cards: ToolCardData[] }
 const descriptions: Record<string, string> = {
   anthropometry: "Оценка базовых пропорций тела и расчётного ориентира веса.",
@@ -125,24 +125,32 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
   const letunov = useMemo(() => calculateLetunov(bpBaseSys, bpBaseDia, bpAfterSys, bpAfterDia, bpRecSys, bpRecDia), [bpBaseSys, bpBaseDia, bpAfterSys, bpAfterDia, bpRecSys, bpRecDia]);
   const stress = useMemo(() => calculateStress(stressAnswers), [stressAnswers]);
   const hypertrophy = useMemo(() => calculateHypertrophy(sets, reps, workWeight, rm1), [sets, reps, workWeight, rm1]);
+  const activeCard = cards.find((card) => card.id === activeTool);
 
   return (
     <section className="space-y-4">
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-3 gap-3">
         {cards.map((card) => (
           <button
             key={card.id}
             type="button"
             onClick={() => setActiveTool(card.id)}
-            className={`rounded-2xl border px-4 py-4 text-left text-base font-medium text-white transition active:scale-[0.995] ${
+            aria-label={card.label}
+            className={`aspect-square rounded-2xl border px-3 py-3 text-center text-white transition active:scale-[0.995] ${
               activeTool === card.id
                 ? "border-cyan-400/80 bg-cyan-500/15 shadow-[0_0_0_1px_rgba(34,211,238,0.35)]"
                 : "border-white/15 bg-white/5 hover:bg-white/10"
             }`}
           >
-            <span className="block truncate">{card.title}</span>
+            <span className="flex h-full items-center justify-center text-4xl leading-none" aria-hidden="true">{card.emoji}</span>
           </button>
         ))}
+      </div>
+
+      <div className="rounded-2xl border border-cyan-400/35 bg-cyan-500/10 px-4 py-3 text-sm text-neutral-100">
+        <p className="font-medium">
+          Выбрано: {activeCard?.label ?? ""}
+        </p>
       </div>
 
       <div className="rounded-3xl border border-white/10 bg-white/10 p-4 sm:p-6 space-y-4">
