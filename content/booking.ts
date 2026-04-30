@@ -8,18 +8,20 @@ export interface BookingService {
 
 export const BOOKING_SERVICES: BookingService[] = [
   {
-    id: "consultation-basic",
-    title: "✨ Персональная консультация",
-    durationMinutes: 45,
-    price: "1 500 ₽",
-    description: "Короткая личная встреча с Еленой Ксорос: запрос, рекомендации и понятный план следующих шагов."
+    id: "fitness-diagnostics",
+    title: "Фитнес-диагностика",
+    durationMinutes: 50,
+    price: "1500 RUB",
+    description:
+      "Разбор текущей формы, целей и ограничений + расчёт стартовых ориентиров. Результат: пошаговый план старта на 2 недели."
   },
   {
-    id: "consultation-pro",
-    title: "💎 Расширенная консультация",
-    durationMinutes: 90,
-    price: "12 000 ₽",
-    description: "Глубокий персональный разбор с Еленой Ксорос и подробной стратегией под вашу ситуацию."
+    id: "personal-support",
+    title: "Персональное сопровождение",
+    durationMinutes: 60,
+    price: "12000 RUB",
+    description:
+      "Индивидуальная программа тренировок и питания с регулярной обратной связью. Результат: план, контроль прогресса и корректировки каждую неделю."
   }
 ];
 
