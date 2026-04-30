@@ -18,13 +18,52 @@ import { NumberField } from "./components/NumberField";
 import { ResultCard } from "./components/ResultCard";
 import { SectionHeader } from "./components/SectionHeader";
 import { SelectField } from "./components/SelectField";
-import { ToolCard } from "./components/ToolCard";
 import { WarningBox } from "./components/WarningBox";
 import { ActivityLevel, Goal, Sex } from "./types";
 
 interface ToolCardData { id: string; title: string; active: boolean }
 interface TrainerToolsClientProps { cards: ToolCardData[] }
 interface ToolInfo { title: string; body: ReactNode }
+interface ToolActionCardProps {
+  title: string;
+  active: boolean;
+  infoActive: boolean;
+  onOpenTool: () => void;
+  onToggleInfo: () => void;
+}
+
+function ToolActionCard({ title, active, infoActive, onOpenTool, onToggleInfo }: ToolActionCardProps) {
+  return (
+    <div
+      className={`flex overflow-hidden rounded-2xl border transition ${
+        active || infoActive
+          ? "border-cyan-400/80 bg-cyan-500/15 shadow-[0_0_0_1px_rgba(34,211,238,0.35)]"
+          : "border-white/15 bg-white/5"
+      }`}
+    >
+      <button
+        type="button"
+        onClick={onOpenTool}
+        className="min-w-0 flex-1 px-4 py-4 text-left text-base font-medium text-white transition hover:bg-white/5 active:scale-[0.995]"
+      >
+        <span className="block truncate">{title}</span>
+      </button>
+      <button
+        type="button"
+        onClick={onToggleInfo}
+        className={`w-14 shrink-0 border-l px-3 text-lg transition hover:bg-white/10 sm:w-16 ${
+          infoActive
+            ? "border-cyan-300/50 bg-cyan-400/15 text-cyan-100"
+            : "border-white/10 bg-white/[0.03] text-white/80"
+        }`}
+        aria-label={`Открыть памятку: ${title}`}
+        aria-pressed={infoActive}
+      >
+        ℹ️
+      </button>
+    </div>
+  );
+}
 
 const descriptions: Record<string, string> = {
   anthropometry: "Оценка базовых пропорций тела и расчётного ориентира веса.",
@@ -125,34 +164,26 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
     <section className="space-y-4">
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {cards.map((card) => {
-          const infoIsActive = activeInfo === card.id;
           return (
-            <div key={card.id} className="flex items-stretch gap-2">
-              <div className="min-w-0 flex-1">
-                <ToolCard title={card.title} active={activeTool === card.id} onClick={() => setActiveTool(card.id)} />
-              </div>
-              <button
-                type="button"
-                onClick={() => setActiveInfo((prev) => (prev === card.id ? null : card.id))}
-                className={`w-14 shrink-0 rounded-2xl border px-3 py-3 text-center text-lg transition active:scale-[0.99] sm:w-16 ${
-                  infoIsActive
-                    ? "border-cyan-400/80 bg-cyan-500/20 text-cyan-100 shadow-[0_0_0_1px_rgba(34,211,238,0.45)]"
-                    : "border-white/15 bg-white/5 text-white/90"
-                }`}
-                aria-label={`Открыть памятку: ${card.title}`}
-                aria-pressed={infoIsActive}
-              >
-                ℹ️
-              </button>
-            </div>
+            <ToolActionCard
+              key={card.id}
+              title={card.title}
+              active={activeTool === card.id}
+              infoActive={activeInfo === card.id}
+              onOpenTool={() => {
+                setActiveTool(card.id);
+                setActiveInfo(null);
+              }}
+              onToggleInfo={() => setActiveInfo((prev) => (prev === card.id ? null : card.id))}
+            />
           );
         })}
       </div>
 
       {activeInfo && toolInfos[activeInfo] && (
-        <div className="rounded-3xl border border-white/10 bg-white/10 p-4 text-sm text-white/90 sm:p-6">
-          <h2 className="mb-2 text-base font-semibold text-white sm:text-lg">{toolInfos[activeInfo].title}</h2>
-          <div className="leading-relaxed">{toolInfos[activeInfo].body}</div>
+        <div className="rounded-3xl border border-cyan-300/20 bg-neutral-900/80 p-4 text-sm text-white/85 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur sm:p-6">
+          <h2 className="mb-3 text-base font-semibold text-white sm:text-lg">{toolInfos[activeInfo].title}</h2>
+          <div className="space-y-3 leading-relaxed text-white/80">{toolInfos[activeInfo].body}</div>
         </div>
       )}
 
