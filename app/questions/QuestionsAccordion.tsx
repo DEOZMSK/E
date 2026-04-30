@@ -57,18 +57,18 @@ export function QuestionsAccordion({ categories }: QuestionsAccordionProps) {
           <div
             key={category.name}
             id={category.anchor}
-            className="overflow-hidden rounded-3xl border border-[#cda15e]/35 bg-[#fff4de]/85 shadow-[0_18px_46px_rgba(125,84,25,0.12)] backdrop-blur-sm transition-colors duration-300 hover:border-[#b78945]/45 hover:bg-[#fde7c9]"
+            className="overflow-hidden rounded-3xl border border-[#2f3745] bg-[#171b22] shadow-[0_18px_46px_rgba(0,0,0,0.35)] backdrop-blur-sm transition-colors duration-300 hover:border-[#4a566e] hover:bg-[#1d2430]"
           >
             <button
               type="button"
               onClick={() => handleToggle(category.name)}
               aria-expanded={isOpen}
-              className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-lg font-semibold tracking-[0.01em] text-neutral-900 sm:text-xl"
+              className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-lg font-semibold tracking-[0.01em] text-[#f8fafc] sm:text-xl"
             >
               <span>{category.name}</span>
               <span
                 aria-hidden
-                className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-[#c59a58]/30 bg-white/80 text-base text-neutral-700 transition-transform duration-300 ${
+                className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-[#4a566e] bg-[#273043] text-base text-[#e2e8f0] transition-transform duration-300 ${
                   isOpen ? "rotate-45" : ""
                 }`}
               >
@@ -81,7 +81,7 @@ export function QuestionsAccordion({ categories }: QuestionsAccordionProps) {
               }`}
             >
               <div className="overflow-hidden">
-                <ul className="space-y-3 px-6 pb-6 text-base leading-relaxed text-neutral-700 sm:text-lg">
+                <ul className="space-y-3 px-6 pb-6 text-base leading-relaxed text-[#cbd5e1] sm:text-lg">
                   {category.entries.map((entry) => {
                     const questionIsOpen = openedQuestionAnchor === entry.anchor;
 
@@ -89,18 +89,18 @@ export function QuestionsAccordion({ categories }: QuestionsAccordionProps) {
                       <li
                         key={entry.anchor}
                         id={entry.anchor}
-                        className="relative rounded-2xl border border-transparent bg-white/60 shadow-[0_10px_28px_rgba(125,84,25,0.08)] transition hover:border-[#c59a58]/25 hover:bg-white/80"
+                        className="relative rounded-2xl border border-[#344055] bg-[#1e2430] shadow-[0_10px_28px_rgba(0,0,0,0.28)] transition hover:border-[#53627e] hover:bg-[#242d3d]"
                       >
                         <button
                           type="button"
                           onClick={() => handleQuestionToggle(category.name, entry.anchor)}
                           aria-expanded={questionIsOpen}
-                          className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-neutral-900 sm:text-lg"
+                          className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-[#f8fafc] sm:text-lg"
                         >
                           <span>{entry.question}</span>
                           <span
                             aria-hidden
-                            className={`flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border border-[#c59a58]/30 bg-white/80 text-sm text-neutral-700 transition-transform duration-300 ${
+                            className={`flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border border-[#4a566e] bg-[#273043] text-sm text-[#e2e8f0] transition-transform duration-300 ${
                               questionIsOpen ? "rotate-45" : ""
                             }`}
                           >
@@ -114,7 +114,7 @@ export function QuestionsAccordion({ categories }: QuestionsAccordionProps) {
                               : "grid-rows-[0fr] opacity-0"
                           }`}
                         >
-                          <div className="overflow-hidden border-t border-[#d9b16f]/35 bg-white/70 px-5 py-4 text-sm text-neutral-700 sm:text-base">
+                          <div className="overflow-hidden border-t border-[#344055] bg-[#202736] px-5 py-4 text-sm text-[#cbd5e1] sm:text-base">
                             {entry.answer.split(/\n{2,}/).map((paragraph, index) => (
                               <p key={index} className={index > 0 ? "mt-3" : undefined}>
                                 {paragraph}
