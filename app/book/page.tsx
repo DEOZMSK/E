@@ -42,10 +42,10 @@ export const metadata: Metadata = {
 export default function BookPage() {
   return (
     <main className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
-      <header className="space-y-4 text-neutral-900">
-        <p className="text-xs font-medium uppercase tracking-[0.28em] text-neutral-400">Онлайн-запись</p>
+      <header className="space-y-4 text-white">
+        <p className="text-xs font-medium uppercase tracking-[0.28em] text-white/60">Онлайн-запись</p>
         <h1 className="text-3xl font-semibold leading-tight">Выберите услугу Елены Ксорос и удобное время</h1>
-        <p className="max-w-3xl text-base text-neutral-600">
+        <p className="max-w-3xl text-base text-white/75">
           Доступны два формата: фитнес-диагностика за 1500 RUB и персональное сопровождение на 4 недели за 12000 RUB. В календаре выбирается время для диагностики или стартовой онлайн-встречи перед сопровождением. Если не уверены, с чего начать — лучше начать с диагностики: она покажет, какая нагрузка и формат сейчас подходят.
         </p>
       </header>
