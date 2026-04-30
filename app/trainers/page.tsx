@@ -22,7 +22,7 @@ const trainerCards = [
 
 export default function TrainersPage() {
   return (
-    <main className="min-h-screen bg-neutral-950 px-4 py-10 text-neutral-100 sm:px-6">
+    <main className="min-h-screen bg-neutral-950 px-4 pb-10 pt-20 text-neutral-100 sm:px-6">
       <div className="mx-auto max-w-6xl space-y-6">
         <header className="space-y-2">
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">🧰 Тесты для тренера</h1>
