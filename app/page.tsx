@@ -41,7 +41,7 @@ export default function HomePage() {
           <div className="absolute bottom-[-18%] right-[-8%] h-96 w-96 rounded-full bg-[#ff9f5a]/20 blur-3xl" />
         </div>
 
-        <div className="relative z-10 mt-auto overflow-hidden rounded-[2rem] border border-white/10 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:mt-0 sm:border-outline/70 sm:p-9 lg:mt-0 lg:grid lg:grid-cols-12 lg:gap-8 lg:bg-surface/70">
+        <div className="relative z-10 mt-auto overflow-hidden rounded-[2rem] border border-white/10 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:mt-0 sm:border-[#ff9f5a]/35 sm:p-9 lg:mt-0 lg:grid lg:grid-cols-12 lg:gap-8 lg:bg-surface/70">
           <div className="pointer-events-none absolute inset-0 lg:hidden">
             <Image src="/photo.png" alt="Елена Ксорос, фитнес-тренер EFITNES" priority fill sizes="100vw" className="absolute inset-0 z-0 object-cover object-[52%_12%] brightness-50" />
             <div className="absolute inset-0 z-10 bg-black/35" />
