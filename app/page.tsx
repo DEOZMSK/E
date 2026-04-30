@@ -58,9 +58,6 @@ export default function HomePage() {
               <CTAButton href={telegramLink} variant="glow">
                 {hero.ctaLabel}
               </CTAButton>
-              <CTAButton href="/book" variant="secondary" newTab={false}>
-                Записаться к Елене
-              </CTAButton>
               <CTAButton href={elenaTelegramLink} variant="secondary">
                 Написать Елене
               </CTAButton>
@@ -119,6 +116,16 @@ export default function HomePage() {
             <div className="relative z-20 min-h-[188px]">
               <h2 className="text-xl font-semibold text-white">{feature.title}</h2>
               <p className="mt-3 leading-relaxed text-neutral-300">{feature.description}</p>
+              {feature.title === "Индивидуальный план" ? (
+                <CTAButton
+                  href="/book"
+                  variant="secondary"
+                  newTab={false}
+                  className="mt-4 w-fit rounded-xl px-4 py-2 text-sm"
+                >
+                  Записаться к Елене
+                </CTAButton>
+              ) : null}
             </div>
           </article>
         ))}
