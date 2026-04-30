@@ -137,7 +137,7 @@ export default function QuestionsPage() {
   };
 
   return (
-    <main className={`${inter.className} min-h-screen overflow-hidden bg-background text-neutral-100`}>
+    <main className={`${inter.className} min-h-screen overflow-hidden bg-[#f9f4ec] text-neutral-900`}>
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -149,32 +149,32 @@ export default function QuestionsPage() {
         </CTAButton>
 
         <div className="text-center sm:text-left">
-          <h1 className="text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl">
+          <h1 className="text-3xl font-semibold leading-tight tracking-tight text-[#2a1a07] sm:text-4xl">
             Вопросы по EFITNES
           </h1>
-          <p className="mt-3 text-base text-neutral-300 sm:text-lg">
+          <p className="mt-3 text-base text-[#4f3f2b] sm:text-lg">
             Категории вопросов по старту, снижению веса, тренировкам, питанию и восстановлению — чтобы быстро понять, с чего начать.
           </p>
-          <p className="mt-4 text-xs font-medium uppercase tracking-[0.22em] text-neutral-400 sm:text-sm">
+          <p className="mt-4 text-xs font-medium uppercase tracking-[0.22em] text-[#7a6548] sm:text-sm">
             EFITNES · Елена Ксорос · фитнес-сопровождение · диагностика · поддержка
           </p>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-300 sm:text-base">{snippetText}</p>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#4f3f2b] sm:text-base">{snippetText}</p>
 
-          <div className="mt-6 rounded-3xl border border-outline/70 bg-surface/85 p-5 shadow-[0_18px_50px_rgba(0,0,0,0.22)]">
-            <div className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-400 sm:text-xs">Навигация по категориям</div>
-            <nav className="mt-3 grid gap-2 text-sm text-neutral-200 sm:grid-cols-2">
+          <div className="mt-6 rounded-3xl border border-[#dfc49d] bg-[#fffaf2] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.22)]">
+            <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#7a6548] sm:text-xs">Навигация по категориям</div>
+            <nav className="mt-3 grid gap-2 text-sm text-[#3f3021] sm:grid-cols-2">
               {categories.map((category) => (
-                <a key={category.name} href={`#${category.anchor}`} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-2 font-medium transition hover:border-accent/45 hover:bg-white/10">
+                <a key={category.name} href={`#${category.anchor}`} className="rounded-2xl border border-[#e6d3b6] bg-[#fff2df] px-4 py-2 font-medium transition hover:border-[#c59a58] hover:bg-[#ffe7c4]">
                   {category.name}
                 </a>
               ))}
             </nav>
           </div>
 
-          <div className="mt-6 grid gap-4 text-sm text-neutral-300 sm:grid-cols-2 sm:gap-5 sm:text-base">
+          <div className="mt-6 grid gap-4 text-sm text-[#4f3f2b] sm:grid-cols-2 sm:gap-5 sm:text-base">
             {fitnessFaqCategories.map(({ name, description }) => (
-              <div key={name} className="rounded-2xl border border-outline/70 bg-surface/85 p-4 shadow-[0_18px_50px_rgba(0,0,0,0.2)]">
-                <div className="text-base font-semibold text-white sm:text-lg">{name}</div>
+              <div key={name} className="rounded-2xl border border-[#dfc49d] bg-[#fffaf2] p-4 shadow-[0_18px_50px_rgba(0,0,0,0.2)]">
+                <div className="text-base font-semibold text-[#2a1a07] sm:text-lg">{name}</div>
                 <p className="mt-2 leading-relaxed">{description}</p>
               </div>
             ))}
@@ -183,8 +183,8 @@ export default function QuestionsPage() {
 
         <QuestionsAccordion categories={categories} />
 
-        <div className="pb-14 text-center text-sm text-neutral-300 sm:text-base">
-          <p className="mx-auto max-w-2xl leading-relaxed text-neutral-300">
+        <div className="pb-14 text-center text-sm text-[#4f3f2b] sm:text-base">
+          <p className="mx-auto max-w-2xl leading-relaxed text-[#4f3f2b]">
             Если хочешь разобрать цель глубже, напиши Елене Ксорос в Telegram — она поможет собрать персональный маршрут по тренировкам, питанию и восстановлению.
           </p>
           <div className="mt-6 flex flex-col items-center gap-4">
