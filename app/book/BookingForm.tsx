@@ -146,7 +146,7 @@ export function BookingForm({ services, timezone }: BookingFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8 rounded-3xl border border-outline/60 bg-white/80 p-6 shadow-lg">
+    <form onSubmit={handleSubmit} className="space-y-8 rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
       <section className="space-y-4">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div>
@@ -165,8 +165,8 @@ export function BookingForm({ services, timezone }: BookingFormProps) {
                 onClick={() => setSelectedServiceId(service.id)}
                 className={`flex h-full flex-col gap-2 rounded-2xl border p-4 text-left transition ${
                   isActive
-                    ? "border-accent bg-surface shadow-[0_12px_32px_rgba(110,75,31,0.12)]"
-                    : "border-outline/70 hover:border-accent/70 hover:shadow-[0_10px_24px_rgba(0,0,0,0.06)]"
+                    ? "border-neutral-400 bg-neutral-50 shadow-[0_8px_24px_rgba(15,23,42,0.08)]"
+                    : "border-neutral-200 hover:border-neutral-300 hover:bg-neutral-50/80"
                 }`}
               >
                 <div className="flex items-start justify-between gap-3">
@@ -174,7 +174,7 @@ export function BookingForm({ services, timezone }: BookingFormProps) {
                     <p className="text-sm font-semibold text-neutral-900">{service.title}</p>
                     <p className="text-sm text-neutral-600">{service.description}</p>
                   </div>
-                  <span className="rounded-full bg-neutral-900/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-white">
+                  <span className="rounded-full bg-neutral-800 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-white">
                     {service.price}
                   </span>
                 </div>
@@ -196,10 +196,10 @@ export function BookingForm({ services, timezone }: BookingFormProps) {
                 value={date}
                 min={minimumBookingDateISO || undefined}
                 onChange={(event) => setDate(event.target.value)}
-                className="w-full rounded-xl border border-outline bg-white px-3 py-2 text-neutral-900 shadow-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                className="w-full rounded-xl border border-neutral-300 bg-white px-3 py-2 text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-300"
               />
             </label>
-            <div className="rounded-xl border border-outline bg-surface/60 p-3">
+            <div className="rounded-xl border border-neutral-200 bg-neutral-50 p-3">
               {loadingSlots && <p className="text-sm text-neutral-500">Ищем свободное время…</p>}
               {!loadingSlots && slotsError && <p className="text-sm text-red-600">{slotsError}</p>}
               {!loadingSlots && !slotsError && slots.length === 0 && (
@@ -216,8 +216,8 @@ export function BookingForm({ services, timezone }: BookingFormProps) {
                         onClick={() => setSelectedSlot(slot)}
                         className={`rounded-lg border px-3 py-2 text-sm transition ${
                           isSelected
-                            ? "border-accent bg-accent text-white"
-                            : "border-outline bg-white hover:border-accent"
+                            ? "border-neutral-800 bg-neutral-800 text-white"
+                            : "border-neutral-300 bg-white hover:border-neutral-500"
                         }`}
                       >
                         {formatSlot(slot)}
@@ -247,7 +247,7 @@ export function BookingForm({ services, timezone }: BookingFormProps) {
               onChange={(event) => setName(event.target.value)}
               placeholder="Как к вам обращаться"
               required
-              className="w-full rounded-xl border border-outline bg-white px-3 py-2 text-neutral-900 shadow-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+              className="w-full rounded-xl border border-neutral-300 bg-white px-3 py-2 text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-300"
             />
           </label>
           <label className="space-y-1 text-sm text-neutral-700">
@@ -258,7 +258,7 @@ export function BookingForm({ services, timezone }: BookingFormProps) {
               onChange={(event) => setContact(event.target.value)}
               placeholder="Телеграм @username или email"
               required
-              className="w-full rounded-xl border border-outline bg-white px-3 py-2 text-neutral-900 shadow-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+              className="w-full rounded-xl border border-neutral-300 bg-white px-3 py-2 text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-300"
             />
           </label>
           <label className="space-y-1 text-sm text-neutral-700">
@@ -268,13 +268,13 @@ export function BookingForm({ services, timezone }: BookingFormProps) {
               onChange={(event) => setComment(event.target.value)}
               rows={3}
               placeholder="Кратко о запросе"
-              className="w-full rounded-xl border border-outline bg-white px-3 py-2 text-neutral-900 shadow-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+              className="w-full rounded-xl border border-neutral-300 bg-white px-3 py-2 text-neutral-900 shadow-sm focus:border-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-300"
             />
           </label>
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full rounded-full bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-white transition enabled:hover:bg-accent-hover disabled:cursor-not-allowed disabled:bg-neutral-400"
+            className="w-full rounded-full bg-neutral-900 px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-white transition enabled:hover:bg-neutral-700 disabled:cursor-not-allowed disabled:bg-neutral-400"
           >
             {isSubmitting ? "Отправляем в календарь…" : "Записаться"}
           </button>
