@@ -156,6 +156,16 @@ export default function QuestionsPage() {
           <p className="mt-3 text-base text-[#cbd5e1] sm:text-lg">
             Категории вопросов по старту, снижению веса, тренировкам, питанию и восстановлению — чтобы быстро понять, с чего начать.
           </p>
+          <div className="mx-auto mt-4 max-w-sm overflow-hidden rounded-2xl border border-[#2f3745] bg-[#171b22] shadow-[0_14px_40px_rgba(0,0,0,0.2)] sm:mx-0">
+            <Image
+              src="/efit.jpg"
+              alt="EFITNES"
+              width={1200}
+              height={675}
+              className="h-full w-full object-cover"
+              sizes="(min-width: 640px) 24rem, 100vw"
+            />
+          </div>
           <p className="mt-4 text-xs font-medium uppercase tracking-[0.22em] text-[#94a3b8] sm:text-sm">
             EFITNES · Елена Ксорос · фитнес-сопровождение · диагностика · поддержка
           </p>
