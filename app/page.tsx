@@ -8,6 +8,7 @@ import { siteConfig } from "../content/site-config";
 
 const elenaTelegramLink = "https://t.me/Al0PBEDA";
 const instagramLink = "https://www.instagram.com/soroskanele/";
+const trainersLink = "https://efitnes.site/trainers";
 
 const featureImages = ["/2.png", "/3.png", "/1.png"] as const;
 
@@ -60,12 +61,12 @@ export default function HomePage() {
               </CTAButton>
             </div>
 
-            <div className="mt-5 flex flex-col gap-2 sm:max-w-[420px] sm:flex-row">
+            <div className="mt-5 flex flex-col gap-2 sm:max-w-[420px] sm:flex-row sm:flex-wrap">
               <Link
                 href="/questions"
                 className="inline-flex min-h-[52px] flex-1 items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-[#ffb36b] no-underline transition hover:bg-white/10 hover:text-white"
               >
-                Частые вопросы
+                Новичкам
               </Link>
               <a
                 href={instagramLink}
@@ -73,7 +74,15 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[52px] flex-1 items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-[#ffb36b] no-underline transition hover:bg-white/10 hover:text-white"
               >
-                Instagram*
+                Instagram
+              </a>
+              <a
+                href={trainersLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[52px] flex-1 items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-[#ffb36b] no-underline transition hover:bg-white/10 hover:text-white"
+              >
+                Тренерам
               </a>
             </div>
 
