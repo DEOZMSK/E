@@ -34,7 +34,16 @@ export default function HomePage() {
   const { hero, features, flow, telegramLink } = siteConfig;
 
   return (
-    <main className="min-h-screen overflow-hidden bg-background text-neutral-100">
+    <main className="relative min-h-screen overflow-hidden bg-background text-neutral-100">
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0">
+        <div className="absolute inset-[6px] rounded-[26px] border border-[#ff6a3d]/20 shadow-[0_0_16px_rgba(255,106,61,0.16),inset_0_0_14px_rgba(255,79,46,0.1)]" />
+        <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-[#ff6a3d]/35 to-transparent" />
+        <div className="absolute right-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-[#ff6a3d]/35 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#ff9f5a]/40 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#e9422e]/35 to-transparent" />
+      </div>
+
+      <div className="relative z-10">
       <section className="relative mx-auto overflow-hidden max-w-6xl px-0 pt-0 sm:px-6 sm:pt-8 lg:grid lg:grid-cols-[1.04fr_0.96fr] lg:items-start lg:gap-8 lg:px-4 lg:pb-8 lg:pt-10">
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute left-[-10%] top-[-12%] h-72 w-72 rounded-full bg-accent/20 blur-3xl" />
@@ -189,6 +198,7 @@ export default function HomePage() {
       </section>
 
       <LegalFooter />
+      </div>
     </main>
   );
 }
