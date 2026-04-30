@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { ReactNode, useMemo, useState } from "react";
 
 import {
   calculateAnthropometry,
@@ -24,6 +24,7 @@ import { ActivityLevel, Goal, Sex } from "./types";
 
 interface ToolCardData { id: string; title: string; active: boolean }
 interface TrainerToolsClientProps { cards: ToolCardData[] }
+interface ToolInfo { title: string; body: ReactNode }
 
 const descriptions: Record<string, string> = {
   anthropometry: "Оценка базовых пропорций тела и расчётного ориентира веса.",
@@ -35,6 +36,18 @@ const descriptions: Record<string, string> = {
   letunov: "Реакция сердечно‑сосудистой системы на нагрузку.",
   stress: "Экспресс-скрининг стресса за последние 7 дней. Оцени каждый пункт по шкале от 0 до 4.",
   hypertrophy: "Оценка тренировочного объёма для гипертрофии."
+};
+
+const toolInfos: Record<string, ToolInfo> = {
+  anthropometry: { title: "📐 Антропометрия — как пользоваться", body: <p>Оценка пропорций (BMI/WHR/WHtR), ввод: пол, возраст, рост, вес, талия, бёдра, запястье. Использовать как стартовый ориентир, а не диагноз.</p> },
+  calories: { title: "🔥 Калории и БЖУ — как пользоваться", body: <p>Ориентир по BMR/TDEE и БЖУ под цель. Ввод: пол, возраст, рост, вес, активность, цель. Не использовать экстремальные дефициты/профициты.</p> },
+  caliper: { title: "🧴 КЖС / состав тела — как пользоваться", body: <p>Оценка жира по складкам 1–4 (мм). Ценность — отслеживание динамики при одинаковой технике замеров.</p> },
+  strength: { title: "💪 Силовые тесты — как пользоваться", body: <p>Скрининг уровня подготовки: отжимания, приседания, планка, вес. Смотри индекс силы и уровень для подбора нагрузки.</p> },
+  flexibility: { title: "🧘 Гибкость — как пользоваться", body: <p>Тест наклона сидя (см) для оценки мобильности. Это ориентир, не диагностика; при боли и травмах нужна осторожность.</p> },
+  functional: { title: "❤️ PWC170 / МПК — как пользоваться", body: <p>Оценка аэробной работоспособности по P1/P2, HR1/HR2 и весу. При жалобах на сердце/давление тест не проводить.</p> },
+  letunov: { title: "🫀 Тест Летунова — как пользоваться", body: <p>Скрининг реакции ССС: АД в покое, после и через 3 минуты. Смотри подъём SYS, восстановление SYS, сдвиг DIA и тип реакции.</p> },
+  stress: { title: "🧠 Стресс — как пользоваться", body: <p>Оценка стресса за 7 дней (0–4 на вопрос). Сумма = балл, зона помогает адаптировать объём и интенсивность нагрузки.</p> },
+  hypertrophy: { title: "🏋️ Гипертрофия — как пользоваться", body: <p>Оценка тоннажа, интенсивности (% от 1ПМ) и индекса объёма. Нужна для быстрой проверки баланса стимула и восстановления.</p> }
 };
 
 const stressQuestions = [
@@ -56,6 +69,7 @@ const stressOptions = [
 
 export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
   const [activeTool, setActiveTool] = useState("anthropometry");
+  const [activeInfo, setActiveInfo] = useState<string | null>(null);
   const [sex, setSex] = useState<Sex>("female");
   const [age, setAge] = useState(30);
   const [heightCm, setHeightCm] = useState(170);
@@ -99,10 +113,37 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
   return (
     <section className="space-y-4">
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {cards.map((card) => (
-          <ToolCard key={card.id} title={card.title} active={activeTool === card.id} onClick={() => setActiveTool(card.id)} />
-        ))}
+        {cards.map((card) => {
+          const infoIsActive = activeInfo === card.id;
+          return (
+            <div key={card.id} className="flex items-stretch gap-2">
+              <div className="min-w-0 flex-1">
+                <ToolCard title={card.title} active={activeTool === card.id} onClick={() => setActiveTool(card.id)} />
+              </div>
+              <button
+                type="button"
+                onClick={() => setActiveInfo((prev) => (prev === card.id ? null : card.id))}
+                className={`w-14 shrink-0 rounded-2xl border px-3 py-3 text-center text-lg transition active:scale-[0.99] sm:w-16 ${
+                  infoIsActive
+                    ? "border-cyan-400/80 bg-cyan-500/20 text-cyan-100 shadow-[0_0_0_1px_rgba(34,211,238,0.45)]"
+                    : "border-white/15 bg-white/5 text-white/90"
+                }`}
+                aria-label={`Открыть памятку: ${card.title}`}
+                aria-pressed={infoIsActive}
+              >
+                ℹ️
+              </button>
+            </div>
+          );
+        })}
       </div>
+
+      {activeInfo && toolInfos[activeInfo] && (
+        <div className="rounded-3xl border border-white/10 bg-white/10 p-4 text-sm text-white/90 sm:p-6">
+          <h2 className="mb-2 text-base font-semibold text-white sm:text-lg">{toolInfos[activeInfo].title}</h2>
+          <div className="leading-relaxed">{toolInfos[activeInfo].body}</div>
+        </div>
+      )}
 
       <div className="rounded-3xl border border-white/10 bg-white/10 p-4 sm:p-6 space-y-4">
         <SectionHeader text={descriptions[activeTool] ?? ""} />
