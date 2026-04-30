@@ -58,9 +58,6 @@ export default function HomePage() {
               <CTAButton href="/book" variant="secondary" newTab={false}>
                 Записаться к Елене
               </CTAButton>
-              <CTAButton href={elenaTelegramLink} variant="secondary">
-                Написать Елене
-              </CTAButton>
             </div>
 
             <div className="mt-5 flex flex-col gap-2 sm:max-w-[420px] sm:flex-row">
@@ -120,6 +117,13 @@ export default function HomePage() {
                 <div className="mt-4">
                   <CTAButton href={telegramLink} variant="glow" className="px-4 py-2 text-sm shadow-[0_14px_38px_rgba(176,77,45,0.22)]">
                     {hero.ctaLabel}
+                  </CTAButton>
+                </div>
+              )}
+              {idx === 2 && (
+                <div className="mt-4">
+                  <CTAButton href={elenaTelegramLink} variant="secondary" className="px-3 py-1.5 text-xs shadow-none">
+                    Написать Елене
                   </CTAButton>
                 </div>
               )}
