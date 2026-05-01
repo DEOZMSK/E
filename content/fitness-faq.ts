@@ -6,7 +6,6 @@ export interface FitnessFaqEntry {
 export interface FitnessFaqCategory {
   name: string;
   description: string;
-  imageSrc?: string;
   entries: FitnessFaqEntry[];
 }
 
@@ -15,7 +14,6 @@ export const fitnessFaqCategories: FitnessFaqCategory[] = [
     name: "Старт",
     description:
       "первичная оценка, постановка цели, формат сопровождения, как начать без стресса",
-    imageSrc: "/101.jpg",
     entries: [
       {
         question: "С чего начать, если я давно не тренировалась?",
@@ -33,7 +31,6 @@ export const fitnessFaqCategories: FitnessFaqCategory[] = [
     name: "Похудение и форма",
     description:
       "снижение веса, уменьшение объёмов, тонус тела, устойчивый результат без жёстких ограничений",
-    imageSrc: "/102.jpg",
     entries: [
       {
         question: "Почему вес стоит, хотя я тренируюсь?",
@@ -50,7 +47,6 @@ export const fitnessFaqCategories: FitnessFaqCategory[] = [
   {
     name: "Тренировки",
     description: "силовые, кардио, техника, прогрессия, домашние и заловые форматы",
-    imageSrc: "/103.jpg",
     entries: [
       {
         question: "Что эффективнее: кардио или силовые?",
@@ -67,7 +63,6 @@ export const fitnessFaqCategories: FitnessFaqCategory[] = [
   {
     name: "Питание",
     description: "дефицит калорий, баланс БЖУ, режим, пищевые привычки и комфортный рацион",
-    imageSrc: "/104.jpg",
     entries: [
       {
         question: "Нужно ли полностью убирать сладкое?",
@@ -84,7 +79,6 @@ export const fitnessFaqCategories: FitnessFaqCategory[] = [
   {
     name: "Восстановление",
     description: "сон, стресс, отдых, профилактика переутомления и поддержка энергии",
-    imageSrc: "/105.jpg",
     entries: [
       {
         question: "Почему нет энергии на тренировки?",
@@ -101,7 +95,6 @@ export const fitnessFaqCategories: FitnessFaqCategory[] = [
   {
     name: "Диагностика EFITNES",
     description: "оценка стартовых данных, анализ прогресса, метрики и персональные корректировки",
-    imageSrc: "/106.jpg",
     entries: [
       {
         question: "Что входит в диагностику EFITNES?",
@@ -118,7 +111,6 @@ export const fitnessFaqCategories: FitnessFaqCategory[] = [
   {
     name: "Ограничения и безопасность",
     description: "противопоказания, травмы, аккуратная адаптация нагрузки и границы онлайн-сопровождения",
-    imageSrc: "/107.jpg",
     entries: [
       {
         question: "Можно ли тренироваться при боли в спине или колене?",
@@ -135,7 +127,6 @@ export const fitnessFaqCategories: FitnessFaqCategory[] = [
   {
     name: "Работа с Еленой",
     description: "формат взаимодействия, обратная связь, сопровождение и коммуникация в Telegram",
-    imageSrc: "/108.jpg",
     entries: [
       {
         question: "Как проходит работа с Еленой Ксорос?",
