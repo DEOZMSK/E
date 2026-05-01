@@ -1,0 +1,25 @@
+EFITNES — сайт фитнес-тренера Елены Ксорос.
+
+Специализация:
+- женский фитнес
+- фитнес-диагностика
+- индивидуальный план
+- питание
+- восстановление
+- сопровождение
+
+Ключевые страницы:
+- /
+- /book
+- /questions
+- /trainers
+- /privacy
+- /user-agreement
+- /telegram-disclaimer
+
+Контакты:
+- Сайт: https://www.efitnes.site
+- Telegram bot: https://t.me/EFITNES_BOT
+- Telegram: https://t.me/Al0PBEDA
+- Instagram: https://www.instagram.com/soroskanele/
+- YouTube: https://youtube.com/@elenaksoros2739
