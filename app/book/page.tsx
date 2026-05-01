@@ -41,17 +41,27 @@ export const metadata: Metadata = {
 
 export default function BookPage() {
   return (
-    <main className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
-      <header className="space-y-4 text-white">
-        <p className="text-xs font-medium uppercase tracking-[0.28em] text-white/60">Онлайн-запись</p>
-        <h1 className="text-3xl font-semibold leading-tight">Выберите услугу Елены Ксорос и удобное время</h1>
-        <p className="max-w-3xl text-base text-white/75">
-          Доступны два формата: фитнес-диагностика за 1500 RUB и персональное сопровождение на 4 недели за 12000 RUB. В календаре выбирается время для диагностики или стартовой онлайн-встречи перед сопровождением. Если не уверены, с чего начать — лучше начать с диагностики: она покажет, какая нагрузка и формат сейчас подходят.
-        </p>
-      </header>
+    <main className="relative min-h-screen overflow-hidden">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute inset-[6px] rounded-[26px] border border-[#fff1bf]/25 shadow-[0_0_16px_rgba(255,241,191,0.14),inset_0_0_14px_rgba(255,248,231,0.1)]" />
+        <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-[#fff1bf]/36 to-transparent" />
+        <div className="absolute right-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-[#fff8e7]/38 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#ffffff]/42 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#f7d774]/34 to-transparent" />
+      </div>
 
-      <div className="mt-10">
-        <BookingForm services={BOOKING_SERVICES} timezone={BOOKING_TIMEZONE} />
+      <div className="relative z-10 mx-auto max-w-5xl px-4 py-16 sm:px-6">
+        <header className="space-y-4 text-white">
+          <p className="text-xs font-medium uppercase tracking-[0.28em] text-white/60">Онлайн-запись</p>
+          <h1 className="text-3xl font-semibold leading-tight">Выберите услугу Елены Ксорос и удобное время</h1>
+          <p className="max-w-3xl text-base text-white/75">
+            Доступны два формата: фитнес-диагностика за 1500 RUB и персональное сопровождение на 4 недели за 12000 RUB. В календаре выбирается время для диагностики или стартовой онлайн-встречи перед сопровождением. Если не уверены, с чего начать — лучше начать с диагностики: она покажет, какая нагрузка и формат сейчас подходят.
+          </p>
+        </header>
+
+        <div className="mt-10">
+          <BookingForm services={BOOKING_SERVICES} timezone={BOOKING_TIMEZONE} />
+        </div>
       </div>
     </main>
   );
