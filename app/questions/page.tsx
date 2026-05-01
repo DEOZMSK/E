@@ -178,34 +178,6 @@ export default function QuestionsPage() {
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#cbd5e1] sm:text-base">{snippetText}</p>
 
-          <div className="mt-6 rounded-3xl border border-[#2f3745] bg-[#171b22] p-5 shadow-[0_18px_50px_rgba(0,0,0,0.22)]">
-            <div className="text-sm font-semibold uppercase tracking-[0.22em] text-[#94a3b8] sm:text-xs">Навигация по категориям</div>
-            <nav className="mt-3 grid gap-2 text-sm text-[#e2e8f0] sm:grid-cols-2">
-              {categories.map((category) => (
-                <a key={category.name} href={`#${category.anchor}`} className="rounded-2xl border border-[#3a4558] bg-[#1e2430] px-4 py-2 font-medium text-[#e2e8f0] transition hover:border-[#5b6b85] hover:bg-[#273043] hover:text-[#f8fafc]">
-                  {category.name}
-                </a>
-              ))}
-            </nav>
-          </div>
-
-          <div className="mt-6 grid gap-4 text-sm text-[#cbd5e1] sm:grid-cols-2 sm:gap-5 sm:text-base">
-            {fitnessFaqCategories.map(({ name, imageSrc }) => (
-              <div key={name} className="overflow-hidden rounded-2xl border border-[#2f3745] bg-[#171b22] shadow-[0_18px_50px_rgba(0,0,0,0.2)]">
-                {imageSrc ? (
-                  <Image
-                    src={imageSrc}
-                    alt={name}
-                    width={1200}
-                    height={675}
-                    className="h-full w-full object-cover"
-                    sizes="(min-width: 640px) 50vw, 100vw"
-                    priority={name === "Старт"}
-                  />
-                ) : null}
-              </div>
-            ))}
-          </div>
         </div>
 
         <QuestionsAccordion categories={categories} />
