@@ -38,8 +38,16 @@ const structuredData = {
       jobTitle: "Фитнес-тренер",
       url: `${siteUrl}/`,
       image: `${siteUrl}/photo.png`,
+      knowsAbout: [
+        "женский фитнес",
+        "фитнес-диагностика",
+        "персональные тренировки",
+        "питание",
+        "восстановление",
+        "онлайн-сопровождение"
+      ],
+      worksFor: { "@id": `${siteUrl}/#organization` },
       sameAs: [
-        `${siteUrl}/`,
         "https://t.me/Al0PBEDA",
         "https://www.instagram.com/soroskanele/",
         "https://youtube.com/@elenaksoros2739"
@@ -54,6 +62,14 @@ const structuredData = {
       founder: { "@id": `${siteUrl}/#person` },
       logo: `${siteUrl}/android-chrome-512x512.png`,
       image: `${siteUrl}/photo.png`,
+      areaServed: ["Москва", "Балашиха", "Бишкек", "онлайн"],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        url: `${siteUrl}/`,
+        availableLanguage: ["ru"],
+        sameAs: ["https://t.me/EFITNES_BOT"]
+      },
       sameAs: [
         "https://t.me/EFITNES_BOT",
         "https://t.me/Al0PBEDA",
@@ -84,13 +100,75 @@ const structuredData = {
         "План питания",
         "Фитнес-диагностика"
       ],
+      knowsAbout: [
+        "диагностика физической формы",
+        "персональные тренировки",
+        "питание",
+        "восстановление",
+        "онлайн-сопровождение"
+      ],
       audience: {
         "@type": "PeopleAudience",
+        audienceType: "Женщины",
         suggestedGender: "female"
       },
-      availableChannel: {
-        "@type": "ServiceChannel",
-        serviceUrl: `${siteUrl}/book`
+      availableChannel: [
+        {
+          "@type": "ServiceChannel",
+          serviceUrl: `${siteUrl}/book`
+        },
+        {
+          "@type": "ServiceChannel",
+          serviceUrl: "https://t.me/EFITNES_BOT"
+        }
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Направления сервиса EFITNES",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Фитнес-диагностика"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Персональное сопровождение"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Персональные тренировки"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "План питания"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Программы восстановления"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Онлайн-формат сопровождения"
+            }
+          }
+        ]
       }
     }
   ]
