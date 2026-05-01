@@ -193,6 +193,23 @@ export default function QuestionsPage() {
           </div>
         </div>
       </div>
+
+      <div className="relative z-10 overflow-x-hidden px-0">
+        <div className="pointer-events-none relative mx-auto w-full max-w-6xl" aria-hidden="true">
+          <div className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(184,131,58,0.22)_0%,rgba(184,131,58,0)_72%)] blur-2xl sm:h-56 sm:w-56" />
+          <div className="relative -mb-2 ml-0 w-[92vw] max-w-[420px] translate-x-[-10px] sm:mx-auto sm:mb-0 sm:w-[74vw] sm:max-w-[430px] sm:translate-x-0 lg:w-[56vw] lg:max-w-[520px]">
+            <Image
+              src="/que.png"
+              alt=""
+              width={860}
+              height={1120}
+              className="h-auto w-full object-contain"
+              sizes="(min-width: 1024px) 520px, (min-width: 640px) 430px, 92vw"
+            />
+          </div>
+        </div>
+      </div>
+
       <div className="relative z-10">
         <LegalFooter />
       </div>
