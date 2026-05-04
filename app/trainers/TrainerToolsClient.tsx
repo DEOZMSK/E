@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { ReactNode, useMemo, useState } from "react";
 
 import {
@@ -143,7 +142,7 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
                 : "border-white/15 bg-white/5 hover:bg-white/10"
             }`}
           >
-            <Image src={card.iconSrc} alt={card.label} fill sizes="(max-width: 640px) 33vw, 180px" className="toolIconImage" unoptimized />
+            <img src={card.iconSrc} alt={card.label} className="toolIconImage" loading="lazy" decoding="async" />
           </button>
         ))}
       </div>

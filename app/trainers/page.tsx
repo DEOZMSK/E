@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 const trainerCards = [
   { id: "anthropometry", iconSrc: "/icon/antropometriya.webp", label: "Антропометрия", active: true },
-  { id: "calories", iconSrc: "/icon/kalorii%20i%20bju.webp", label: "Калории и БЖУ", active: true },
-  { id: "caliper", iconSrc: "/icon/kjs%20sostav%20tela.webp", label: "КЖС / состав тела", active: true },
+  { id: "calories", iconSrc: "/icon/kalorii i bju.webp", label: "Калории и БЖУ", active: true },
+  { id: "caliper", iconSrc: "/icon/kjs sostav tela.webp", label: "КЖС / состав тела", active: true },
   { id: "strength", iconSrc: "/icon/silovie_testi.webp", label: "Силовые тесты", active: true },
   { id: "flexibility", iconSrc: "/icon/gibkost.webp", label: "Гибкость", active: true },
   { id: "functional", iconSrc: "/icon/pwc170_mpk.webp", label: "PWC170 / МПК", active: true },
