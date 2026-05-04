@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ReactNode, useMemo, useState } from "react";
 
 import {
@@ -136,13 +137,13 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
             type="button"
             onClick={() => setActiveTool(card.id)}
             aria-label={card.label}
-            className={`aspect-square overflow-hidden rounded-2xl border p-0 text-center text-white transition active:scale-[0.995] ${
+            className={`aspect-square relative overflow-hidden rounded-2xl border p-0 text-center text-white transition active:scale-[0.995] ${
               activeTool === card.id
                 ? "border-cyan-400/80 bg-cyan-500/15 shadow-[0_0_0_1px_rgba(34,211,238,0.35)]"
                 : "border-white/15 bg-white/5 hover:bg-white/10"
             }`}
           >
-            <img src={card.iconSrc} alt={card.label} className="toolIconImage" loading="lazy" />
+            <Image src={card.iconSrc} alt={card.label} fill sizes="(max-width: 640px) 33vw, 180px" className="toolIconImage" unoptimized />
           </button>
         ))}
       </div>
