@@ -21,7 +21,7 @@ import { SelectField } from "./components/SelectField";
 import { WarningBox } from "./components/WarningBox";
 import { ActivityLevel, Goal, Sex } from "./types";
 
-interface ToolCardData { id: string; emoji: string; label: string; active: boolean }
+interface ToolCardData { id: string; iconSrc: string; label: string; active: boolean }
 interface TrainerToolsClientProps { cards: ToolCardData[] }
 const descriptions: Record<string, string> = {
   anthropometry: "Оценка базовых пропорций тела и расчётного ориентира веса.",
@@ -136,13 +136,13 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
             type="button"
             onClick={() => setActiveTool(card.id)}
             aria-label={card.label}
-            className={`aspect-square rounded-2xl border px-3 py-3 text-center text-white transition active:scale-[0.995] ${
+            className={`aspect-square relative overflow-hidden rounded-2xl border p-0 text-center text-white transition active:scale-[0.995] ${
               activeTool === card.id
                 ? "border-cyan-400/80 bg-cyan-500/15 shadow-[0_0_0_1px_rgba(34,211,238,0.35)]"
                 : "border-white/15 bg-white/5 hover:bg-white/10"
             }`}
           >
-            <span className="flex h-full items-center justify-center text-4xl leading-none" aria-hidden="true">{card.emoji}</span>
+            <img src={card.iconSrc} alt={card.label} className="toolIconImage" loading="lazy" decoding="async" />
           </button>
         ))}
       </div>
