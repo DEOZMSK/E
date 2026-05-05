@@ -55,6 +55,9 @@ export function TrainersPageClient({ cards }: TrainersPageClientProps) {
             setActiveTool={setActiveTool}
             setSelectedTool={setSelectedTool}
           />
+          <p className="pointer-events-none absolute inset-x-4 bottom-[calc(env(safe-area-inset-bottom)+58px)] z-20 mx-auto max-w-[340px] text-center text-[11px] leading-snug text-white/60">
+            Выберите инструмент — откроется расчёт с пояснениями и ориентирами для клиента.
+          </p>
           <div className="flex justify-center pt-2 pb-[calc(env(safe-area-inset-bottom)+12px)]">
             <Link
               href="/"
