@@ -129,7 +129,7 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
   const selectedCard = cards.find((card) => card.id === selectedTool);
 
   return (
-    <section className="space-y-4">
+    <section className="space-y-3">
       {selectedTool === null ? (
         <div className="grid grid-cols-3 gap-3">
           {cards.map((card) => (
