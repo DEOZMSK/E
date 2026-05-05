@@ -44,7 +44,7 @@ export function TrainersPageClient({ cards }: TrainersPageClientProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Открыть Telegram-чат"
-            className="absolute left-4 top-4 z-20 block h-12 w-12 overflow-hidden rounded-full sm:left-6 sm:top-6 sm:h-14 sm:w-14"
+            className="absolute left-4 top-4 z-20 block h-[72px] w-[72px] overflow-hidden rounded-full sm:left-6 sm:top-6 sm:h-[84px] sm:w-[84px]"
           >
             <img src="/logoapp.png" alt="" aria-hidden="true" className="h-full w-full object-contain" />
           </a>
