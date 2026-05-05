@@ -185,6 +185,36 @@ export function BookingForm({ services, timezone }: BookingFormProps) {
         </div>
       </section>
 
+      <section className="rounded-2xl border border-neutral-200 bg-neutral-50 p-4">
+        <div className="space-y-2">
+          <p className="text-xs uppercase tracking-[0.25em] text-neutral-400">Оплата</p>
+          <h3 className="text-lg font-semibold text-neutral-900">Оплатить выбранный формат в Telegram</h3>
+          <p className="text-sm text-neutral-600">
+            Сначала можно выбрать удобное время в календаре ниже. Оплата откроется в Telegram-боте @EFITNES_BOT.
+          </p>
+        </div>
+
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          <a
+            href="https://t.me/EFITNES_BOT?start=pay_1500"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center justify-center rounded-full bg-neutral-900 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-neutral-700 active:scale-[0.98]"
+          >
+            Оплатить диагностику — 1 500 ₽
+          </a>
+
+          <a
+            href="https://t.me/EFITNES_BOT?start=pay_12000"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center justify-center rounded-full border border-neutral-300 bg-white px-5 py-3 text-center text-sm font-semibold text-neutral-900 transition hover:bg-neutral-100 active:scale-[0.98]"
+          >
+            Оплатить сопровождение — 12 000 ₽
+          </a>
+        </div>
+      </section>
+
       <section className="grid gap-6 md:grid-cols-[1.2fr,1fr]">
         <div className="space-y-3">
           <h3 className="text-lg font-semibold text-neutral-900">Дата и время</h3>
