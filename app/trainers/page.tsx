@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { TrainerToolsClient } from "./TrainerToolsClient";
 
 export const metadata: Metadata = {
@@ -22,20 +23,26 @@ const trainerCards = [
 
 export default function TrainersPage() {
   return (
-    <main className="bg-[#110813] px-4 pb-5 pt-8 text-neutral-100 sm:px-6 sm:pt-10">
-      <div className="mx-auto max-w-6xl space-y-3">
+    <main className="relative overflow-hidden bg-[#110813] px-4 pb-8 pt-8 text-neutral-100 sm:px-6 sm:pt-10">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[url('/foni.webp')] bg-cover bg-center bg-no-repeat"
+      />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[#110813]/52" />
+
+      <div className="mx-auto max-w-6xl">
         <header className="relative overflow-hidden rounded-3xl border border-[#ffb280]/25">
           <img
             src="/fonapp.webp"
             alt=""
             aria-hidden="true"
-            className="h-[280px] w-full object-cover object-top sm:h-[320px]"
+            className="h-[420px] w-full object-cover object-top sm:h-[500px]"
             loading="eager"
             decoding="async"
           />
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-[#170818]/22 via-[#160816]/35 to-[#110813]/88" />
+          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-[#170818]/20 via-[#160816]/34 to-[#110813]/84" />
           <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,175,128,0.16),transparent_56%)]" />
-          <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6">
+          <div className="absolute inset-x-0 bottom-0 p-4 pb-24 sm:p-6 sm:pb-28">
             <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Инструменты тренера</h1>
             <p className="mt-2 max-w-3xl text-sm text-neutral-100/90 sm:text-base">
               Профессиональные фитнес-расчёты для оценки клиента: антропометрия, состав тела, питание и тренировочные
@@ -44,7 +51,17 @@ export default function TrainersPage() {
           </div>
         </header>
 
-        <TrainerToolsClient cards={trainerCards} />
+        <div className="-mt-20 relative z-10 space-y-4 sm:-mt-24">
+          <TrainerToolsClient cards={trainerCards} />
+          <div className="flex justify-center pb-1">
+            <Link
+              href="/"
+              className="inline-flex items-center rounded-2xl border border-[#ffbb94]/40 bg-[#25132a]/70 px-5 py-2.5 text-sm font-medium text-[#ffe0cb] shadow-[0_10px_30px_rgba(0,0,0,0.35)] backdrop-blur-sm transition hover:bg-[#2f1834]/85"
+            >
+              ← Назад на сайт
+            </Link>
+          </div>
+        </div>
       </div>
     </main>
   );
