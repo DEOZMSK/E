@@ -22,21 +22,26 @@ const trainerCards = [
 
 export default function TrainersPage() {
   return (
-    <main className="relative overflow-hidden bg-[#110813] px-4 pb-5 pt-14 text-neutral-100 sm:px-6 sm:pt-16">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute inset-x-0 top-0 h-[48vh] min-h-[300px] bg-[url('/fonapp.webp')] bg-top bg-no-repeat bg-cover opacity-95" />
-        <div className="absolute inset-x-0 top-0 h-[48vh] min-h-[300px] bg-gradient-to-b from-[#1a0a20]/20 via-[#150817]/38 to-[#110813]/92" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,170,120,0.12),transparent_52%),radial-gradient(circle_at_bottom,rgba(190,120,255,0.07),transparent_58%)]" />
-        <div className="absolute inset-0 border border-[#ffb280]/18 shadow-[0_0_28px_rgba(255,164,119,0.12),inset_0_0_28px_rgba(171,114,230,0.12)]" />
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-6xl space-y-4 pb-1">
-        <header className="space-y-2">
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Инструменты тренера</h1>
-          <p className="text-base text-neutral-300 sm:text-lg">
-            Профессиональные фитнес-расчёты для оценки клиента: антропометрия, состав тела, питание и тренировочные
-            ориентиры.
-          </p>
+    <main className="bg-[#110813] px-4 pb-5 pt-8 text-neutral-100 sm:px-6 sm:pt-10">
+      <div className="mx-auto max-w-6xl space-y-3">
+        <header className="relative overflow-hidden rounded-3xl border border-[#ffb280]/25">
+          <img
+            src="/fonapp.webp"
+            alt=""
+            aria-hidden="true"
+            className="h-[280px] w-full object-cover object-top sm:h-[320px]"
+            loading="eager"
+            decoding="async"
+          />
+          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-[#170818]/22 via-[#160816]/35 to-[#110813]/88" />
+          <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,175,128,0.16),transparent_56%)]" />
+          <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6">
+            <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Инструменты тренера</h1>
+            <p className="mt-2 max-w-3xl text-sm text-neutral-100/90 sm:text-base">
+              Профессиональные фитнес-расчёты для оценки клиента: антропометрия, состав тела, питание и тренировочные
+              ориентиры.
+            </p>
+          </div>
         </header>
 
         <TrainerToolsClient cards={trainerCards} />
