@@ -39,6 +39,15 @@ export function TrainersPageClient({ cards }: TrainersPageClientProps) {
           <img src="/fonapp.webp" alt="" aria-hidden="true" className="h-[360px] w-full object-cover object-top sm:h-[500px]" loading="eager" decoding="async" />
           <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-[#170818]/20 via-[#160816]/34 to-[#110813]/84" />
           <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,175,128,0.16),transparent_56%)]" />
+          <a
+            href="https://t.me/+vqSxXkgWsoVjMmFi"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Открыть Telegram-чат"
+            className="absolute left-4 top-4 z-20 block h-[72px] w-[72px] overflow-hidden rounded-full sm:left-6 sm:top-6 sm:h-[84px] sm:w-[84px]"
+          >
+            <img src="/logoapp.png" alt="" aria-hidden="true" className="h-full w-full object-contain" />
+          </a>
           <div className="absolute inset-x-0 bottom-0 p-4 pb-16 sm:p-6 sm:pb-24">
             <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Инструменты тренера</h1>
             <p className="mt-2 max-w-3xl text-sm text-neutral-100/90 sm:text-base">
