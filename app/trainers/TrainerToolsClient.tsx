@@ -135,7 +135,7 @@ export function TrainerToolsClient({ cards, activeTool, selectedTool, setActiveT
   return (
     <section className={`space-y-3 ${selectedTool === null ? "overflow-hidden" : "min-h-0 flex-1 overflow-hidden"}`}>
       {selectedTool === null ? (
-        <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
+        <div className="grid grid-cols-[repeat(3,clamp(86px,26vw,104px))] justify-center gap-2">
           {cards.map((card) => (
             <button
               key={card.id}
@@ -145,9 +145,15 @@ export function TrainerToolsClient({ cards, activeTool, selectedTool, setActiveT
                 setSelectedTool(card.id);
               }}
               aria-label={card.label}
-              className="aspect-square relative overflow-hidden rounded-xl border border-[#ffb07f]/28 bg-[#26142b]/75 p-0 text-center text-white shadow-[0_4px_12px_rgba(0,0,0,0.28),inset_0_0_0_1px_rgba(255,160,116,0.08)] transition hover:border-[#ffc49b]/50 hover:bg-[#311935]/88 hover:shadow-[0_0_12px_rgba(255,156,110,0.2)] active:scale-[0.995]"
+              className="relative h-[clamp(86px,26vw,104px)] w-[clamp(86px,26vw,104px)] overflow-hidden rounded-xl border border-[#ffb07f]/28 bg-[#26142b]/75 p-0 text-center text-white shadow-[0_4px_12px_rgba(0,0,0,0.28),inset_0_0_0_1px_rgba(255,160,116,0.08)] transition hover:border-[#ffc49b]/50 hover:bg-[#311935]/88 hover:shadow-[0_0_12px_rgba(255,156,110,0.2)] active:scale-[0.995]"
             >
-              <img src={card.iconSrc} alt={card.label} className="toolIconImage" loading="lazy" decoding="async" />
+              <img
+                src={card.iconSrc}
+                alt={card.label}
+                className="absolute inset-0 h-full w-full scale-[1.1] object-cover object-center"
+                loading="lazy"
+                decoding="async"
+              />
             </button>
           ))}
         </div>

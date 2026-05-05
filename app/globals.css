@@ -52,14 +52,3 @@ select {
     background-position: 200% center;
   }
 }
-
-.toolIconImage {
-  width: calc(100% + 8px);
-  height: calc(100% + 8px);
-  margin: -4px;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  border-radius: 0.7rem;
-  transform: none;
-}
