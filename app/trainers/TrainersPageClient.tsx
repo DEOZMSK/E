@@ -47,7 +47,7 @@ export function TrainersPageClient({ cards }: TrainersPageClientProps) {
           </div>
         </header>
 
-        <div className="-mt-14 relative z-10 grid min-h-0 flex-1 grid-rows-[1fr_auto] sm:-mt-24">
+        <div className="-mt-10 relative z-10 grid min-h-0 flex-1 grid-rows-[1fr_auto] sm:-mt-20">
           <TrainerToolsClient
             cards={cards}
             activeTool={activeTool}
