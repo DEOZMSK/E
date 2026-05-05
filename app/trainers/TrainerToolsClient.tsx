@@ -22,7 +22,13 @@ import { WarningBox } from "./components/WarningBox";
 import { ActivityLevel, Goal, Sex } from "./types";
 
 interface ToolCardData { id: string; iconSrc: string; label: string; active: boolean }
-interface TrainerToolsClientProps { cards: ToolCardData[] }
+interface TrainerToolsClientProps {
+  cards: ToolCardData[];
+  activeTool: string;
+  selectedTool: string | null;
+  setActiveTool: (value: string) => void;
+  setSelectedTool: (value: string | null) => void;
+}
 const descriptions: Record<string, string> = {
   anthropometry: "Оценка базовых пропорций тела и расчётного ориентира веса.",
   calories: "Расчёт калорийности и макросов по цели.",
@@ -84,9 +90,7 @@ const stressOptions = [
   { value: "4", label: "4 — почти постоянно" }
 ];
 
-export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
-  const [activeTool, setActiveTool] = useState("anthropometry");
-  const [selectedTool, setSelectedTool] = useState<string | null>(null);
+export function TrainerToolsClient({ cards, activeTool, selectedTool, setActiveTool, setSelectedTool }: TrainerToolsClientProps) {
   const [sex, setSex] = useState<Sex>("female");
   const [age, setAge] = useState(30);
   const [heightCm, setHeightCm] = useState(170);
