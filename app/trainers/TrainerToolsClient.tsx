@@ -135,7 +135,7 @@ export function TrainerToolsClient({ cards, activeTool, selectedTool, setActiveT
   return (
     <section className={`space-y-3 ${selectedTool === null ? "overflow-hidden" : "min-h-0 flex-1 overflow-hidden"}`}>
       {selectedTool === null ? (
-        <div className="grid grid-cols-3 gap-2.5 sm:gap-3">
+        <div className="grid grid-cols-3 gap-2 sm:gap-2.5">
           {cards.map((card) => (
             <button
               key={card.id}
@@ -145,7 +145,7 @@ export function TrainerToolsClient({ cards, activeTool, selectedTool, setActiveT
                 setSelectedTool(card.id);
               }}
               aria-label={card.label}
-              className="aspect-square relative overflow-hidden rounded-2xl border border-[#ffb07f]/35 bg-[#26142b]/75 p-0 text-center text-white shadow-[0_8px_22px_rgba(0,0,0,0.35),inset_0_0_0_1px_rgba(255,160,116,0.16)] transition hover:border-[#ffc49b]/65 hover:bg-[#311935]/90 hover:shadow-[0_0_18px_rgba(255,156,110,0.3)] active:scale-[0.995]"
+              className="aspect-square relative overflow-hidden rounded-xl border border-[#ffb07f]/30 bg-[#26142b]/78 p-[1px] text-center text-white shadow-[0_6px_16px_rgba(0,0,0,0.3),inset_0_0_0_1px_rgba(255,160,116,0.1)] transition hover:border-[#ffc49b]/55 hover:bg-[#311935]/90 hover:shadow-[0_0_14px_rgba(255,156,110,0.24)] active:scale-[0.995]"
             >
               <img src={card.iconSrc} alt={card.label} className="toolIconImage" loading="lazy" decoding="async" />
             </button>
