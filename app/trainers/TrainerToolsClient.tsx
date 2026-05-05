@@ -86,6 +86,7 @@ const stressOptions = [
 
 export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
   const [activeTool, setActiveTool] = useState("anthropometry");
+  const [selectedTool, setSelectedTool] = useState<string | null>(null);
   const [sex, setSex] = useState<Sex>("female");
   const [age, setAge] = useState(30);
   const [heightCm, setHeightCm] = useState(170);
@@ -125,35 +126,39 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
   const letunov = useMemo(() => calculateLetunov(bpBaseSys, bpBaseDia, bpAfterSys, bpAfterDia, bpRecSys, bpRecDia), [bpBaseSys, bpBaseDia, bpAfterSys, bpAfterDia, bpRecSys, bpRecDia]);
   const stress = useMemo(() => calculateStress(stressAnswers), [stressAnswers]);
   const hypertrophy = useMemo(() => calculateHypertrophy(sets, reps, workWeight, rm1), [sets, reps, workWeight, rm1]);
-  const activeCard = cards.find((card) => card.id === activeTool);
+  const selectedCard = cards.find((card) => card.id === selectedTool);
 
   return (
-    <section className="space-y-4">
-      <div className="grid grid-cols-3 gap-3">
-        {cards.map((card) => (
+    <section className="space-y-3">
+      {selectedTool === null ? (
+        <div className="grid grid-cols-3 gap-3">
+          {cards.map((card) => (
+            <button
+              key={card.id}
+              type="button"
+              onClick={() => {
+                setActiveTool(card.id);
+                setSelectedTool(card.id);
+              }}
+              aria-label={card.label}
+              className="aspect-square relative overflow-hidden rounded-2xl border border-[#ffb07f]/35 bg-[#26142b]/75 p-0 text-center text-white shadow-[0_8px_22px_rgba(0,0,0,0.35),inset_0_0_0_1px_rgba(255,160,116,0.16)] transition hover:border-[#ffc49b]/65 hover:bg-[#311935]/90 hover:shadow-[0_0_18px_rgba(255,156,110,0.3)] active:scale-[0.995]"
+            >
+              <img src={card.iconSrc} alt={card.label} className="toolIconImage" loading="lazy" decoding="async" />
+            </button>
+          ))}
+        </div>
+      ) : (
+      <div className="rounded-3xl border border-[#ffb07f]/30 bg-[linear-gradient(145deg,rgba(39,21,44,0.95),rgba(21,11,26,0.96))] p-4 sm:p-6 space-y-4 shadow-[0_12px_36px_rgba(0,0,0,0.45)]">
+        <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[#ffb07f]/25 bg-[#1d1022]/70 px-3 py-2">
           <button
-            key={card.id}
             type="button"
-            onClick={() => setActiveTool(card.id)}
-            aria-label={card.label}
-            className={`aspect-square relative overflow-hidden rounded-2xl border p-0 text-center text-white transition active:scale-[0.995] ${
-              activeTool === card.id
-                ? "border-cyan-400/80 bg-cyan-500/15 shadow-[0_0_0_1px_rgba(34,211,238,0.35)]"
-                : "border-white/15 bg-white/5 hover:bg-white/10"
-            }`}
+            onClick={() => setSelectedTool(null)}
+            className="rounded-xl border border-[#ffbe93]/40 bg-[#2a152f] px-3 py-1.5 text-sm font-medium text-[#ffd6bd] transition hover:bg-[#341b39]"
           >
-            <img src={card.iconSrc} alt={card.label} className="toolIconImage" loading="lazy" decoding="async" />
+            ← Назад
           </button>
-        ))}
-      </div>
-
-      <div className="rounded-2xl border border-cyan-400/35 bg-cyan-500/10 px-4 py-3 text-sm text-neutral-100">
-        <p className="font-medium">
-          Выбрано: {activeCard?.label ?? ""}
-        </p>
-      </div>
-
-      <div className="rounded-3xl border border-white/10 bg-white/10 p-4 sm:p-6 space-y-4">
+          <p className="text-sm font-medium text-[#ffe7d6]">{selectedCard?.label}</p>
+        </div>
         <SectionHeader text={descriptions[activeTool] ?? ""} />
 
         <div className="grid gap-3 sm:grid-cols-2">
@@ -257,6 +262,7 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
         <WarningBox text={anthropometry.warning || calories.warning || caliper.warning || strength.warning || flexibility.warning || functional.warning || letunov.warning || stress.warning || hypertrophy.warning || ""} />
         <DisclaimerBox />
       </div>
+      )}
     </section>
   );
 }
