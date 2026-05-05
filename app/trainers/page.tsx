@@ -23,14 +23,14 @@ const trainerCards = [
 
 export default function TrainersPage() {
   return (
-    <main className="relative overflow-hidden bg-[#110813] px-4 pb-8 pt-8 text-neutral-100 sm:px-6 sm:pt-10">
+    <main className="relative h-[100dvh] overflow-hidden bg-[#110813] px-4 pb-4 pt-6 text-neutral-100 sm:px-6 sm:pt-8">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[url('/foni.webp')] bg-cover bg-center bg-no-repeat"
+        className="pointer-events-none fixed inset-0 z-0 bg-[url('/foni.webp')] bg-cover bg-center bg-no-repeat"
       />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[#110813]/52" />
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 bg-[#08040b]/38" />
 
-      <div className="mx-auto max-w-6xl">
+      <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col">
         <header className="relative overflow-hidden rounded-3xl border border-[#ffb280]/25">
           <img
             src="/fonapp.webp"
@@ -51,9 +51,9 @@ export default function TrainersPage() {
           </div>
         </header>
 
-        <div className="-mt-20 relative z-10 space-y-4 sm:-mt-24">
+        <div className="-mt-20 relative z-10 flex min-h-0 flex-1 flex-col sm:-mt-24">
           <TrainerToolsClient cards={trainerCards} />
-          <div className="flex justify-center pb-1">
+          <div className="flex justify-center pt-3 pb-[calc(env(safe-area-inset-bottom)+14px)]">
             <Link
               href="/"
               className="inline-flex items-center rounded-2xl border border-[#ffbb94]/40 bg-[#25132a]/70 px-5 py-2.5 text-sm font-medium text-[#ffe0cb] shadow-[0_10px_30px_rgba(0,0,0,0.35)] backdrop-blur-sm transition hover:bg-[#2f1834]/85"

@@ -129,9 +129,9 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
   const selectedCard = cards.find((card) => card.id === selectedTool);
 
   return (
-    <section className="space-y-3">
+    <section className={`space-y-3 ${selectedTool === null ? "overflow-hidden" : "min-h-0 flex-1 overflow-hidden"}`}>
       {selectedTool === null ? (
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 gap-2.5 sm:gap-3">
           {cards.map((card) => (
             <button
               key={card.id}
@@ -148,7 +148,7 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
           ))}
         </div>
       ) : (
-      <div className="rounded-3xl border border-[#ffb07f]/30 bg-[linear-gradient(145deg,rgba(39,21,44,0.95),rgba(21,11,26,0.96))] p-4 sm:p-6 space-y-4 shadow-[0_12px_36px_rgba(0,0,0,0.45)]">
+      <div className="min-h-0 overflow-y-auto rounded-3xl border border-[#ffb07f]/30 bg-[linear-gradient(145deg,rgba(39,21,44,0.95),rgba(21,11,26,0.96))] p-4 sm:p-6 space-y-4 shadow-[0_12px_36px_rgba(0,0,0,0.45)]">
         <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[#ffb07f]/25 bg-[#1d1022]/70 px-3 py-2">
           <button
             type="button"
