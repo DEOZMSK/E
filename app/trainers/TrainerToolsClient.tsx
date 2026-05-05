@@ -22,7 +22,13 @@ import { WarningBox } from "./components/WarningBox";
 import { ActivityLevel, Goal, Sex } from "./types";
 
 interface ToolCardData { id: string; iconSrc: string; label: string; active: boolean }
-interface TrainerToolsClientProps { cards: ToolCardData[] }
+interface TrainerToolsClientProps {
+  cards: ToolCardData[];
+  activeTool: string;
+  selectedTool: string | null;
+  setActiveTool: (value: string) => void;
+  setSelectedTool: (value: string | null) => void;
+}
 const descriptions: Record<string, string> = {
   anthropometry: "Оценка базовых пропорций тела и расчётного ориентира веса.",
   calories: "Расчёт калорийности и макросов по цели.",
@@ -84,9 +90,7 @@ const stressOptions = [
   { value: "4", label: "4 — почти постоянно" }
 ];
 
-export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
-  const [activeTool, setActiveTool] = useState("anthropometry");
-  const [selectedTool, setSelectedTool] = useState<string | null>(null);
+export function TrainerToolsClient({ cards, activeTool, selectedTool, setActiveTool, setSelectedTool }: TrainerToolsClientProps) {
   const [sex, setSex] = useState<Sex>("female");
   const [age, setAge] = useState(30);
   const [heightCm, setHeightCm] = useState(170);
@@ -129,9 +133,9 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
   const selectedCard = cards.find((card) => card.id === selectedTool);
 
   return (
-    <section className="space-y-3">
+    <section className={`space-y-3 ${selectedTool === null ? "overflow-hidden" : "min-h-0 flex-1 overflow-hidden"}`}>
       {selectedTool === null ? (
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-[repeat(3,clamp(86px,26vw,104px))] justify-center gap-2">
           {cards.map((card) => (
             <button
               key={card.id}
@@ -141,14 +145,20 @@ export function TrainerToolsClient({ cards }: TrainerToolsClientProps) {
                 setSelectedTool(card.id);
               }}
               aria-label={card.label}
-              className="aspect-square relative overflow-hidden rounded-2xl border border-[#ffb07f]/35 bg-[#26142b]/75 p-0 text-center text-white shadow-[0_8px_22px_rgba(0,0,0,0.35),inset_0_0_0_1px_rgba(255,160,116,0.16)] transition hover:border-[#ffc49b]/65 hover:bg-[#311935]/90 hover:shadow-[0_0_18px_rgba(255,156,110,0.3)] active:scale-[0.995]"
+              className="relative h-[clamp(86px,26vw,104px)] w-[clamp(86px,26vw,104px)] overflow-hidden rounded-xl border border-[#ffb07f]/28 bg-[#26142b]/75 p-0 text-center text-white shadow-[0_4px_12px_rgba(0,0,0,0.28),inset_0_0_0_1px_rgba(255,160,116,0.08)] transition hover:border-[#ffc49b]/50 hover:bg-[#311935]/88 hover:shadow-[0_0_12px_rgba(255,156,110,0.2)] active:scale-[0.995]"
             >
-              <img src={card.iconSrc} alt={card.label} className="toolIconImage" loading="lazy" decoding="async" />
+              <img
+                src={card.iconSrc}
+                alt={card.label}
+                className="absolute inset-0 h-full w-full scale-[1.1] object-cover object-center"
+                loading="lazy"
+                decoding="async"
+              />
             </button>
           ))}
         </div>
       ) : (
-      <div className="rounded-3xl border border-[#ffb07f]/30 bg-[linear-gradient(145deg,rgba(39,21,44,0.95),rgba(21,11,26,0.96))] p-4 sm:p-6 space-y-4 shadow-[0_12px_36px_rgba(0,0,0,0.45)]">
+      <div className="min-h-0 overflow-y-auto rounded-3xl border border-[#ffb07f]/30 bg-[linear-gradient(145deg,rgba(39,21,44,0.95),rgba(21,11,26,0.96))] p-4 sm:p-6 space-y-4 shadow-[0_12px_36px_rgba(0,0,0,0.45)]">
         <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[#ffb07f]/25 bg-[#1d1022]/70 px-3 py-2">
           <button
             type="button"
